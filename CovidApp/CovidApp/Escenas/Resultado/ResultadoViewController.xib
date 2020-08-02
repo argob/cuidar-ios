@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResultadoViewController" customModule="CovidApp_AR" customModuleProvider="target">
+            <connections>
+                <outlet property="cerrarBoton" destination="Knn-tn-hKa" id="wDM-Z5-jOt"/>
+                <outlet property="tablaContenido" destination="AfW-Ql-3lj" id="f50-Lf-X7e"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Knn-tn-hKa">
+                    <rect key="frame" x="354" y="54" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="DCq-3y-0xy"/>
+                        <constraint firstAttribute="width" constant="40" id="QRC-IS-uST"/>
+                    </constraints>
+                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="resultado-cerrar"/>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="resultado-encabezado" translatesAutoresizingMaskIntoConstraints="NO" id="WA7-PR-6Ui">
+                    <rect key="frame" x="122" y="54" width="170" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="170" id="y9e-2D-LLL"/>
+                    </constraints>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AfW-Ql-3lj">
+                    <rect key="frame" x="0.0" y="134" width="414" height="728"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="AfW-Ql-3lj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Dww-RF-XcP"/>
+                <constraint firstItem="WA7-PR-6Ui" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="L9G-Rw-nBS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Knn-tn-hKa" secondAttribute="trailing" constant="20" id="MDR-B5-5Zt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="AfW-Ql-3lj" secondAttribute="bottom" id="N3Y-bY-fzu"/>
+                <constraint firstItem="AfW-Ql-3lj" firstAttribute="top" secondItem="WA7-PR-6Ui" secondAttribute="bottom" constant="10" id="Niw-ss-HCm"/>
+                <constraint firstItem="AfW-Ql-3lj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="90" id="Qj9-ls-H0t"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AfW-Ql-3lj" secondAttribute="trailing" id="o2U-SN-O6j"/>
+                <constraint firstItem="WA7-PR-6Ui" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="tGW-Wf-mH4"/>
+                <constraint firstItem="Knn-tn-hKa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="zsm-1P-sj6"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="resultado-cerrar" width="26" height="26"/>
+        <image name="resultado-encabezado" width="254.5" height="94.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

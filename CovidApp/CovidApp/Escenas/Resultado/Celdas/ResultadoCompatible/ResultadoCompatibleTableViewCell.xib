@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Black.ttf">
+            <string>Roboto-Black</string>
+        </array>
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultadoCompatibleTableViewCell" rowHeight="438" id="KGk-i7-Jjw" customClass="ResultadoCompatibleTableViewCell" customModule="CovidApp_AR" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="619" height="438"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="619" height="438"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWU-GL-Zg4" customClass="ShadowView" customModule="CovidApp_AR" customModuleProvider="target">
+                        <rect key="frame" x="20" y="20" width="579" height="400"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="lOx-kX-lp6">
+                                <rect key="frame" x="0.0" y="0.0" width="579" height="400"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WcQ-Bw-VZf">
+                                        <rect key="frame" x="0.0" y="0.0" width="579" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EN EVALUACIÓN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0v-V5-I3l">
+                                                <rect key="frame" x="15" y="15" width="549" height="20"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Black" family="Roboto" pointSize="16"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="f0v-V5-I3l" firstAttribute="top" secondItem="WcQ-Bw-VZf" secondAttribute="top" constant="15" id="32x-dE-W0m"/>
+                                            <constraint firstAttribute="trailing" secondItem="f0v-V5-I3l" secondAttribute="trailing" constant="15" id="3sT-s9-Qpa"/>
+                                            <constraint firstAttribute="bottom" secondItem="f0v-V5-I3l" secondAttribute="bottom" constant="15" id="BB3-nb-cxj"/>
+                                            <constraint firstItem="f0v-V5-I3l" firstAttribute="leading" secondItem="WcQ-Bw-VZf" secondAttribute="leading" constant="15" id="axG-Ty-AfT"/>
+                                        </constraints>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="evJ-HA-J6m">
+                                        <rect key="frame" x="20" y="52" width="539" height="317"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <mutableString key="content">Felipe, tu autodiagnóstico tiene síntomas compatibles con COVID-19 y fueron reportados.\n\n Por favor comunicate con tu obra social o acercate a una Unidad Febril de Urgencia (UFU): \nhttps://bamapas.usig.buenosaires.gob.ar\n\nSi por alguna razón no podés ir, llamá al </mutableString>
+                                                <attributes>
+                                                    <color key="NSColor" systemColor="labelColor"/>
+                                                    <font key="NSFont" size="16" name="Roboto-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="📞">
+                                                <attributes>
+                                                    <color key="NSColor" systemColor="labelColor"/>
+                                                    <font key="NSFont" size="16" name="AppleColorEmoji"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="107.\n\nSi considerás que hubo un error en la carga de tus síntomas entrá a \nhttps://www.buenosaires.gob.ar/coronavirus">
+                                                <attributes>
+                                                    <color key="NSColor" systemColor="labelColor"/>
+                                                    <font key="NSFont" size="16" name="Roboto-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="CABA: 107 + Whatsapp: 11-5050-0147" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRt-50-Tue">
+                                        <rect key="frame" x="20" y="371" width="539" height="19"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="evJ-HA-J6m" firstAttribute="leading" secondItem="lOx-kX-lp6" secondAttribute="leading" constant="20" id="0lp-Xz-aJc"/>
+                                    <constraint firstItem="WcQ-Bw-VZf" firstAttribute="top" secondItem="lOx-kX-lp6" secondAttribute="top" id="13K-Rm-LjY"/>
+                                    <constraint firstAttribute="trailing" secondItem="WcQ-Bw-VZf" secondAttribute="trailing" id="8NU-3H-TFH"/>
+                                    <constraint firstAttribute="trailing" secondItem="evJ-HA-J6m" secondAttribute="trailing" constant="20" id="AWZ-ug-mt2"/>
+                                    <constraint firstAttribute="trailing" secondItem="rRt-50-Tue" secondAttribute="trailing" constant="20" id="Akh-aA-WGB"/>
+                                    <constraint firstItem="evJ-HA-J6m" firstAttribute="top" secondItem="WcQ-Bw-VZf" secondAttribute="bottom" constant="2" id="DgU-aj-sRA"/>
+                                    <constraint firstItem="WcQ-Bw-VZf" firstAttribute="leading" secondItem="lOx-kX-lp6" secondAttribute="leading" id="fvs-aE-4gW"/>
+                                    <constraint firstItem="rRt-50-Tue" firstAttribute="leading" secondItem="lOx-kX-lp6" secondAttribute="leading" constant="20" id="oEi-49-Imf"/>
+                                    <constraint firstAttribute="bottom" secondItem="rRt-50-Tue" secondAttribute="bottom" constant="10" id="xym-qX-uuL"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="400" id="32J-KZ-rYF"/>
+                            <constraint firstItem="lOx-kX-lp6" firstAttribute="top" secondItem="DWU-GL-Zg4" secondAttribute="top" id="MQU-wa-wcK"/>
+                            <constraint firstAttribute="bottom" secondItem="lOx-kX-lp6" secondAttribute="bottom" id="Sg4-6h-Qar"/>
+                            <constraint firstItem="lOx-kX-lp6" firstAttribute="leading" secondItem="DWU-GL-Zg4" secondAttribute="leading" id="WFn-HA-Gxt"/>
+                            <constraint firstAttribute="trailing" secondItem="lOx-kX-lp6" secondAttribute="trailing" id="Y2D-x1-Yuz"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="DWU-GL-Zg4" secondAttribute="bottom" constant="20" id="3x3-4N-I8P"/>
+                    <constraint firstItem="DWU-GL-Zg4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="8i0-lt-cJe"/>
+                    <constraint firstAttribute="trailing" secondItem="DWU-GL-Zg4" secondAttribute="trailing" constant="20" id="Pvz-zu-nxp"/>
+                    <constraint firstItem="DWU-GL-Zg4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Q58-I5-KOV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="descripcion" destination="evJ-HA-J6m" id="mFd-SX-TXR"/>
+                <outlet property="header" destination="WcQ-Bw-VZf" id="eH9-EC-Zwr"/>
+                <outlet property="telefono" destination="rRt-50-Tue" id="FUJ-ey-ZXd"/>
+                <outlet property="titulo" destination="f0v-V5-I3l" id="uxY-8x-AfJ"/>
+                <outlet property="vista" destination="DWU-GL-Zg4" id="rVA-Nf-C9y"/>
+            </connections>
+            <point key="canvasLocation" x="934.05797101449286" y="279.91071428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

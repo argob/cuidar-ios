@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuNavegacionViewController" customModule="CovidApp" customModuleProvider="target">
+            <connections>
+                <outlet property="barraNavegacion" destination="oFz-mY-BCf" id="IWa-cS-f2M"/>
+                <outlet property="view" destination="iN0-l3-epB" id="CnG-2S-KlI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oFz-mY-BCf">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="nZh-bC-BVf"/>
+                    </constraints>
+                    <items>
+                        <navigationItem id="kRp-rE-7iy">
+                            <barButtonItem key="leftBarButtonItem" title="Item" image="plus" id="dAH-7C-EXk">
+                                <connections>
+                                    <action selector="clickToggleMenu:" destination="-1" id="Z0O-QT-LEF"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="oFz-mY-BCf" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Lcr-3j-dlL"/>
+                <constraint firstAttribute="trailing" secondItem="oFz-mY-BCf" secondAttribute="trailing" id="ioO-ZS-5jj"/>
+                <constraint firstItem="oFz-mY-BCf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="vPl-ti-Sih"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="154"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="plus" width="32" height="32"/>
+    </resources>
+</document>

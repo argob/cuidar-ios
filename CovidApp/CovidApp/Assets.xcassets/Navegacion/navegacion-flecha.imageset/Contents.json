@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "iconmonstr-arrow-64.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "iconmonstr-arrow-65.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "iconmonstr-arrow-66.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Black.ttf">
+            <string>Roboto-Black</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultadoNoCompatibleTableViewCell" rowHeight="530" id="R66-X9-Rma" userLabel="ResultadoNoCompatibleTableViewCell" customClass="ResultadoNoCompatibleTableViewCell" customModule="CovidApp_STG" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="619" height="530"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R66-X9-Rma" id="vfp-wU-PLg">
+                <rect key="frame" x="0.0" y="0.0" width="619" height="530"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQX-dV-HSo" userLabel="Vista" customClass="ShadowView" customModule="CovidApp_STG" customModuleProvider="target">
+                        <rect key="frame" x="20" y="20" width="579" height="490"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DtL-uG-aVh" userLabel="Encabezado">
+                                <rect key="frame" x="0.0" y="0.0" width="579" height="55"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUZ-B8-47K" userLabel="Titulo Encabezado">
+                                        <rect key="frame" x="15" y="15" width="549" height="25"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Black" family="Roboto" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="UUZ-B8-47K" secondAttribute="bottom" constant="15" id="B4C-aA-wpK"/>
+                                    <constraint firstAttribute="trailing" secondItem="UUZ-B8-47K" secondAttribute="trailing" constant="15" id="ZQd-aO-HcJ"/>
+                                    <constraint firstAttribute="height" constant="55" id="gyX-6E-euD"/>
+                                    <constraint firstItem="UUZ-B8-47K" firstAttribute="leading" secondItem="DtL-uG-aVh" secondAttribute="leading" constant="15" id="t8Z-Nb-hnw"/>
+                                    <constraint firstItem="UUZ-B8-47K" firstAttribute="top" secondItem="DtL-uG-aVh" secondAttribute="top" constant="15" id="yc8-Wb-u1D"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1W6-Te-heW">
+                                <rect key="frame" x="20" y="79" width="547" height="19"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m4H-s0-U1m">
+                                <rect key="frame" x="90" y="128" width="399" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="7Yz-tO-Qk2"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zh-HV-eky">
+                                <rect key="frame" x="20" y="187" width="547" height="253"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="m4H-s0-U1m" secondAttribute="trailing" constant="90" id="0aW-sF-5KH"/>
+                            <constraint firstItem="DtL-uG-aVh" firstAttribute="top" secondItem="gQX-dV-HSo" secondAttribute="top" id="1pw-SK-X5y"/>
+                            <constraint firstItem="DtL-uG-aVh" firstAttribute="leading" secondItem="gQX-dV-HSo" secondAttribute="leading" id="8ee-WI-Ipv"/>
+                            <constraint firstItem="0Zh-HV-eky" firstAttribute="top" secondItem="m4H-s0-U1m" secondAttribute="bottom" constant="23" id="HYL-sy-xGR"/>
+                            <constraint firstItem="1W6-Te-heW" firstAttribute="top" secondItem="DtL-uG-aVh" secondAttribute="bottom" constant="24" id="JiE-I0-8Um"/>
+                            <constraint firstItem="0Zh-HV-eky" firstAttribute="trailing" secondItem="1W6-Te-heW" secondAttribute="trailing" id="N2b-ym-7Ez"/>
+                            <constraint firstItem="m4H-s0-U1m" firstAttribute="top" secondItem="1W6-Te-heW" secondAttribute="bottom" constant="30" id="QJg-nD-ZXG"/>
+                            <constraint firstAttribute="bottom" secondItem="0Zh-HV-eky" secondAttribute="bottom" constant="50" id="WyW-Wd-6L0"/>
+                            <constraint firstItem="m4H-s0-U1m" firstAttribute="leading" secondItem="gQX-dV-HSo" secondAttribute="leading" constant="90" id="a8T-tM-hGb"/>
+                            <constraint firstItem="0Zh-HV-eky" firstAttribute="leading" secondItem="1W6-Te-heW" secondAttribute="leading" id="iji-fb-Huv"/>
+                            <constraint firstItem="1W6-Te-heW" firstAttribute="leading" secondItem="gQX-dV-HSo" secondAttribute="leading" constant="20" id="lyP-T7-kOg"/>
+                            <constraint firstAttribute="trailing" secondItem="1W6-Te-heW" secondAttribute="trailing" constant="12" id="sHm-JW-TfI"/>
+                            <constraint firstAttribute="trailing" secondItem="DtL-uG-aVh" secondAttribute="trailing" id="xKi-Rc-itk"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gQX-dV-HSo" firstAttribute="leading" secondItem="vfp-wU-PLg" secondAttribute="leading" constant="20" id="6zG-R0-ya7"/>
+                    <constraint firstItem="gQX-dV-HSo" firstAttribute="top" secondItem="vfp-wU-PLg" secondAttribute="top" constant="20" id="RBY-yJ-z5o"/>
+                    <constraint firstAttribute="bottom" secondItem="gQX-dV-HSo" secondAttribute="bottom" constant="20" id="aga-iE-acQ"/>
+                    <constraint firstAttribute="trailing" secondItem="gQX-dV-HSo" secondAttribute="trailing" constant="20" id="gHj-Un-akN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="jNi-yE-aJ1"/>
+            <connections>
+                <outlet property="encabezado" destination="DtL-uG-aVh" id="4Rv-6y-OPO"/>
+                <outlet property="imagen" destination="m4H-s0-U1m" id="WuU-dj-5Zx"/>
+                <outlet property="indicaciones" destination="0Zh-HV-eky" id="ydv-KH-POi"/>
+                <outlet property="resultado" destination="1W6-Te-heW" id="tMm-IA-3ll"/>
+                <outlet property="tituloEncabezado" destination="UUZ-B8-47K" id="xXx-Kz-Z5K"/>
+                <outlet property="vista" destination="gQX-dV-HSo" id="bg8-tI-d0h"/>
+            </connections>
+            <point key="canvasLocation" x="934.05797101449286" y="310.71428571428572"/>
+        </tableViewCell>
+    </objects>
+</document>

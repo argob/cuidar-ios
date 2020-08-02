@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InformacionPBAViewController" customModule="CovidApp_AR" customModuleProvider="target">
+            <connections>
+                <outlet property="asistenciaRemota" destination="Umx-HK-Efv" id="FPG-Lr-p4Y"/>
+                <outlet property="asistenteDeSalud" destination="I2H-u2-9N5" id="SC0-n5-0FZ"/>
+                <outlet property="portalCoronavirus" destination="QuE-tc-9OB" id="ANB-dG-rNW"/>
+                <outlet property="sip" destination="gpM-D1-Vit" id="9Sl-aV-gss"/>
+                <outlet property="view" destination="iN0-l3-epB" id="LVQ-eS-0Cz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zyn-26-AgB" userLabel="Header">
+                    <rect key="frame" x="0.0" y="60" width="320" height="70"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CUIDAR-_EMERGENCIA SANITARIA" translatesAutoresizingMaskIntoConstraints="NO" id="g1u-t9-8Eb">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" name="AzulCovid"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="g1u-t9-8Eb" secondAttribute="trailing" id="1xx-N9-NEE"/>
+                        <constraint firstItem="g1u-t9-8Eb" firstAttribute="leading" secondItem="Zyn-26-AgB" secondAttribute="leading" id="Q6q-kX-g2c"/>
+                        <constraint firstAttribute="bottom" secondItem="g1u-t9-8Eb" secondAttribute="bottom" id="Sya-ni-CAB"/>
+                        <constraint firstItem="g1u-t9-8Eb" firstAttribute="top" secondItem="Zyn-26-AgB" secondAttribute="top" id="YN6-Oa-aYK"/>
+                        <constraint firstAttribute="height" constant="70" id="uc1-nC-edo"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jld-QA-fVh">
+                    <rect key="frame" x="10" y="140" width="300" height="85"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="85" id="eYh-LP-IDg"/>
+                    </constraints>
+                    <attributedString key="attributedText">
+                        <fragment content="Desde la ">
+                            <attributes>
+                                <font key="NSFont" metaFont="system" size="17"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Provincia de Buenos Aires">
+                            <attributes>
+                                <font key="NSFont" metaFont="systemBold" size="17"/>
+                                <font key="NSOriginalFont" metaFont="systemBold" size="17"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" ponemos a disposición información y aplicaciones interactivas relacionadas con el coronavirus.">
+                            <attributes>
+                                <font key="NSFont" metaFont="system" size="17"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQY-oQ-49u" userLabel="Footer">
+                    <rect key="frame" x="0.0" y="498" width="320" height="70"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CUIDAR-_BOX PIE" translatesAutoresizingMaskIntoConstraints="NO" id="zLN-h6-xYq">
+                            <rect key="frame" x="0.0" y="10" width="320" height="50"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" name="AzulCovid"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="1Fo-HW-Uer"/>
+                        <constraint firstItem="zLN-h6-xYq" firstAttribute="leading" secondItem="BQY-oQ-49u" secondAttribute="leading" id="2N0-ot-cuU"/>
+                        <constraint firstAttribute="bottom" secondItem="zLN-h6-xYq" secondAttribute="bottom" constant="10" id="3dQ-Pc-elg"/>
+                        <constraint firstItem="zLN-h6-xYq" firstAttribute="top" secondItem="BQY-oQ-49u" secondAttribute="top" constant="10" id="e7z-DG-RBD"/>
+                        <constraint firstAttribute="trailing" secondItem="zLN-h6-xYq" secondAttribute="trailing" id="ngY-iC-AvU"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aic-9E-RVX">
+                    <rect key="frame" x="16" y="233" width="288" height="257"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="center" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qOG-Re-bXl">
+                            <rect key="frame" x="0.0" y="8" width="288" height="255"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuE-tc-9OB">
+                                    <rect key="frame" x="0.0" y="0.0" width="288" height="60"/>
+                                    <color key="backgroundColor" name="AzulCovid"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="1Ty-Mg-r2o"/>
+                                    </constraints>
+                                    <state key="normal" title="PORTAL CORONAVIRUS">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="portalCoronavirusAction:" destination="-1" eventType="touchUpInside" id="eoh-NS-rRi"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2H-u2-9N5">
+                                    <rect key="frame" x="0.0" y="65" width="288" height="60"/>
+                                    <color key="backgroundColor" name="AzulCovid"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="bVu-sJ-YZe"/>
+                                    </constraints>
+                                    <state key="normal" title="ASISTENTE DE SALUD MENTAL">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="asistenteDeSaludAction:" destination="-1" eventType="touchUpInside" id="bQB-Yk-0Y3"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gpM-D1-Vit">
+                                    <rect key="frame" x="0.0" y="130" width="288" height="60"/>
+                                    <color key="backgroundColor" name="AzulCovid"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="pdr-id-eoy"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                    <state key="normal" title="SISTEMA INTERACTIVO DE LA PROVINCIA (SIP)">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="sipAction:" destination="-1" eventType="touchUpInside" id="2qz-F8-Tg7"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Umx-HK-Efv">
+                                    <rect key="frame" x="0.0" y="195" width="288" height="60"/>
+                                    <color key="backgroundColor" name="AzulCovid"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="Ib9-I6-LdL"/>
+                                    </constraints>
+                                    <state key="normal" title="ASISTENCIA REMOTA COVID">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="asistenciaRemotaAction:" destination="-1" eventType="touchUpInside" id="HLA-d2-s91"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="qOG-Re-bXl" firstAttribute="top" secondItem="Aic-9E-RVX" secondAttribute="topMargin" id="8Bb-Tq-f1t"/>
+                        <constraint firstItem="qOG-Re-bXl" firstAttribute="leading" secondItem="Aic-9E-RVX" secondAttribute="leading" id="Dqh-tT-msA"/>
+                        <constraint firstAttribute="bottom" secondItem="qOG-Re-bXl" secondAttribute="bottom" id="WAu-gR-Aph"/>
+                        <constraint firstAttribute="trailing" secondItem="qOG-Re-bXl" secondAttribute="trailing" id="f8W-Zi-pue"/>
+                        <constraint firstItem="qOG-Re-bXl" firstAttribute="centerX" secondItem="Aic-9E-RVX" secondAttribute="centerX" id="qtN-Bj-ySh"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="dve-YM-oHt"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="bel-XW-RuN"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="Aic-9E-RVX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="02Q-bs-fXb"/>
+                <constraint firstItem="Jld-QA-fVh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="DWu-hf-8bh"/>
+                <constraint firstItem="Aic-9E-RVX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="HxR-Ye-8SV"/>
+                <constraint firstItem="Jld-QA-fVh" firstAttribute="top" secondItem="Zyn-26-AgB" secondAttribute="bottom" constant="10" id="MMp-0Q-CNG"/>
+                <constraint firstItem="Zyn-26-AgB" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="60" id="OSz-f4-jFr"/>
+                <constraint firstAttribute="trailing" secondItem="Jld-QA-fVh" secondAttribute="trailing" constant="10" id="V5p-Zy-x3V"/>
+                <constraint firstItem="BQY-oQ-49u" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="XGk-il-fAf"/>
+                <constraint firstItem="Aic-9E-RVX" firstAttribute="top" secondItem="Jld-QA-fVh" secondAttribute="bottom" constant="8" id="bs9-Kf-FM8"/>
+                <constraint firstItem="BQY-oQ-49u" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="gFW-6S-5lS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Zyn-26-AgB" secondAttribute="trailing" id="kGJ-23-jKl"/>
+                <constraint firstItem="BQY-oQ-49u" firstAttribute="top" secondItem="Aic-9E-RVX" secondAttribute="bottom" constant="8" id="toC-3z-zkS"/>
+                <constraint firstItem="BQY-oQ-49u" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="uOC-nV-4bC"/>
+                <constraint firstItem="Zyn-26-AgB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="x9C-iY-6rT"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="130.40000000000001" y="111.0944527736132"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="CUIDAR-_BOX PIE" width="188" height="38"/>
+        <image name="CUIDAR-_EMERGENCIA SANITARIA" width="300" height="70"/>
+        <namedColor name="AzulCovid">
+            <color red="0.21600000560283661" green="0.73299998044967651" blue="0.91399997472763062" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

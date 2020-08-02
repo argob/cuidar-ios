@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="292" id="KGk-i7-Jjw" customClass="PasaporteResultadoPositivoTableViewCell" customModule="CovidApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="471" height="292"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="471" height="292"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="062-vB-suJ">
+                        <rect key="frame" x="20" y="20" width="431" height="252"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5e7-2M-Fzw">
+                                <rect key="frame" x="0.0" y="0.0" width="431" height="267"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="gi8-97-AkC">
+                                        <rect key="frame" x="0.0" y="0.0" width="431" height="80"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FIw-43-6zl" userLabel="EstatusContenedor">
+                                                <rect key="frame" x="0.0" y="0.0" width="267" height="80"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="NO PODÉS ESTAR EN CONTACTO CON OTRAS PERSONAS" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2W-Ff-tKx">
+                                                        <rect key="frame" x="10" y="10" width="247" height="60"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="RosaCovid"/>
+                                                <constraints>
+                                                    <constraint firstItem="m2W-Ff-tKx" firstAttribute="leading" secondItem="FIw-43-6zl" secondAttribute="leading" constant="10" id="Bu9-FW-wXC"/>
+                                                    <constraint firstItem="m2W-Ff-tKx" firstAttribute="top" secondItem="FIw-43-6zl" secondAttribute="top" constant="10" id="FqI-hd-8c2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="m2W-Ff-tKx" secondAttribute="trailing" constant="10" id="Gek-tH-hjf"/>
+                                                    <constraint firstAttribute="bottom" secondItem="m2W-Ff-tKx" secondAttribute="bottom" constant="10" id="hJB-Nx-wL6"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xop-fB-jFY" userLabel="HorasContenedor">
+                                                <rect key="frame" x="267" y="0.0" width="164" height="80"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1KS-1Q-ftJ" userLabel="Separador">
+                                                        <rect key="frame" x="0.0" y="8" width="1" height="64"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="1" id="ZwV-1S-HYQ"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P6M-Y4-enl" userLabel="Contenedor">
+                                                        <rect key="frame" x="1" y="0.0" width="163" height="80"/>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" name="RosaCovid"/>
+                                                <constraints>
+                                                    <constraint firstItem="1KS-1Q-ftJ" firstAttribute="height" secondItem="xop-fB-jFY" secondAttribute="height" multiplier="0.8" id="ECf-cS-vTy"/>
+                                                    <constraint firstAttribute="bottom" secondItem="P6M-Y4-enl" secondAttribute="bottom" id="Gmw-N3-LA7"/>
+                                                    <constraint firstItem="P6M-Y4-enl" firstAttribute="top" secondItem="xop-fB-jFY" secondAttribute="top" id="Rqt-51-AAg"/>
+                                                    <constraint firstItem="1KS-1Q-ftJ" firstAttribute="leading" secondItem="xop-fB-jFY" secondAttribute="leading" id="TuV-Jf-753"/>
+                                                    <constraint firstItem="P6M-Y4-enl" firstAttribute="leading" secondItem="1KS-1Q-ftJ" secondAttribute="trailing" id="gMd-F4-3pn"/>
+                                                    <constraint firstAttribute="trailing" secondItem="P6M-Y4-enl" secondAttribute="trailing" id="pS1-lw-3ZM"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="xop-fB-jFY" firstAttribute="width" secondItem="gi8-97-AkC" secondAttribute="width" multiplier="0.38" id="13S-Vt-yri"/>
+                                            <constraint firstItem="1KS-1Q-ftJ" firstAttribute="centerY" secondItem="gi8-97-AkC" secondAttribute="centerY" id="qMx-eK-u99"/>
+                                            <constraint firstItem="FIw-43-6zl" firstAttribute="width" secondItem="gi8-97-AkC" secondAttribute="width" multiplier="0.62" id="xZ4-wy-YfF"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0X5-i7-TEb">
+                                        <rect key="frame" x="0.0" y="80" width="431" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COVID-19 POSITIVO" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vd8-44-WR2">
+                                                <rect key="frame" x="71" y="6" width="297" height="38"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="RosaTenueCovid"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="vd8-44-WR2" secondAttribute="trailing" constant="63" id="28Y-cc-ah9"/>
+                                            <constraint firstItem="vd8-44-WR2" firstAttribute="top" secondItem="0X5-i7-TEb" secondAttribute="top" constant="6" id="HL3-B2-S1O"/>
+                                            <constraint firstAttribute="bottom" secondItem="vd8-44-WR2" secondAttribute="bottom" constant="6" id="TqB-JV-N26"/>
+                                            <constraint firstAttribute="bottom" secondItem="vd8-44-WR2" secondAttribute="bottom" constant="6" id="cMU-h3-dof"/>
+                                            <constraint firstItem="vd8-44-WR2" firstAttribute="leading" secondItem="0X5-i7-TEb" secondAttribute="leading" constant="71" id="n6e-KS-AAR"/>
+                                            <constraint firstItem="vd8-44-WR2" firstAttribute="top" secondItem="0X5-i7-TEb" secondAttribute="top" constant="6" id="o6U-kX-Wsx"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Kh-Lo-eKv">
+                                        <rect key="frame" x="0.0" y="130" width="431" height="137"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Casa_Temporal" translatesAutoresizingMaskIntoConstraints="NO" id="43O-Wq-gdy">
+                                                <rect key="frame" x="14" y="8" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="8oR-9U-lyu"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estás aislado, tenés que minimizar el contacto. Si no tenés quien te ayude podés escribirnos" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1Cz-3E-VP5">
+                                                <rect key="frame" x="118" y="8" width="282" height="55"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="43O-Wq-gdy" firstAttribute="top" secondItem="4Kh-Lo-eKv" secondAttribute="topMargin" id="5Lw-Yl-Jg0"/>
+                                            <constraint firstAttribute="bottom" secondItem="1Cz-3E-VP5" secondAttribute="bottom" constant="74" id="AKn-S9-Mhg"/>
+                                            <constraint firstItem="43O-Wq-gdy" firstAttribute="leading" secondItem="4Kh-Lo-eKv" secondAttribute="leading" constant="14" id="CrX-fH-ZQz"/>
+                                            <constraint firstAttribute="trailing" secondItem="1Cz-3E-VP5" secondAttribute="trailing" constant="31" id="He6-qv-H0j"/>
+                                            <constraint firstItem="1Cz-3E-VP5" firstAttribute="top" secondItem="4Kh-Lo-eKv" secondAttribute="top" constant="8" id="eFM-jn-lud"/>
+                                            <constraint firstItem="1Cz-3E-VP5" firstAttribute="leading" secondItem="43O-Wq-gdy" secondAttribute="trailing" constant="24" id="km5-Rk-Fmv"/>
+                                            <constraint firstAttribute="bottom" secondItem="43O-Wq-gdy" secondAttribute="bottom" constant="49" id="mlk-nd-gzN"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0X5-i7-TEb" firstAttribute="top" secondItem="5e7-2M-Fzw" secondAttribute="top" constant="80" id="PmC-DH-h55"/>
+                                    <constraint firstItem="4Kh-Lo-eKv" firstAttribute="top" secondItem="5e7-2M-Fzw" secondAttribute="top" constant="130" id="cD4-rB-fzo"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mas Información" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpL-L8-J18">
+                                <rect key="frame" x="286" y="221" width="114" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="CjW-AM-8mO"/>
+                                    <constraint firstAttribute="width" constant="114" id="WEC-ZN-Cus"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="5e7-2M-Fzw" secondAttribute="bottom" constant="-15" id="9SU-G6-SJW"/>
+                            <constraint firstItem="5e7-2M-Fzw" firstAttribute="centerX" secondItem="062-vB-suJ" secondAttribute="centerX" id="IMd-mD-01s"/>
+                            <constraint firstItem="5e7-2M-Fzw" firstAttribute="top" secondItem="062-vB-suJ" secondAttribute="top" id="ZxW-fr-i8j"/>
+                            <constraint firstAttribute="trailing" secondItem="BpL-L8-J18" secondAttribute="trailing" constant="31" id="eNb-H5-GrD"/>
+                            <constraint firstItem="5e7-2M-Fzw" firstAttribute="leading" secondItem="062-vB-suJ" secondAttribute="leading" id="pMi-Za-VT0"/>
+                            <constraint firstItem="1Cz-3E-VP5" firstAttribute="bottom" secondItem="BpL-L8-J18" secondAttribute="top" constant="-28" id="rgX-AK-ylE"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="062-vB-suJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="I2j-z3-Mac"/>
+                    <constraint firstAttribute="bottom" secondItem="062-vB-suJ" secondAttribute="bottom" constant="20" id="T1E-NI-J1a"/>
+                    <constraint firstItem="062-vB-suJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="lvn-PX-Vjo"/>
+                    <constraint firstAttribute="trailing" secondItem="062-vB-suJ" secondAttribute="trailing" constant="20" id="qg9-4T-4TM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imagenResultado" destination="43O-Wq-gdy" id="iKp-xz-8tl"/>
+                <outlet property="masInformacion" destination="BpL-L8-J18" id="XFy-qr-Ju7"/>
+                <outlet property="mensajeResultadoLabel" destination="1Cz-3E-VP5" id="JqG-vU-iFK"/>
+                <outlet property="resultadoLabel" destination="vd8-44-WR2" id="gNu-PK-h6C"/>
+                <outlet property="tiempoContenedor" destination="P6M-Y4-enl" id="vQu-br-A8h"/>
+                <outlet property="tituloEstadoLabel" destination="m2W-Ff-tKx" id="a1B-Bo-OnB"/>
+                <outlet property="vistaContenedor" destination="062-vB-suJ" id="Ato-5Q-Yos"/>
+                <outlet property="vistaResultado" destination="0X5-i7-TEb" id="dgg-VK-4al"/>
+                <outletCollection property="primeraFilaVista" destination="FIw-43-6zl" collectionClass="NSMutableArray" id="ixa-h6-qsh"/>
+                <outletCollection property="primeraFilaVista" destination="xop-fB-jFY" collectionClass="NSMutableArray" id="DTt-6x-xZl"/>
+            </connections>
+            <point key="canvasLocation" x="136.95652173913044" y="69.642857142857139"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Casa_Temporal" width="58" height="52"/>
+        <namedColor name="RosaCovid">
+            <color red="0.93333333333333335" green="0.23921568627450981" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="RosaTenueCovid">
+            <color red="0.87000000476837158" green="0.56599998474121094" blue="0.71399998664855957" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

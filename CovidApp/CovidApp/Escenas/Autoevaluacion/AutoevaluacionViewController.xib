@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="EncodeSans-SemiBold.ttf">
+            <string>EncodeSans-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AutoevaluacionViewController" customModule="CovidApp" customModuleProvider="target">
+            <connections>
+                <outlet property="barraProgreso" destination="UOB-mU-VVP" id="dNy-KO-88w"/>
+                <outlet property="botonSiguiente" destination="vs7-mV-hDP" id="30C-pc-h3E"/>
+                <outlet property="tabla" destination="gTo-mQ-nVc" id="1Yt-3b-Mv4"/>
+                <outlet property="view" destination="iN0-l3-epB" id="88l-Xc-FoX"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UOB-mU-VVP" customClass="BarraProgreso" customModule="CovidApp" customModuleProvider="target">
+                    <rect key="frame" x="67" y="89" width="280" height="60"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="Y8z-YH-yoo"/>
+                        <constraint firstAttribute="width" constant="280" id="YwH-dj-nkY"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vs7-mV-hDP">
+                    <rect key="frame" x="36" y="761" width="342" height="58"/>
+                    <color key="backgroundColor" red="0.2156862745" green="0.73333333329999995" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="58" id="Ggk-r8-bBs"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="EncodeSans-SemiBold" family="Encode Sans" pointSize="16"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="botonSiguienteSeleccionado:" destination="-1" eventType="touchUpInside" id="qeu-I4-e4e"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gTo-mQ-nVc">
+                    <rect key="frame" x="0.0" y="149" width="414" height="612"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="UOB-mU-VVP" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="531-6K-8uH"/>
+                <constraint firstItem="vs7-mV-hDP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="36" id="9h9-Mp-h3H"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vs7-mV-hDP" secondAttribute="bottom" constant="43" id="Hnu-lV-iyT"/>
+                <constraint firstItem="gTo-mQ-nVc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="OWL-c7-UAT"/>
+                <constraint firstItem="UOB-mU-VVP" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="45" id="QaO-JD-MfD"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vs7-mV-hDP" secondAttribute="trailing" constant="36" id="YDu-NW-8O8"/>
+                <constraint firstItem="gTo-mQ-nVc" firstAttribute="top" secondItem="UOB-mU-VVP" secondAttribute="bottom" id="b2A-gj-eld"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gTo-mQ-nVc" secondAttribute="trailing" id="gqn-zW-700"/>
+                <constraint firstItem="vs7-mV-hDP" firstAttribute="top" secondItem="gTo-mQ-nVc" secondAttribute="bottom" id="tav-ch-Qss"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-194.20289855072465" y="-23.4375"/>
+        </view>
+    </objects>
+</document>

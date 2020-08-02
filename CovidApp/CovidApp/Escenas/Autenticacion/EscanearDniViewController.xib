@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EscanearDniViewController" customModule="CovidApp" customModuleProvider="target">
+            <connections>
+                <outlet property="botonEscanear" destination="882-6e-Ho2" id="fM2-g9-pYv"/>
+                <outlet property="botonEscanearManual" destination="nQY-b7-OD0" id="ci6-5S-Dc0"/>
+                <outlet property="imagenDni" destination="hXg-lK-nFT" id="sR2-68-Jvd"/>
+                <outlet property="view" destination="iN0-l3-epB" id="xsh-EV-sNs"/>
+                <outlet property="vistaError" destination="aIG-SW-0ag" id="gqO-Ep-6vH"/>
+                <outlet property="vistaEscanearDni" destination="Bqr-zz-mTz" id="mP7-zN-n13"/>
+                <outlet property="vistaFinalizarEscaner" destination="Kq7-bZ-8zB" id="r5X-wK-5yX"/>
+                <outlet property="vistaTerminos" destination="HvD-kw-iXB" id="R5T-od-qj1"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZOK-lD-qSu" userLabel="ContainerView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6u-uX-zUF">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aul-AN-nty" userLabel="ContentView">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="650"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Necesitaremos tomar una foto de tu DNI para simplificar la carga de datos" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuP-01-6jQ">
+                                            <rect key="frame" x="20.5" y="5" width="334.5" height="42"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
+                                            <color key="textColor" red="0.31372549019607843" green="0.32156862745098036" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4a-HG-g8k" userLabel="Por favor, buscá un espacio luminoso, e intentá que las imágenes sean nítidas.">
+                                            <rect key="frame" x="20.5" y="72" width="334" height="37.5"/>
+                                            <string key="text" base64-UTF8="YES">
+UG9yIGZhdm9yLCBidXNjYSB1biBlc3BhY2lvIGx1bWlub3NvLAtlIGludGVudGEgcXVlIGxhcyBpbcOh
+Z2VuZXMgc2VhbiBuw610aWRhcy4
+</string>
+                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                            <color key="textColor" red="0.31372549020000001" green="0.32156862749999998" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="dni-imagen" translatesAutoresizingMaskIntoConstraints="NO" id="hXg-lK-nFT">
+                                            <rect key="frame" x="47.5" y="134.5" width="280" height="141"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="hXg-lK-nFT" secondAttribute="height" multiplier="280:141" id="6pm-qb-QdN"/>
+                                                <constraint firstAttribute="width" constant="280" id="uHM-hk-8ok"/>
+                                            </constraints>
+                                        </imageView>
+                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIG-SW-0ag" userLabel="Vista Error">
+                                            <rect key="frame" x="20.5" y="119.5" width="334" height="180"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="icon-error" translatesAutoresizingMaskIntoConstraints="NO" id="aVB-16-wH6">
+                                                    <rect key="frame" x="147" y="20" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="aVB-16-wH6" secondAttribute="height" multiplier="1:1" id="fcv-pF-Tdq"/>
+                                                        <constraint firstAttribute="width" constant="40" id="tP8-VW-g4m"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hubo un error en la identificación del DNI scaneado. Por favor, ingresá los datos manualmente" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7D-Zo-Vu3">
+                                                    <rect key="frame" x="10" y="75" width="314" height="56"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                                    <color key="textColor" red="0.31372549020000001" green="0.32156862749999998" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="aVB-16-wH6" firstAttribute="centerX" secondItem="aIG-SW-0ag" secondAttribute="centerX" id="6Jl-wd-ivg"/>
+                                                <constraint firstAttribute="trailing" secondItem="i7D-Zo-Vu3" secondAttribute="trailing" constant="10" id="KyG-UR-Opw"/>
+                                                <constraint firstAttribute="height" constant="180" id="UcZ-AD-Qpg"/>
+                                                <constraint firstItem="i7D-Zo-Vu3" firstAttribute="leading" secondItem="aIG-SW-0ag" secondAttribute="leading" constant="10" id="kUE-Th-k67"/>
+                                                <constraint firstItem="aVB-16-wH6" firstAttribute="top" secondItem="aIG-SW-0ag" secondAttribute="top" constant="20" id="uku-eM-DgN"/>
+                                                <constraint firstItem="i7D-Zo-Vu3" firstAttribute="top" secondItem="aVB-16-wH6" secondAttribute="bottom" constant="15" id="wao-w3-uFm"/>
+                                            </constraints>
+                                        </view>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HvD-kw-iXB">
+                                            <rect key="frame" x="20" y="299.5" width="335" height="130"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="130" id="PlT-mp-xQT"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bqr-zz-mTz">
+                                            <rect key="frame" x="0.0" y="429.5" width="375" height="140"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="882-6e-Ho2" customClass="BotonNavegacionGeneral" customModule="CovidApp" customModuleProvider="target">
+                                                    <rect key="frame" x="20.5" y="10" width="334" height="58.5"/>
+                                                    <color key="backgroundColor" name="AzulCovid"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="882-6e-Ho2" secondAttribute="height" multiplier="331:58" id="zXZ-bM-qeG"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" title="ESCANEAR FRENTE">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="escanearDni:" destination="-1" eventType="touchUpInside" id="Xtj-pj-BaM"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQY-b7-OD0" customClass="BotonNavegacionGeneralConBorde" customModule="CovidApp" customModuleProvider="target">
+                                                    <rect key="frame" x="20.5" y="95.5" width="334" height="58.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
+                                                    <color key="tintColor" name="AzulCovid"/>
+                                                    <state key="normal" title="INGRESARLO MANUALMENTE">
+                                                        <color key="titleColor" name="AzulCovid"/>
+                                                        <color key="titleShadowColor" name="AzulCovid"/>
+                                                    </state>
+                                                    <state key="disabled">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="ingresarManualmente:" destination="-1" eventType="touchUpInside" id="7Hs-aY-rDn"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="nQY-b7-OD0" firstAttribute="height" secondItem="882-6e-Ho2" secondAttribute="height" id="ExP-s8-dbH"/>
+                                                <constraint firstItem="nQY-b7-OD0" firstAttribute="top" secondItem="882-6e-Ho2" secondAttribute="bottom" constant="27" id="JIc-BY-jTD"/>
+                                                <constraint firstItem="nQY-b7-OD0" firstAttribute="trailing" secondItem="882-6e-Ho2" secondAttribute="trailing" id="KDY-wY-TTa"/>
+                                                <constraint firstItem="882-6e-Ho2" firstAttribute="top" secondItem="Bqr-zz-mTz" secondAttribute="top" constant="10" id="NY4-nK-kb2"/>
+                                                <constraint firstItem="nQY-b7-OD0" firstAttribute="leading" secondItem="882-6e-Ho2" secondAttribute="leading" id="gVz-7M-Aty"/>
+                                                <constraint firstItem="882-6e-Ho2" firstAttribute="width" secondItem="Bqr-zz-mTz" secondAttribute="width" multiplier="0.799517" constant="34.379227053140085" id="kuW-q2-F3s"/>
+                                                <constraint firstAttribute="height" constant="140" id="mVD-ao-qST"/>
+                                                <constraint firstItem="882-6e-Ho2" firstAttribute="centerX" secondItem="Bqr-zz-mTz" secondAttribute="centerX" id="vZ5-tO-Ehj"/>
+                                                <constraint firstItem="nQY-b7-OD0" firstAttribute="centerX" secondItem="Bqr-zz-mTz" secondAttribute="centerX" id="wGA-Lk-tLK"/>
+                                            </constraints>
+                                        </view>
+                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kq7-bZ-8zB">
+                                            <rect key="frame" x="0.0" y="490" width="375" height="160"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYk-xi-85h" customClass="BotonNavegacionGeneral" customModule="CovidApp" customModuleProvider="target">
+                                                    <rect key="frame" x="20.5" y="81.5" width="334" height="58.5"/>
+                                                    <color key="backgroundColor" name="AzulCovid"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" title="SIGUIENTE">
+                                                        <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="terminarEscaneo:" destination="-1" eventType="touchUpInside" id="2Bf-gq-0oc"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5b-ff-DHD" customClass="BotonNavegacionGeneralConBorde" customModule="CovidApp" customModuleProvider="target">
+                                                    <rect key="frame" x="20.5" y="10" width="334" height="58.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
+                                                    <color key="tintColor" name="AzulCovid"/>
+                                                    <state key="normal" title="VOLVER A ESCANEAR">
+                                                        <color key="titleColor" name="AzulCovid"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="volverAEscanear:" destination="-1" eventType="touchUpInside" id="oaf-bv-bJw"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="160" id="YMh-Ls-Q80"/>
+                                                <constraint firstItem="CYk-xi-85h" firstAttribute="centerX" secondItem="Kq7-bZ-8zB" secondAttribute="centerX" id="ZY1-Jq-3HM"/>
+                                                <constraint firstItem="c5b-ff-DHD" firstAttribute="height" secondItem="CYk-xi-85h" secondAttribute="height" id="ae7-mh-cEf"/>
+                                                <constraint firstItem="c5b-ff-DHD" firstAttribute="trailing" secondItem="CYk-xi-85h" secondAttribute="trailing" id="oqB-wd-OLj"/>
+                                                <constraint firstItem="c5b-ff-DHD" firstAttribute="leading" secondItem="CYk-xi-85h" secondAttribute="leading" id="uIm-rx-z9d"/>
+                                                <constraint firstAttribute="bottom" secondItem="CYk-xi-85h" secondAttribute="bottom" constant="20" id="uqy-MQ-VyL"/>
+                                                <constraint firstItem="c5b-ff-DHD" firstAttribute="centerX" secondItem="Kq7-bZ-8zB" secondAttribute="centerX" id="z2y-Es-X4t"/>
+                                                <constraint firstItem="c5b-ff-DHD" firstAttribute="top" secondItem="Kq7-bZ-8zB" secondAttribute="top" constant="10" id="zbS-lf-zgJ"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="hXg-lK-nFT" firstAttribute="centerX" secondItem="aul-AN-nty" secondAttribute="centerX" id="00I-cP-Jdj"/>
+                                        <constraint firstItem="aIG-SW-0ag" firstAttribute="leading" secondItem="H4a-HG-g8k" secondAttribute="leading" id="07w-xY-gHS"/>
+                                        <constraint firstItem="aIG-SW-0ag" firstAttribute="trailing" secondItem="H4a-HG-g8k" secondAttribute="trailing" id="2cN-bc-xA7"/>
+                                        <constraint firstItem="H4a-HG-g8k" firstAttribute="top" secondItem="IuP-01-6jQ" secondAttribute="bottom" constant="25" id="39A-0Y-7vn"/>
+                                        <constraint firstItem="CYk-xi-85h" firstAttribute="height" secondItem="882-6e-Ho2" secondAttribute="height" id="3af-hM-zxb"/>
+                                        <constraint firstItem="HvD-kw-iXB" firstAttribute="leading" secondItem="aul-AN-nty" secondAttribute="leading" constant="20" id="3oj-jx-2m4"/>
+                                        <constraint firstItem="aIG-SW-0ag" firstAttribute="top" secondItem="H4a-HG-g8k" secondAttribute="bottom" constant="10" id="BF6-8c-XS6"/>
+                                        <constraint firstItem="aIG-SW-0ag" firstAttribute="leading" secondItem="IuP-01-6jQ" secondAttribute="leading" id="DlY-lc-qhW"/>
+                                        <constraint firstItem="H4a-HG-g8k" firstAttribute="width" secondItem="aul-AN-nty" secondAttribute="width" multiplier="0.8" constant="34.199999999999989" id="EK2-V4-DTY"/>
+                                        <constraint firstAttribute="trailing" secondItem="HvD-kw-iXB" secondAttribute="trailing" constant="20" id="MHZ-v6-q7A"/>
+                                        <constraint firstItem="Bqr-zz-mTz" firstAttribute="centerX" secondItem="aul-AN-nty" secondAttribute="centerX" id="MUp-sc-rHE"/>
+                                        <constraint firstItem="IuP-01-6jQ" firstAttribute="top" secondItem="aul-AN-nty" secondAttribute="top" constant="5" id="Pgj-7z-ScI"/>
+                                        <constraint firstItem="Kq7-bZ-8zB" firstAttribute="centerX" secondItem="aul-AN-nty" secondAttribute="centerX" id="Rr9-xf-d30"/>
+                                        <constraint firstItem="Bqr-zz-mTz" firstAttribute="width" secondItem="aul-AN-nty" secondAttribute="width" id="UkJ-tI-HX8"/>
+                                        <constraint firstAttribute="height" constant="650" id="X93-Te-wQp"/>
+                                        <constraint firstAttribute="trailing" secondItem="IuP-01-6jQ" secondAttribute="trailing" constant="20" id="c2G-e9-RGU"/>
+                                        <constraint firstItem="Kq7-bZ-8zB" firstAttribute="width" secondItem="aul-AN-nty" secondAttribute="width" id="eAp-MX-q3G"/>
+                                        <constraint firstItem="HvD-kw-iXB" firstAttribute="top" secondItem="aIG-SW-0ag" secondAttribute="bottom" id="fMf-Rp-DoU"/>
+                                        <constraint firstItem="hXg-lK-nFT" firstAttribute="top" secondItem="H4a-HG-g8k" secondAttribute="bottom" constant="25" id="hsc-xY-EXF"/>
+                                        <constraint firstItem="Bqr-zz-mTz" firstAttribute="top" secondItem="HvD-kw-iXB" secondAttribute="bottom" id="o3z-ed-4BI"/>
+                                        <constraint firstAttribute="bottom" secondItem="Kq7-bZ-8zB" secondAttribute="bottom" id="oR9-yR-4RX"/>
+                                        <constraint firstItem="IuP-01-6jQ" firstAttribute="leading" secondItem="H4a-HG-g8k" secondAttribute="leading" id="snS-dG-4AW"/>
+                                        <constraint firstItem="CYk-xi-85h" firstAttribute="width" secondItem="882-6e-Ho2" secondAttribute="width" id="vKC-bN-vbZ"/>
+                                        <constraint firstItem="H4a-HG-g8k" firstAttribute="centerX" secondItem="aul-AN-nty" secondAttribute="centerX" id="zAz-dB-xPX"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="aul-AN-nty" firstAttribute="leading" secondItem="Xzn-U1-b5G" secondAttribute="leading" id="2bn-zp-OVu"/>
+                                <constraint firstAttribute="bottom" secondItem="aul-AN-nty" secondAttribute="bottom" id="Ggy-6V-FG0"/>
+                                <constraint firstAttribute="trailing" secondItem="aul-AN-nty" secondAttribute="trailing" id="d9G-Pw-gGh"/>
+                                <constraint firstItem="aul-AN-nty" firstAttribute="centerX" secondItem="z6u-uX-zUF" secondAttribute="centerX" id="udD-bj-7c4"/>
+                                <constraint firstItem="aul-AN-nty" firstAttribute="top" secondItem="tSm-BB-FET" secondAttribute="top" id="w5s-CU-JVq"/>
+                            </constraints>
+                            <viewLayoutGuide key="contentLayoutGuide" id="tSm-BB-FET"/>
+                            <viewLayoutGuide key="frameLayoutGuide" id="Xzn-U1-b5G"/>
+                        </scrollView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="z6u-uX-zUF" firstAttribute="centerX" secondItem="ZOK-lD-qSu" secondAttribute="centerX" id="D96-yd-D3j"/>
+                        <constraint firstItem="z6u-uX-zUF" firstAttribute="top" secondItem="ZOK-lD-qSu" secondAttribute="top" id="jWd-JU-WIz"/>
+                        <constraint firstAttribute="bottom" secondItem="z6u-uX-zUF" secondAttribute="bottom" id="v7i-35-XUI"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="aul-AN-nty" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="aJt-P9-3tp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="leading" secondItem="ZOK-lD-qSu" secondAttribute="leading" id="asM-zo-Z6p"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="ZOK-lD-qSu" secondAttribute="top" id="vpH-2e-XfH"/>
+                <constraint firstItem="ZOK-lD-qSu" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="yKW-Pk-i1N"/>
+                <constraint firstItem="ZOK-lD-qSu" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ydP-Zd-Yod"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="136.80000000000001" y="138.0809595202399"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="dni-imagen" width="108" height="68"/>
+        <image name="icon-error" width="92" height="92"/>
+        <namedColor name="AzulCovid">
+            <color red="0.21600000560283661" green="0.73299998044967651" blue="0.91399997472763062" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>
