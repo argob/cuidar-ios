@@ -43,7 +43,7 @@ final class ContenedorMenuLateral: UIView, XIBInitiable {
             pbaOpcion.isHidden = false
             pbaOpcion.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(abrirOpcionPBA)))
 
-        }else{
+        } else {
             pbaOpcion.isHidden = true
         }
          

@@ -69,4 +69,3 @@ fastlane/test_output
 CovidApp/.DS_Store
 CovidApp/CovidApp/CovidApp-Bridging-Header.h
 CovidApp/ExternalFrameworks/NewRelicAgent.framework
-push_to_github.sh

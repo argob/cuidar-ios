@@ -93,20 +93,20 @@ extension NotificacionFachada: NotificacionFachadaProtocolo {
         httpCliente.ejecutar(solicitud: solicitud) { [weak self] (respuesta) in
             if (200...299).contains(respuesta.httpResponse?.statusCode ?? 0) {
                 self?.userDefaults.deviceToken = nil
-            }else{
-//               Se solicita un token nuevo y se vuelve a intentar
+            } else {
+                // Se solicita un token nuevo y se vuelve a intentar.
                 let refresh = RefreshToken.init(hash: sesion.hash, refreshToken: sesion.authRefreshToken)
                 self!.httpCliente.ejecutar(solicitud: refresh) { (respuesta) in
                     switch respuesta.resultado {
                         case .success(let resultado):
-//                          Actualizo el token en la sesión
 
+                            // Actualizo el token en la sesión
                             let newToken = resultado.token
                             var newsesion = self!.sesionPersistencia.getSesion()
                             newsesion?.authToken = newToken
                             self?.sesionPersistencia.guardar(sesion: newsesion!)
-//                          Vuelvo a intentar el request original
-                            
+
+                            // Vuelvo a intentar el request original
                             self?.httpCliente.ejecutar(solicitud: solicitud) { [weak self] (respuesta) in
                                 guard let self = self else { return }
                                 switch respuesta.resultado {

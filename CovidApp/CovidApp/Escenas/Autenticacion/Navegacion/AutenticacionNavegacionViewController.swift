@@ -13,6 +13,7 @@ protocol AutenticacionNavegacionDelegado: class, VisualizadorDeCarga {
     func siguienteEtapa()
     func ingresoManual()
     func finalAutenticacion()
+    func logOut()
     
 }
 
@@ -41,6 +42,10 @@ final class AutenticacionNavegacionViewController: BaseViewController, MVPVista 
 }
 
 extension AutenticacionNavegacionViewController: AutenticacionNavegacionDelegado {
+    func logOut() {
+        enrutador.desvinculaciónTerminada()
+    }
+    
     func finalAutenticacion() {
         autenticacionTerminada()
     }

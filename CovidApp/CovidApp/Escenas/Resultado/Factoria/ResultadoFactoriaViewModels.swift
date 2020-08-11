@@ -55,7 +55,7 @@ private extension ResultadoFactoriaViewModels {
         var telefonos = LabelViewModel.init(texto: coep?.descripcion ?? "",
                              apariencia: .init(fuente: .robotoBold(tamaño: 16),
                                                colorTexto: .negroPrimario))
-        if(coep?.provincia == Constantes.COEP_CABA){
+        if (coep?.provincia == Constantes.COEP_CABA) {
             telefonos.texto = ""
             contenido = "\(nombre),  tu autodiagnóstico tiene síntomas compatibles con COVID-19 y fueron reportados.\n\nPor favor comunicate con tu obra social o acercate a una Unidad Febril de Urgencia (UFU):https://bamapas.usig.buenosaires.gob.ar\n\nSi por alguna razón no podés ir, llamá al 📞107.\n\nSi considerás que hubo un error en la carga de tus síntomas entrá a https://www.buenosaires.gob.ar/coronavirus"
         }

@@ -14,6 +14,7 @@ protocol FormularioDatosDeContactoVista: AutenticacionVistaHija {
     func presentarFormularioDireccion(viewModel: FormularioDatosDeContactoViewModel)
     func presentarErrorEnFormulario(mensaje: String)
     func presentarErrorEnFormulario(viewModel: ElementoDeFormularioViewModel)
+    func alertAnotherDeviceLogged()
     func presentarFormularioAnterior()
     func escenaCargo()
     func finalizoAutenticacion()
@@ -52,6 +53,19 @@ final class FormularioDatosDeContactoViewController: BaseViewController, MVPVist
 }
 
 extension FormularioDatosDeContactoViewController: FormularioDatosDeContactoVista {
+    func alertAnotherDeviceLogged() {
+        let alert = UIAlertController(title: "Alerta", message: Constantes.ANOTHER_DEVICE_LOGGED, preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "Aceptar", style: .default) { (action) in
+            
+            self.dismiss(animated: true, completion: nil)
+            self.autenticacionNavegacionDelegado?.logOut()
+            
+        }
+        alert.addAction(ok)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func agregarValorAlCampo(_ valor: String, identifier: TiposDeElementosDeFormulario) {
         camposFormularios[identifier]?.campoDeTexto.text = valor
         presentador.recibirDato(dato: valor, tipoDeElemento: identifier)

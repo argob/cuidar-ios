@@ -56,7 +56,7 @@ extension TelefonoContactoPresentador : TelefonoContactoPresentadorProtocolo {
         default:
             reglas = []
         }
-        if let error = validador.validar(texto: valor, con: reglas){
+        if let error = validador.validar(texto: valor, con: reglas) {
             remover(identificador: identificador, mensaje: error)
         } else {
             procesar(identificador: identificador, valor: valor)

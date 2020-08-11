@@ -1,8 +1,14 @@
 Cuidar iOS
 
-Versión 3.5.2 -- en desarrollo
+Versión 3.5.4 -- WIP
+* Se ajusta el criterio de caso a la definición del 1/08/2020.
+* Se mejora el procesamiento de actualizaciones cuando llegan notificaciones.
+
+Versión 3.5.2 -- 5/08/2020
 * Se agregan "splash screens" con consejos mientras se carga estado del server.
 * Se termina de separar las claves con vistas a la publicación.
+* Error de tipeo en el menú lateral: hipoacústicas -> hipoacúsicas.
+* Publicada en github.
 
 Versión 3.5.0 -- 18/07/2020
 Más importantes:

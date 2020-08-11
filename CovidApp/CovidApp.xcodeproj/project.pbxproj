@@ -205,6 +205,10 @@
 		E83C49F324902DCB007972BD /* TelefonoContactoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83C49F224902DCB007972BD /* TelefonoContactoViewController.swift */; };
 		E83C49F524902DE0007972BD /* TelefonoContactoPresentador.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83C49F424902DE0007972BD /* TelefonoContactoPresentador.swift */; };
 		E83C49F724902E13007972BD /* TelefonoContactoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83C49F624902E13007972BD /* TelefonoContactoViewModel.swift */; };
+		E84838D824BF5765000314BB /* ConsejosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E84838D724BF5765000314BB /* ConsejosViewController.xib */; };
+		E84838DA24BF5F02000314BB /* ConsejosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84838D924BF5F02000314BB /* ConsejosViewController.swift */; };
+		E84838DC24BF5FAA000314BB /* ConsejosPresentador.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84838DB24BF5FAA000314BB /* ConsejosPresentador.swift */; };
+		E8569A6224C21580000BDD77 /* Consejos.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8569A6124C21580000BDD77 /* Consejos.swift */; };
 		E8C26B62247D77B300AB0082 /* Obfuscator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C26B61247D77B300AB0082 /* Obfuscator.swift */; };
 		E8E44DB324AC140000E26044 /* InformacionPBAViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E44DB224AC140000E26044 /* InformacionPBAViewController.xib */; };
 		E8E44DB524AC141600E26044 /* InformacionPBAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E44DB424AC141600E26044 /* InformacionPBAViewController.swift */; };
@@ -458,6 +462,10 @@
 		E83C49F224902DCB007972BD /* TelefonoContactoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelefonoContactoViewController.swift; sourceTree = "<group>"; };
 		E83C49F424902DE0007972BD /* TelefonoContactoPresentador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelefonoContactoPresentador.swift; sourceTree = "<group>"; };
 		E83C49F624902E13007972BD /* TelefonoContactoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelefonoContactoViewModel.swift; sourceTree = "<group>"; };
+		E84838D724BF5765000314BB /* ConsejosViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConsejosViewController.xib; sourceTree = "<group>"; };
+		E84838D924BF5F02000314BB /* ConsejosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsejosViewController.swift; sourceTree = "<group>"; };
+		E84838DB24BF5FAA000314BB /* ConsejosPresentador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsejosPresentador.swift; sourceTree = "<group>"; };
+		E8569A6124C21580000BDD77 /* Consejos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consejos.swift; sourceTree = "<group>"; };
 		E8C26B61247D77B300AB0082 /* Obfuscator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obfuscator.swift; sourceTree = "<group>"; };
 		E8E44DB224AC140000E26044 /* InformacionPBAViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformacionPBAViewController.xib; sourceTree = "<group>"; };
 		E8E44DB424AC141600E26044 /* InformacionPBAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformacionPBAViewController.swift; sourceTree = "<group>"; };
@@ -848,6 +856,7 @@
 		66E41643243CC6A100EE4052 /* Escenas */ = {
 			isa = PBXGroup;
 			children = (
+				E84838D624BF573D000314BB /* Consejos */,
 				E8E44DB124AC13DE00E26044 /* InformacionPBA */,
 				E83C49EF249025E8007972BD /* TelefonoContacto */,
 				9773C010244398DA0040E180 /* Resultado */,
@@ -877,6 +886,7 @@
 				B3BD7FC1244512250076775B /* CiudadProvincia.swift */,
 				B3BD7FB92444F6C80076775B /* Provincia.swift */,
 				B3BD7FC32445123D0076775B /* Ciudad.swift */,
+				E8569A6124C21580000BDD77 /* Consejos.swift */,
 			);
 			path = Modelos;
 			sourceTree = "<group>";
@@ -1286,6 +1296,16 @@
 			path = TelefonoContacto;
 			sourceTree = "<group>";
 		};
+		E84838D624BF573D000314BB /* Consejos */ = {
+			isa = PBXGroup;
+			children = (
+				E84838D724BF5765000314BB /* ConsejosViewController.xib */,
+				E84838D924BF5F02000314BB /* ConsejosViewController.swift */,
+				E84838DB24BF5FAA000314BB /* ConsejosPresentador.swift */,
+			);
+			path = Consejos;
+			sourceTree = "<group>";
+		};
 		E8C26B63247D913000AB0082 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -1482,6 +1502,7 @@
 				661C0A902441432B001957CA /* QRTableViewCell.xib in Resources */,
 				978BCFA92447A224004FFFF8 /* PasaporteTokenRotativoTableViewCell.xib in Resources */,
 				975C46C5244415950009A10E /* ResultadoNegativoTableViewCell.xib in Resources */,
+				E84838D824BF5765000314BB /* ConsejosViewController.xib in Resources */,
 				65811964243F386100485E37 /* AutenticacionNavegacionViewController.xib in Resources */,
 				6646C0ED243E3E0A004ACD6E /* AutoevaluacionViewController.xib in Resources */,
 				51F2B368243FEBAE00ED16C0 /* EscanerViewController.xib in Resources */,
@@ -1654,6 +1675,7 @@
 				C54B042F243FE75500F31008 /* BarraProgreso.swift in Sources */,
 				66FA4584244E09F0002917AD /* AppConfiguracionFachada.swift in Sources */,
 				657F4EF42441E47D00BDA1B9 /* CampoDeTextoSencilloView.swift in Sources */,
+				E84838DA24BF5F02000314BB /* ConsejosViewController.swift in Sources */,
 				07671A73247490100052F261 /* CertificadoEstadoTableViewCell.swift in Sources */,
 				38402F6C243F1A8800FB5489 /* FactoriaMenuLateral.swift in Sources */,
 				66E41650243D0BE500EE4052 /* BaseViewController.swift in Sources */,
@@ -1670,6 +1692,7 @@
 				6B42F38F2473117F008FE3D9 /* TextoSinIconoTableViewCell.swift in Sources */,
 				65811978243F93A900485E37 /* FormularioDatosDeContactoViewModels.swift in Sources */,
 				657F4EDF243FD01400BDA1B9 /* AutenticacionNavegacionViewModels.swift in Sources */,
+				E84838DC24BF5FAA000314BB /* ConsejosPresentador.swift in Sources */,
 				9705136424410B240015DCD2 /* PasaporteViewModels.swift in Sources */,
 				66FA4582244E07E3002917AD /* ObtenerVersion.swift in Sources */,
 				FFAC5A312442463B005D5BD4 /* LinkTableViewCell.swift in Sources */,
@@ -1691,6 +1714,7 @@
 				9773C01E24439FE80040E180 /* ResultadoCompatibleTableViewCell.swift in Sources */,
 				518C07AC244CD0CB0066E243 /* UbicacionFachada.swift in Sources */,
 				66E4165E243D2F9500EE4052 /* AutoevaluacionFachada.swift in Sources */,
+				E8569A6224C21580000BDD77 /* Consejos.swift in Sources */,
 				65811976243F939200485E37 /* FormularioDatosDeContactoPresentador.swift in Sources */,
 				FF803E49244B4EEF0062C031 /* AutenticacionNumeroTramiteViewModel.swift in Sources */,
 				E8E44DB724ACB99300E26044 /* InformacionPBAPresentador.swift in Sources */,
@@ -1927,7 +1951,7 @@
 				CODE_SIGN_ENTITLEMENTS = CovidApp/CovidApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1940,7 +1964,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.5.2;
+				MARKETING_VERSION = 3.5.4;
 				OTHER_SWIFT_FLAGS = "-DNEWRELIC";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.gob.coronavirus;
 				PRODUCT_NAME = "$(TARGET_NAME)-Dev";
@@ -1961,7 +1985,7 @@
 				CODE_SIGN_ENTITLEMENTS = CovidApp/CovidApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1974,7 +1998,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.5.2;
+				MARKETING_VERSION = 3.5.4;
 				OTHER_SWIFT_FLAGS = "-DNEWRELIC";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.gob.coronavirus;
 				PRODUCT_NAME = "$(TARGET_NAME)-Dev";
@@ -2098,7 +2122,7 @@
 				CODE_SIGN_ENTITLEMENTS = CovidApp/CovidApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2111,7 +2135,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.5.2;
+				MARKETING_VERSION = 3.5.4;
 				OTHER_SWIFT_FLAGS = "-DNEWRELIC";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.gob.coronavirus;
 				PRODUCT_NAME = "$(TARGET_NAME)-Qa";
@@ -2214,7 +2238,7 @@
 				CODE_SIGN_ENTITLEMENTS = CovidApp/CovidApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2227,7 +2251,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.5.2;
+				MARKETING_VERSION = 3.5.4;
 				OTHER_SWIFT_FLAGS = "-DNEWRELIC";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.gob.coronavirus;
 				PRODUCT_NAME = "$(TARGET_NAME)-Stg";
@@ -2330,7 +2354,7 @@
 				CODE_SIGN_ENTITLEMENTS = CovidApp/CovidApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2343,7 +2367,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.5.2;
+				MARKETING_VERSION = 3.5.4;
 				OTHER_SWIFT_FLAGS = "-DNEWRELIC";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.gob.coronavirus;
 				PRODUCT_NAME = "$(TARGET_NAME)-AR";
@@ -2446,7 +2470,7 @@
 				CODE_SIGN_ENTITLEMENTS = CovidApp/CovidApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2459,7 +2483,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.5.2;
+				MARKETING_VERSION = 3.5.4;
 				OTHER_SWIFT_FLAGS = "-DNEWRELIC";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.gob.coronavirus;
 				PRODUCT_NAME = "$(TARGET_NAME)-Local";
@@ -2556,7 +2580,7 @@
 				CODE_SIGN_ENTITLEMENTS = CovidApp/CovidApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2569,7 +2593,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.5.2;
+				MARKETING_VERSION = 3.5.4;
 				OTHER_SWIFT_FLAGS = "-DNEWRELIC";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.gob.coronavirus;
 				PRODUCT_NAME = "$(TARGET_NAME)-Qa";
@@ -2665,7 +2689,7 @@
 				CODE_SIGN_ENTITLEMENTS = CovidApp/CovidApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2678,7 +2702,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.5.2;
+				MARKETING_VERSION = 3.5.4;
 				OTHER_SWIFT_FLAGS = "-DNEWRELIC";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.gob.coronavirus;
 				PRODUCT_NAME = "$(TARGET_NAME)-Stg";
@@ -2774,7 +2798,7 @@
 				CODE_SIGN_ENTITLEMENTS = CovidApp/CovidApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2787,7 +2811,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.5.2;
+				MARKETING_VERSION = 3.5.4;
 				OTHER_SWIFT_FLAGS = "-DNEWRELIC";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.gob.coronavirus;
 				PRODUCT_NAME = "$(TARGET_NAME)-AR";
@@ -2883,7 +2907,7 @@
 				CODE_SIGN_ENTITLEMENTS = CovidApp/CovidApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2896,7 +2920,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.5.2;
+				MARKETING_VERSION = 3.5.4;
 				OTHER_SWIFT_FLAGS = "-DNEWRELIC";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.gob.coronavirus;
 				PRODUCT_NAME = "$(TARGET_NAME)-Local";

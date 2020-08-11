@@ -56,7 +56,7 @@ final class EscanearDniViewController: BaseViewController, MVPVista {
         configurarVistaErrorEscaneo()
     }
     
-    func configurarVistaErrorEscaneo(){
+    func configurarVistaErrorEscaneo() {
         vistaError.layer.borderColor = UIColor.red.cgColor
         vistaError.layer.borderWidth = 1
         vistaError.layer.cornerRadius = 10

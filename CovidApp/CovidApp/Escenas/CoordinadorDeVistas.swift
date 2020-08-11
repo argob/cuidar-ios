@@ -25,6 +25,7 @@ protocol CoordinadorDeVistaProtocolo: class {
     func irAConfiguracionDeAPP()
     func irATelefonoContacto()
     func irAInformacionPBA()
+    func irAConsejos()
 }
 
 protocol Enrutador {
@@ -41,6 +42,7 @@ protocol Enrutador {
     func edicionDatosPersonales()
     func telefonoContactoConfirmado()
     func informacionPBA()
+    func consejos()
     func volverAPasaporte()
 }
 
@@ -75,6 +77,10 @@ extension CoordinadorDeVistas {
 }
 
 extension CoordinadorDeVistas: Enrutador {
+    func consejos() {
+        presentador.manejarConsejos()
+    }
+    
     
     func telefonoContactoConfirmado() {
         presentador.manejarTelefonoContactoConfirmado()
@@ -130,7 +136,7 @@ extension CoordinadorDeVistas: Enrutador {
     func volverAPasaporte() {
         presentador.manejarVolverAPasaporte()
     }
-    func irA(url:URL){
+    func irA(url:URL) {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
@@ -139,6 +145,12 @@ extension CoordinadorDeVistas: Enrutador {
 // MARK: Conformacia de CoordinadorDeVistaProtocolo
 
 extension CoordinadorDeVistas: CoordinadorDeVistaProtocolo {
+    func irAConsejos() {
+        let consejos = ConsejosViewController()
+        consejos.modalPresentationStyle = .fullScreen
+        presentar(controlador: consejos)
+    }
+    
     func irATelefonoContacto() {
         irA(controlador: TelefonoContactoViewController())
     }

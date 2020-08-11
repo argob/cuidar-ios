@@ -306,7 +306,7 @@ private extension FactoriaPasaporteViewModel {
 
 private extension FactoriaPasaporteViewModel {
     func crearQR(enunciadoBase64: String?) -> UIImage? {
-        guard let enunciadoBase64 = enunciadoBase64 else{
+        guard let enunciadoBase64 = enunciadoBase64 else {
             return nil
         }
         guard let imageData = Data.init(base64Encoded: enunciadoBase64, options: .init(rawValue: 0)) else {

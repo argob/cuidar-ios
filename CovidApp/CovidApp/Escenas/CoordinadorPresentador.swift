@@ -24,6 +24,7 @@ protocol CoordinadorPresentadorProtocolo {
     func manejarTelefonoContactoConfirmado()
     func manejarVolverAPasaporte()
     func manejarInformacionPBA()
+    func manejarConsejos()
 }
 
 final class CoordinadorPresentador: MVPPresentador {
@@ -45,6 +46,10 @@ final class CoordinadorPresentador: MVPPresentador {
 }
 
 extension CoordinadorPresentador: CoordinadorPresentadorProtocolo {
+    func manejarConsejos() {
+        vista?.irAConsejos()
+    }
+    
     func manejarEdicionDatosPersonales() {
         vista?.irAAutenticacion()
     }

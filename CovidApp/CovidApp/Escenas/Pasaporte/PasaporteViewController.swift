@@ -22,7 +22,7 @@ protocol PasaporteVista: class, VisualizadorDeCarga {
     func configurarMenu(con viewModel: ViewModelMenuNavegacion?)
     func editarDatosPersonales()
     func terminarRefresh()
-    func avisoOtroDispositivoLogeado()
+    func mostrarConsejos()
 }
 
 final class PasaporteViewController: BaseViewController, MVPVista {
@@ -43,15 +43,6 @@ final class PasaporteViewController: BaseViewController, MVPVista {
 }
 
 extension PasaporteViewController: PasaporteVista {
-    func avisoOtroDispositivoLogeado() {
-        let alert = UIAlertController(title: "Alerta", message: "Hemos detectado que iniciaste sesión en otro dispositivo y por lo tanto tenés que volver a ingresar tu DNI para continuar en este dispositivo", preferredStyle: .alert)
-        
-        let ok = UIAlertAction(title: "Aceptar", style: .default) { (action) in
-            self.desvincularSesion()
-        }
-        alert.addAction(ok)
-        present(alert, animated: true, completion: nil)
-    }
     
     func configurar(viewModel: PasaporteViewModel) {
         self.elementos = viewModel.elementos
@@ -60,7 +51,7 @@ extension PasaporteViewController: PasaporteVista {
         tablaDeContenido.addSubview(refreshControl)
     }
     
-    func terminarRefresh(){
+    func terminarRefresh() {
         refreshControl.endRefreshing()
     }
     
@@ -127,6 +118,10 @@ extension PasaporteViewController: PasaporteVista {
     @objc func refresh(_ sender: AnyObject) {
         presentador.manejarRefresh()
     }
+    func mostrarConsejos() {
+        self.enrutador.consejos()
+    }
+    
 }
 
 extension PasaporteViewController: UITableViewDataSource, UITableViewDelegate {

@@ -112,7 +112,7 @@ extension URLSessionHTTPCliente: HTTPCliente {
                          print("[DEBUG] Error Response: \(json)")
                     }
                    
-                    if(httpResponse.statusCode == 401){
+                    if (httpResponse.statusCode == 401) {
                         finalizacion(respuestaFactoria.crearRespuestaFallida(error: .tokenInvalido))
                         return
                     }
@@ -120,7 +120,8 @@ extension URLSessionHTTPCliente: HTTPCliente {
                     finalizacion(respuestaFactoria.crearRespuestaFallida(error: .errorHttp(error: error)))
                     return
                 }
-                
+                // Se limpia el flag de alerta de otro dispositivo conectado.
+                UserDefaults.standard.set(false, forKey: Constantes.INVALID_TOKEN)
                 finalizacion(self.descodificarRespuesta(solicitud: solicitud,
                                                         urlRequest: urlRequest,
                                                         httpResponse: httpResponse,

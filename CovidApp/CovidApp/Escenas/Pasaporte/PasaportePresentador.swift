@@ -47,7 +47,7 @@ extension PasaportePresentador: PasaportePresentadorProtocol {
     func manejarOpcionPBA() {
         guard let sesion = dependencias.usuarioFachada.obtenerUltimaSession(), let usuario = sesion.informacionDeUsuario else { return }
                
-        if(usuario.domicilio?.provincia == "Buenos Aires"){
+        if (usuario.domicilio?.provincia == "Buenos Aires") {
             vista?.presentarInformacionPBA()
         }
     }
@@ -199,20 +199,16 @@ private extension PasaportePresentador {
     }
     
     @objc func refrescarInformacionDelUsuario() {
+        self.vista?.mostrarConsejos()
         vista?.mostrarLoader()
         dependencias.usuarioFachada.actualizarInformacionDeUsuario { [weak self] sesion in
             DispatchQueue.main.async { [weak self] in
                 self?.vista?.ocultarLoader()
-                self?.vista?.terminarRefresh()
-                
-                guard (self?.dependencias.usuarioFachada.obtenerUltimaSession()) != nil else {
-                    self?.vista?.avisoOtroDispositivoLogeado()
-                    return
-                }
-                
+                self?.vista?.terminarRefresh()                
                 self?.vista?.configurarMenu(con: self?.generarInformacionMenu())
                 guard let self = self else { return }
                 self.configurarVistaConSesion(sesion: sesion)
+                
             }
         }
     }

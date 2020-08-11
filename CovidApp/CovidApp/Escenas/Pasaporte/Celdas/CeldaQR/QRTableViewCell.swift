@@ -22,7 +22,7 @@ final class QRTableViewCell: UITableViewCell, UITableViewCellRegistrable {
         super.awakeFromNib()
     }
     
-    func configurar(viewModel: PasaporteTokenSeguridadViewModel){
+    func configurar(viewModel: PasaporteTokenSeguridadViewModel) {
         primerEmojiLabel.text = viewModel.primerEmoji
         segundoEmojiLabel.text = viewModel.segundoEmoji
         tercerEmojiLabel.text = viewModel.tercerEmoji

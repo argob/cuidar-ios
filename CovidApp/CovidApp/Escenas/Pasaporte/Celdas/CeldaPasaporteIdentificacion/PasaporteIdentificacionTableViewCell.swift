@@ -35,18 +35,18 @@ final class PasaporteIdentificacionTableViewCell: UITableViewCell, UITableViewCe
             self.subeView.isHidden = false
 
             self.SUBE.text = "..." + viewModel.sube!.suffix(8)
-        }else{
+        } else {
             self.subeView.isHidden = true
         }
         if (viewModel.patente != nil && !(viewModel.patente?.isEmpty ?? true)) {
             self.patenteView.isHidden = false
             self.patente.text = viewModel.patente
-        }else{
+        } else {
             self.patenteView.isHidden = true
         }
         if viewModel.provincia == "Buenos Aires"{
             botonAsistenciaPBA.isHidden = false
-        }else{
+        } else {
             botonAsistenciaPBA.isHidden = true
         }
         

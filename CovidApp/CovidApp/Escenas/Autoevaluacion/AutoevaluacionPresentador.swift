@@ -42,7 +42,7 @@ private final class AutoevaluacionPresentador: MVPPresentador {
         Self.generarResumen
     ]
     
-    private var temperaturaSeleccionada = Constantes.AUTOEVALUACION_PRECENTADOR_TEMPERATURA_DEFAULT
+    private var temperaturaSeleccionada = Constantes.AUTOEVALUACION_PRESENTADOR_TEMPERATURA_DEFAULT
     private var sintomaSeleccionados: [String: ItemAutoevaluado] = [:]
     private var antecendentesSeleccionados: [String: ItemAutoevaluado] = [:]
 
@@ -69,7 +69,7 @@ extension AutoevaluacionPresentador: AutoevaluacionPresentadorProtocolo {
         generarContenidoParaPasoActual(refrescar: true)
         formatearAccionParaPasoActual()
         autoevaluacionFachada.agregarAutoevaluacion(
-            indicadores: .init(temperatura: Constantes.AUTOEVALUACION_PRECENTADOR_TEMPERATURA_DEFAULT))
+            indicadores: .init(temperatura: Constantes.AUTOEVALUACION_PRESENTADOR_TEMPERATURA_DEFAULT))
     }
     
     func escenaAparecera() {
@@ -100,7 +100,7 @@ extension AutoevaluacionPresentador: AutoevaluacionPresentadorProtocolo {
         formatearAccionParaPasoActual()
     }
     
-    func volverAEmpezar(){
+    func volverAEmpezar() {
        pasoActual = 0
        vista?.actualizarBarraDeProgreso(direccion: .primerPaso)
        vista?.habilitarBotonSiguiente()
@@ -134,6 +134,8 @@ extension AutoevaluacionPresentador: AutoevaluacionPresentadorProtocolo {
                     self?.alertaAceptada()
                 }
                 self.vista?.mostrarAlertaDeErrorAlSalvarDatos(viewModel: viewModel)
+            case .failure(let error) where error == .tokenInvalido:
+                self.vista?.showAlertInvalidToken()
             case .failure:
                 let viewModel = AlertaErrorEjecutarClienteViewModel.crearAlertaReintentable(mensaje: "Algo inesperado ha ocurrido") { [weak self] in
                     self?.alertaAceptada()
@@ -145,7 +147,7 @@ extension AutoevaluacionPresentador: AutoevaluacionPresentadorProtocolo {
     
     func usuarioAceptoAlertaDeTemperaturaFueraDeRango(reiniciarValorInicial: Bool) {
         if reiniciarValorInicial {
-            temperaturaSeleccionada = Constantes.AUTOEVALUACION_PRECENTADOR_TEMPERATURA_DEFAULT
+            temperaturaSeleccionada = Constantes.AUTOEVALUACION_PRESENTADOR_TEMPERATURA_DEFAULT
             generarContenidoParaPasoActual(refrescar: true)
         }
     }
@@ -239,7 +241,7 @@ private extension AutoevaluacionPresentador {
             creaTextBasicoViewModel(texto: "Consejos para medir la temperatura",
                                     textFont: MetricasTemperatura.fuenteTituloConsejosCortos,
                                     margenes: MetricasTemperatura.margenesTituloConsejosCortos),
-        ] + consejos.prefix(upTo: Constantes.AUTOEVALUACION_PRECENTADOR_SINTOMAS_MINIMOS) .enumerated().map {
+        ] + consejos.prefix(upTo: Constantes.AUTOEVALUACION_PRESENTADOR_SINTOMAS_MINIMOS) .enumerated().map {
             creaTextoEnumeradoViewModel(texto: $1.descripcionDelUsuario, numero: $0 + 1, margenes: Metricas.margenesBasicos)
         } + [
             creaLinkViewModel(texto: "Más información") { [weak self] in
@@ -290,7 +292,7 @@ private extension AutoevaluacionPresentador {
     }
     func hayRegistros(items :[String: ItemAutoevaluado]) -> Bool {
         for item in items{
-            if(item.value.getValor()){
+            if (item.value.getValor()) {
                 return true
             }
         }
@@ -461,11 +463,11 @@ private extension AutoevaluacionPresentador {
         return AutoevaluacionIncrementalDecrementalViewModel(
             valor: valorInicial,
             fuente: MetricasTemperatura.fuenteSelectorTemperatura,
-            formato: Constantes.AUTOEVALUACION_PRECENTADOR_FORMATO_TEMPERATURA,
-            valorDePaso: Constantes.AUTOEVALUACION_PRECENTADOR_VALOR_DE_PASO_TEMPERATURA,
-            valorMaximo: Constantes.AUTOEVALUACION_PRECENTADOR_VALOR_MAXIMO_TEMPERATURA_HUMANA,
-            valorMinimo: Constantes.AUTOEVALUACION_PRECENTADOR_VALOR_MINIMO_TEMPERATURA_HUMANA,
-            separadorDecimal: Constantes.AUTOEVALUACION_PRECENTADOR_SEPARADOR,
+            formato: Constantes.AUTOEVALUACION_PRESENTADOR_FORMATO_TEMPERATURA,
+            valorDePaso: Constantes.AUTOEVALUACION_PRESENTADOR_VALOR_DE_PASO_TEMPERATURA,
+            valorMaximo: Constantes.AUTOEVALUACION_PRESENTADOR_VALOR_MAXIMO_TEMPERATURA_HUMANA,
+            valorMinimo: Constantes.AUTOEVALUACION_PRESENTADOR_VALOR_MINIMO_TEMPERATURA_HUMANA,
+            separadorDecimal: Constantes.AUTOEVALUACION_PRESENTADOR_SEPARADOR,
             margen: MetricasTemperatura.margenesIncrementalDecremental,
             cambio: cambio,
             accionEditando: accionEditandoTemperatura(),
@@ -521,7 +523,7 @@ private extension AutoevaluacionPresentador {
 
 private extension AutoevaluacionPresentador {
     func accionDeTemperatura(para valor: Double, reiniciarValorInicial: Bool) {
-        if valor > Constantes.AUTOEVALUACION_PRECENTADOR_VALOR_MAXIMO_TEMPERATURA_HUMANA || valor <= Constantes.AUTOEVALUACION_PRECENTADOR_VALOR_MINIMO_TEMPERATURA_HUMANA {
+        if valor > Constantes.AUTOEVALUACION_PRESENTADOR_VALOR_MAXIMO_TEMPERATURA_HUMANA || valor <= Constantes.AUTOEVALUACION_PRESENTADOR_VALOR_MINIMO_TEMPERATURA_HUMANA {
             vista?.mostrarAlertaDeTemperatura(contenido: generaAlertDeTemperaturaAnormal(), reiniciarValorInicial: reiniciarValorInicial)
         } else {
             temperaturaSeleccionada = valor
@@ -535,20 +537,20 @@ private extension AutoevaluacionPresentador {
             guard let rangoDeTexto = Range(range, in: textoActual) else { return false }
             var textoIngresado = textoActual.replacingCharacters(in: rangoDeTexto, with: string)
             
-            if textoIngresado.count == Constantes.AUTOEVALUACION_PRECENTADOR_MAXIMO_ENTEROS && string != "" {
-                textField.text = textoIngresado + Constantes.AUTOEVALUACION_PRECENTADOR_SEPARADOR
+            if textoIngresado.count == Constantes.AUTOEVALUACION_PRESENTADOR_MAXIMO_ENTEROS && string != "" {
+                textField.text = textoIngresado + Constantes.AUTOEVALUACION_PRESENTADOR_SEPARADOR
                 return false
             }
                                 
             if string == "",
                 let ultimoCaracter = textoIngresado.last,
-                String(ultimoCaracter) == Constantes.AUTOEVALUACION_PRECENTADOR_SEPARADOR {
+                String(ultimoCaracter) == Constantes.AUTOEVALUACION_PRESENTADOR_SEPARADOR {
                 textoIngresado.removeLast()
                 textField.text = textoIngresado
                 return false
             }
                                 
-            return textoIngresado.count <= Constantes.AUTOEVALUACION_PRECENTADOR_MAXIMO_CARACTERES
+            return textoIngresado.count <= Constantes.AUTOEVALUACION_PRESENTADOR_MAXIMO_CARACTERES
         }
     }
     
@@ -557,11 +559,11 @@ private extension AutoevaluacionPresentador {
             guard let texto = textField.text else {
                 return nil
             }
-            var textoActual = texto.replacingOccurrences(of: Constantes.AUTOEVALUACION_PRECENTADOR_SEPARADOR, with: ".")
-            if let index = textoActual.range(of: Constantes.AUTOEVALUACION_PRECENTADOR_SEPARADOR) {
+            var textoActual = texto.replacingOccurrences(of: Constantes.AUTOEVALUACION_PRESENTADOR_SEPARADOR, with: ".")
+            if let index = textoActual.range(of: Constantes.AUTOEVALUACION_PRESENTADOR_SEPARADOR) {
                 textoActual.removeSubrange(index)
             }
-            return Double(textoActual) ?? Constantes.AUTOEVALUACION_PRECENTADOR_TEMPERATURA_DEFAULT
+            return Double(textoActual) ?? Constantes.AUTOEVALUACION_PRESENTADOR_TEMPERATURA_DEFAULT
         }
     }
     

@@ -119,7 +119,7 @@ extension FormularioDatosDeContactoPresentador: FormularioDatosDeContactoPresent
         vista?.recargarCampoCiudad(viewModel: ciudadViewModel)
     }
     
-    func guardarDatos(dato: String, tipoDeElemento: TiposDeElementosDeFormulario){
+    func guardarDatos(dato: String, tipoDeElemento: TiposDeElementosDeFormulario) {
         switch tipoDeElemento {
         case .calle:
             datosContacto.calle = dato
@@ -225,10 +225,14 @@ extension FormularioDatosDeContactoPresentador: FormularioDatosDeContactoPresent
             telefono: telefono
         ) {  [weak self]  (respuesta) in
             self?.vista?.removerLoaderAutenticacion()
-            if respuesta{
+            if respuesta {
                 self?.vista?.finalizoAutenticacion()
             } else {
-                self?.vista?.presentarErrorEnFormulario(mensaje: "usuario invalido")
+                if (UserDefaults.standard.bool(forKey: Constantes.INVALID_TOKEN)) {
+                    self?.vista?.alertAnotherDeviceLogged()
+                } else {
+                    self?.vista?.presentarErrorEnFormulario(mensaje: "usuario inválido")
+                }
             }
         }
     }
@@ -264,8 +268,8 @@ private extension FormularioDatosDeContactoPresentador {
             tipografiaCampoDeTexto: tipografiaCampoTextoPorDefecto(),
             textoBajoCampoDeTexto: textoBajoCampoTextoPorDefectoPara(.telefono),
             tipografiaEtiquetaBajoTexto: tipografiaBajoCampoTextoPorDefecto(),
-            metricaDeAltura: Constantes.FORMULARIO_DATOS_CONTACTO_PRECENTADOR_ALTURA_ELEMENTO,
-            metricaDeAncho: Constantes.FORMULARIO_DATOS_CONTACTO_PRECENTADOR_ANCHO_ELEMENTO_FORMULARIO_SENSILLO,
+            metricaDeAltura: Constantes.FORMULARIO_DATOS_CONTACTO_PRESENTADOR_ALTURA_ELEMENTO,
+            metricaDeAncho: Constantes.FORMULARIO_DATOS_CONTACTO_PRESENTADOR_ANCHO_ELEMENTO_FORMULARIO_SENSILLO,
             identificador: .telefono,
             tipoDeElemento: .sencillo,
             prefijoCampoDeTexto: "+54")
@@ -273,7 +277,7 @@ private extension FormularioDatosDeContactoPresentador {
         
         let viewModel = FormularioDatosDeContactoViewModel(
             tituloParaFormulario: "Teléfono de contacto",
-            tamañoFuenteDescripcion: Constantes.FORMULARIO_DATOS_CONTACTO_PRECENTADOR_TAMAÑO_FUENTE_NORMAL,
+            tamañoFuenteDescripcion: Constantes.FORMULARIO_DATOS_CONTACTO_PRESENTADOR_TAMAÑO_FUENTE_NORMAL,
             elementosDeFormulario: [elementoDeFormularioTelefono],
             botonSiguiente: .crearBotonAzul(titulo: "SIGUIENTE"))
         
@@ -289,8 +293,8 @@ private extension FormularioDatosDeContactoPresentador {
             tipografiaCampoDeTexto: tipografiaCampoTextoPorDefecto(),
             textoBajoCampoDeTexto: "",
             tipografiaEtiquetaBajoTexto: tipografiaBajoCampoTextoPorDefecto(),
-            metricaDeAltura: Constantes.FORMULARIO_DATOS_CONTACTO_PRECENTADOR_ALTURA_ELEMENTO,
-            metricaDeAncho: Constantes.FORMULARIO_DATOS_CONTACTO_PRECENTADOR_ANCHO_ELEMENTO_FORMULARIO_SENSILLO,
+            metricaDeAltura: Constantes.FORMULARIO_DATOS_CONTACTO_PRESENTADOR_ALTURA_ELEMENTO,
+            metricaDeAncho: Constantes.FORMULARIO_DATOS_CONTACTO_PRESENTADOR_ANCHO_ELEMENTO_FORMULARIO_SENSILLO,
             identificador: .provincia,
             tipoDeElemento: .seleccionador,
             datos: domicilioFachada.cargarProvincias(),
@@ -305,8 +309,8 @@ private extension FormularioDatosDeContactoPresentador {
             tipografiaCampoDeTexto: tipografiaCampoTextoPorDefecto(),
             textoBajoCampoDeTexto: "",
             tipografiaEtiquetaBajoTexto: tipografiaBajoCampoTextoPorDefecto(),
-            metricaDeAltura: Constantes.FORMULARIO_DATOS_CONTACTO_PRECENTADOR_ALTURA_ELEMENTO,
-            metricaDeAncho: Constantes.FORMULARIO_DATOS_CONTACTO_PRECENTADOR_ANCHO_ELEMENTO_FORMULARIO_SENSILLO,
+            metricaDeAltura: Constantes.FORMULARIO_DATOS_CONTACTO_PRESENTADOR_ALTURA_ELEMENTO,
+            metricaDeAncho: Constantes.FORMULARIO_DATOS_CONTACTO_PRESENTADOR_ANCHO_ELEMENTO_FORMULARIO_SENSILLO,
             identificador: .ciudad,
             tipoDeElemento: .seleccionador,
             datos: ciudades,
@@ -320,8 +324,8 @@ private extension FormularioDatosDeContactoPresentador {
             tipografiaCampoDeTexto: tipografiaCampoTextoPorDefecto(),
             textoBajoCampoDeTexto: "",
             tipografiaEtiquetaBajoTexto: tipografiaBajoCampoTextoPorDefecto(),
-            metricaDeAltura: Constantes.FORMULARIO_DATOS_CONTACTO_PRECENTADOR_ALTURA_ELEMENTO,
-            metricaDeAncho: Constantes.FORMULARIO_DATOS_CONTACTO_PRECENTADOR_ANCHO_ELEMENTO_FORMULARIO_SENSILLO,
+            metricaDeAltura: Constantes.FORMULARIO_DATOS_CONTACTO_PRESENTADOR_ALTURA_ELEMENTO,
+            metricaDeAncho: Constantes.FORMULARIO_DATOS_CONTACTO_PRESENTADOR_ANCHO_ELEMENTO_FORMULARIO_SENSILLO,
             identificador: .calle,
             tipoDeElemento: .sencillo)
             elementosViewModels[.calle] = elementoCalle
@@ -332,8 +336,8 @@ private extension FormularioDatosDeContactoPresentador {
             tipografiaCampoDeTexto: tipografiaCampoTextoPorDefecto(),
             textoBajoCampoDeTexto: "",
             tipografiaEtiquetaBajoTexto: tipografiaBajoCampoTextoPorDefecto(),
-            metricaDeAltura: Constantes.FORMULARIO_DATOS_CONTACTO_PRECENTADOR_ALTURA_ELEMENTO,
-            metricaDeAncho: Constantes.FORMULARIO_DATOS_CONTACTO_PRECENTADOR_ANCHO_ELEMENTO_FORMULARIO_DOBLE,
+            metricaDeAltura: Constantes.FORMULARIO_DATOS_CONTACTO_PRESENTADOR_ALTURA_ELEMENTO,
+            metricaDeAncho: Constantes.FORMULARIO_DATOS_CONTACTO_PRESENTADOR_ANCHO_ELEMENTO_FORMULARIO_DOBLE,
             identificador: .numero,
             tipoDeElemento: .doble)
             elementosViewModels[.numero] = elementoNumero
@@ -344,8 +348,8 @@ private extension FormularioDatosDeContactoPresentador {
             tipografiaCampoDeTexto: tipografiaCampoTextoPorDefecto(),
             textoBajoCampoDeTexto: "",
             tipografiaEtiquetaBajoTexto: tipografiaBajoCampoTextoPorDefecto(),
-            metricaDeAltura: Constantes.FORMULARIO_DATOS_CONTACTO_PRECENTADOR_ALTURA_ELEMENTO,
-            metricaDeAncho: Constantes.FORMULARIO_DATOS_CONTACTO_PRECENTADOR_ANCHO_ELEMENTO_FORMULARIO_DOBLE,
+            metricaDeAltura: Constantes.FORMULARIO_DATOS_CONTACTO_PRESENTADOR_ALTURA_ELEMENTO,
+            metricaDeAncho: Constantes.FORMULARIO_DATOS_CONTACTO_PRESENTADOR_ANCHO_ELEMENTO_FORMULARIO_DOBLE,
             identificador: .codigoPostal,
             tipoDeElemento: .doble)
             elementosViewModels[.codigoPostal] = elementoPostal
@@ -356,8 +360,8 @@ private extension FormularioDatosDeContactoPresentador {
             tipografiaCampoDeTexto: tipografiaCampoTextoPorDefecto(),
             textoBajoCampoDeTexto: textoBajoCampoTextoPorDefectoPara(.puerta),
             tipografiaEtiquetaBajoTexto: tipografiaBajoCampoTextoPorDefecto(),
-            metricaDeAltura: Constantes.FORMULARIO_DATOS_CONTACTO_PRECENTADOR_ALTURA_ELEMENTO,
-            metricaDeAncho: Constantes.FORMULARIO_DATOS_CONTACTO_PRECENTADOR_ANCHO_ELEMENTO_FORMULARIO_DOBLE,
+            metricaDeAltura: Constantes.FORMULARIO_DATOS_CONTACTO_PRESENTADOR_ALTURA_ELEMENTO,
+            metricaDeAncho: Constantes.FORMULARIO_DATOS_CONTACTO_PRESENTADOR_ANCHO_ELEMENTO_FORMULARIO_DOBLE,
             identificador: .puerta,
             tipoDeElemento: .doble)
             elementosViewModels[.puerta] = elementoPuerta
@@ -368,8 +372,8 @@ private extension FormularioDatosDeContactoPresentador {
             tipografiaCampoDeTexto: tipografiaCampoTextoPorDefecto(),
             textoBajoCampoDeTexto: textoBajoCampoTextoPorDefectoPara(.piso),
             tipografiaEtiquetaBajoTexto: tipografiaBajoCampoTextoPorDefecto(),
-            metricaDeAltura: Constantes.FORMULARIO_DATOS_CONTACTO_PRECENTADOR_ALTURA_ELEMENTO,
-            metricaDeAncho: Constantes.FORMULARIO_DATOS_CONTACTO_PRECENTADOR_ANCHO_ELEMENTO_FORMULARIO_DOBLE,
+            metricaDeAltura: Constantes.FORMULARIO_DATOS_CONTACTO_PRESENTADOR_ALTURA_ELEMENTO,
+            metricaDeAncho: Constantes.FORMULARIO_DATOS_CONTACTO_PRESENTADOR_ANCHO_ELEMENTO_FORMULARIO_DOBLE,
             identificador: .piso,
             tipoDeElemento: .doble)
             elementosViewModels[.piso] = elementoPiso
@@ -380,15 +384,15 @@ private extension FormularioDatosDeContactoPresentador {
             tipografiaCampoDeTexto: tipografiaCampoTextoPorDefecto(),
             textoBajoCampoDeTexto: textoBajoCampoTextoPorDefectoPara(.otros),
             tipografiaEtiquetaBajoTexto: tipografiaBajoCampoTextoPorDefecto(),
-            metricaDeAltura: Constantes.FORMULARIO_DATOS_CONTACTO_PRECENTADOR_ALTURA_ELEMENTO,
-            metricaDeAncho: Constantes.FORMULARIO_DATOS_CONTACTO_PRECENTADOR_ANCHO_ELEMENTO_FORMULARIO_SENSILLO,
+            metricaDeAltura: Constantes.FORMULARIO_DATOS_CONTACTO_PRESENTADOR_ALTURA_ELEMENTO,
+            metricaDeAncho: Constantes.FORMULARIO_DATOS_CONTACTO_PRESENTADOR_ANCHO_ELEMENTO_FORMULARIO_SENSILLO,
             identificador: .otros,
             tipoDeElemento: .sencillo)
             elementosViewModels[.otros] = elementoOtros
         
         let viewModel = FormularioDatosDeContactoViewModel(
             tituloParaFormulario: "Tu dirección actual",
-            tamañoFuenteDescripcion: Constantes.FORMULARIO_DATOS_CONTACTO_PRECENTADOR_TAMAÑO_FUENTE_NORMAL,
+            tamañoFuenteDescripcion: Constantes.FORMULARIO_DATOS_CONTACTO_PRESENTADOR_TAMAÑO_FUENTE_NORMAL,
             elementosDeFormulario: [elementoProvincia,
                                     elementoCiudad,
                                     elementoCalle,

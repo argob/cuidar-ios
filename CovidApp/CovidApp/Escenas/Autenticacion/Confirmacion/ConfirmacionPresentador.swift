@@ -56,20 +56,20 @@ extension ConfirmacionPresentador: ConfirmacionPresentadorProtocolo {
         let apellidos = informacionUsuario.apellidos
         let nombreCompleto = nombres + ", " + apellidos
         
-        let titulo = LabelViewModel(texto: "Para continuar necesitamos que confirmes tus datos", apariencia: Constantes.CONFIRMACION_PRECENTADOR_TITULO)
+        let titulo = LabelViewModel(texto: "Para continuar necesitamos que confirmes tus datos", apariencia: Constantes.CONFIRMACION_PRESENTADOR_TITULO)
 
         let botonSiguiente: BotonViewModelAccion = .crearBotonAzul(titulo: "SIGUIENTE") { [weak self] in
             self?.manejarAccionSiguiente()
         }
         
-               let nombreUsuario = LabelViewModel(texto: nombreCompleto, apariencia: Constantes.CONFIRMACION_PRECENTADOR_VALOR)
-        let etiquetaDNI = LabelViewModel(texto: "DNI:", apariencia: Constantes.CONFIRMACION_PRECENTADOR_ETIQUETA)
-        let DNI = LabelViewModel(texto: session.dni.description, apariencia: Constantes.CONFIRMACION_PRECENTADOR_VALOR)
-        let etiquetaNacimiento = LabelViewModel(texto: "Fecha de Nacimiento:", apariencia: Constantes.CONFIRMACION_PRECENTADOR_ETIQUETA)
+               let nombreUsuario = LabelViewModel(texto: nombreCompleto, apariencia: Constantes.CONFIRMACION_PRESENTADOR_VALOR)
+        let etiquetaDNI = LabelViewModel(texto: "DNI:", apariencia: Constantes.CONFIRMACION_PRESENTADOR_ETIQUETA)
+        let DNI = LabelViewModel(texto: session.dni.description, apariencia: Constantes.CONFIRMACION_PRESENTADOR_VALOR)
+        let etiquetaNacimiento = LabelViewModel(texto: "Fecha de Nacimiento:", apariencia: Constantes.CONFIRMACION_PRESENTADOR_ETIQUETA)
         let fechaNacimiento = LabelViewModel(texto: fechaNacimientoUsuario.formatearFecha(de: .guiones, a: .diagonales),
-                                             apariencia: Constantes.CONFIRMACION_PRECENTADOR_VALOR)
-        let etiquetaGenero = LabelViewModel(texto: "Sexo:", apariencia: Constantes.CONFIRMACION_PRECENTADOR_ETIQUETA)
-        let genero = LabelViewModel(texto: session.sexo.valorTexto, apariencia: Constantes.CONFIRMACION_PRECENTADOR_VALOR)
+                                             apariencia: Constantes.CONFIRMACION_PRESENTADOR_VALOR)
+        let etiquetaGenero = LabelViewModel(texto: "Sexo:", apariencia: Constantes.CONFIRMACION_PRESENTADOR_ETIQUETA)
+        let genero = LabelViewModel(texto: session.sexo.valorTexto, apariencia: Constantes.CONFIRMACION_PRESENTADOR_VALOR)
         let iconoUser = ImageViewModelo(imagen: "icon-user-dark")
         let viewModel = ConfirmacionViewModel(imagenUsuario: iconoUser,
                                               tituloPantalla: titulo,

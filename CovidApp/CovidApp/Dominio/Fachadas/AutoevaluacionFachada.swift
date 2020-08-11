@@ -24,6 +24,7 @@ typealias EstadoFinalizacionDeAutoevaluacion = Result<Void, FinalizacionDeAutoev
 enum FinalizacionDeAutoevaluacionError: Error {
     case sinConexionAInternet
     case datosInvalidos
+    case tokenInvalido
     case otro
 }
 
@@ -211,7 +212,10 @@ extension AutoevaluacionFachada: AutoevaluacionFachadaProtocolo {
                                     }
                                 }
                         case .failure(_):
-                            finalizaEnElMainThread(.failure(.datosInvalidos))
+                            // Este flag se usa para levantar la alerta de otro dispositivo conectado.
+                            UserDefaults.standard.set(true, forKey: Constantes.INVALID_TOKEN)
+                            self?.sesionPersistencia.borrar()
+                            finalizaEnElMainThread(.failure(.tokenInvalido))
                         }
                     }
                 default:

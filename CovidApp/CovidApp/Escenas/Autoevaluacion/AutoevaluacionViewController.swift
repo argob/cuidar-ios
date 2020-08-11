@@ -25,6 +25,7 @@ protocol AutoevaluacionVista: class, VisualizadorDeCarga {
     func mostrarAlertaDeEnviarDatos(contenido: AlertaViewModel)
     func mostrarAlertaDeTemperatura(contenido: AlertaViewModel, reiniciarValorInicial: Bool)
     func mostrarAlertaDeErrorAlSalvarDatos(viewModel: AlertaErrorEjecutarClienteViewModel)
+    func showAlertInvalidToken()
     func actualizarBarraDeProgreso(direccion: Direccion)
     func actualizar(tituloDeAccion: String)
     func irASiguienteEscena()
@@ -44,7 +45,7 @@ final class AutoevaluacionViewController: BaseViewController, MVPVista, BotonCel
         presentador.siguiente()
     }
     func botonSeleccionado(conIdentificador: Identificador) {
-        if(conIdentificador == .volverAEmpezar){
+        if (conIdentificador == .volverAEmpezar) {
             presentador.volverAEmpezar()
         }
     }
@@ -52,6 +53,18 @@ final class AutoevaluacionViewController: BaseViewController, MVPVista, BotonCel
 }
 
 extension AutoevaluacionViewController: AutoevaluacionVista {
+    func showAlertInvalidToken() {
+        let alert = UIAlertController(title: "Alerta", message: Constantes.ANOTHER_DEVICE_LOGGED, preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "Aceptar", style: .default) { (action) in
+            self.dismiss(animated: true, completion: nil)
+            self.enrutador.desvinculaciónTerminada()
+            
+        }
+        alert.addAction(ok)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
     func actualizarBotonBack(visible: Bool) {
         barraNavegacionPersonalizada.mostrarBotonIzquierdo(mostrar: visible)

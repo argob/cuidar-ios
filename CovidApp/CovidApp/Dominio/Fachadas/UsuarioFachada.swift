@@ -144,6 +144,8 @@ extension UsuarioFachada: UsuarioFachadaProtocolo {
                         case .failure(let error):
                             switch error {
                             case .tokenInvalido:
+                                // Este flag se usa para levantar la alerta de otro dispositivo conectado.
+                                UserDefaults.standard.set(true, forKey: Constantes.INVALID_TOKEN)
                                 self.logout()
                                 finalizarEnElMainThread(sesion)
                             default:
@@ -208,6 +210,8 @@ extension UsuarioFachada: UsuarioFachadaProtocolo {
                        case .failure(let error):
                             switch error {
                             case .tokenInvalido:
+                                // Este flag se usa para levantar la alerta de otro dispositivo conectado.
+                                UserDefaults.standard.set(true, forKey: Constantes.INVALID_TOKEN)
                                 self.logout()
                                 finalizarEnElMainThread(false)
                             default:
