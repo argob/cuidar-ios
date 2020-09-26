@@ -215,10 +215,11 @@
 		E8E44DB724ACB99300E26044 /* InformacionPBAPresentador.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E44DB624ACB99300E26044 /* InformacionPBAPresentador.swift */; };
 		FB01E299244783F600692E3C /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB01E298244783F600692E3C /* Array.swift */; };
 		FB05B0B124452DBD00CDA0CE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB05B0B024452DBD00CDA0CE /* WebKit.framework */; };
+		FB6AF371251F7D000013B5D7 /* SwiftOTP in Frameworks */ = {isa = PBXBuildFile; productRef = FB6AF370251F7D000013B5D7 /* SwiftOTP */; };
+		FB6AF374251F7D190013B5D7 /* TrustKit in Frameworks */ = {isa = PBXBuildFile; productRef = FB6AF373251F7D190013B5D7 /* TrustKit */; };
 		FB6D7AA32448D4F300EC3176 /* VistaTerminos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6D7AA22448D4F300EC3176 /* VistaTerminos.swift */; };
 		FB6D7AA52448FE6F00EC3176 /* AceptarTerminosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6D7AA42448FE6F00EC3176 /* AceptarTerminosViewModel.swift */; };
 		FBC610822447722200BCEC77 /* TokenFachada.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC610812447722200BCEC77 /* TokenFachada.swift */; };
-		FBE262302447B4C700C12F01 /* CovidPackage in Frameworks */ = {isa = PBXBuildFile; productRef = FBE2622F2447B4C700C12F01 /* CovidPackage */; };
 		FF074342244BCF370025781F /* AlertaErrorEjecutarClienteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF074341244BCF370025781F /* AlertaErrorEjecutarClienteViewModel.swift */; };
 		FF074344244BD2840025781F /* FactoriaAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF074343244BD2840025781F /* FactoriaAlertViewController.swift */; };
 		FF2DF449244397B600F0FF0F /* TextoConIconoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2DF448244397B600F0FF0F /* TextoConIconoTableViewCell.swift */; };
@@ -475,7 +476,6 @@
 		FB6D7AA22448D4F300EC3176 /* VistaTerminos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaTerminos.swift; sourceTree = "<group>"; };
 		FB6D7AA42448FE6F00EC3176 /* AceptarTerminosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AceptarTerminosViewModel.swift; sourceTree = "<group>"; };
 		FBC610812447722200BCEC77 /* TokenFachada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenFachada.swift; sourceTree = "<group>"; };
-		FBE2622E2447B3FE00C12F01 /* CovidPackage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CovidPackage; sourceTree = "<group>"; };
 		FF074341244BCF370025781F /* AlertaErrorEjecutarClienteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertaErrorEjecutarClienteViewModel.swift; sourceTree = "<group>"; };
 		FF074343244BD2840025781F /* FactoriaAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoriaAlertViewController.swift; sourceTree = "<group>"; };
 		FF2DF448244397B600F0FF0F /* TextoConIconoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextoConIconoTableViewCell.swift; sourceTree = "<group>"; };
@@ -511,12 +511,13 @@
 			files = (
 				6BF3785E244C107800B8080F /* libz.tbd in Frameworks */,
 				6BF3785C244C106E00B8080F /* libc++.tbd in Frameworks */,
+				FB6AF374251F7D190013B5D7 /* TrustKit in Frameworks */,
 				6BF3785A244C106500B8080F /* SystemConfiguration.framework in Frameworks */,
 				6BF37858244C105A00B8080F /* CoreTelephony.framework in Frameworks */,
 				FB05B0B124452DBD00CDA0CE /* WebKit.framework in Frameworks */,
-				FBE262302447B4C700C12F01 /* CovidPackage in Frameworks */,
 				6BF37856244C100700B8080F /* NewRelicAgent.framework in Frameworks */,
 				510311882446376A002780C8 /* MapKit.framework in Frameworks */,
+				FB6AF371251F7D000013B5D7 /* SwiftOTP in Frameworks */,
 				51F2B361243F86E500ED16C0 /* ZXingObjC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -796,7 +797,6 @@
 		66E41614243C094500EE4052 = {
 			isa = PBXGroup;
 			children = (
-				FBE2622E2447B3FE00C12F01 /* CovidPackage */,
 				66E4161F243C094500EE4052 /* CovidApp */,
 				66E41636243C094A00EE4052 /* CovidAppTests */,
 				66E4161E243C094500EE4052 /* Products */,
@@ -1425,7 +1425,8 @@
 			);
 			name = CovidApp;
 			packageProductDependencies = (
-				FBE2622F2447B4C700C12F01 /* CovidPackage */,
+				FB6AF370251F7D000013B5D7 /* SwiftOTP */,
+				FB6AF373251F7D190013B5D7 /* TrustKit */,
 			);
 			productName = CovidApp;
 			productReference = 66E4161D243C094500EE4052 /* CovidApp-Dev.app */;
@@ -1477,6 +1478,10 @@
 				Base,
 			);
 			mainGroup = 66E41614243C094500EE4052;
+			packageReferences = (
+				FB6AF36F251F7D000013B5D7 /* XCRemoteSwiftPackageReference "SwiftOTP" */,
+				FB6AF372251F7D190013B5D7 /* XCRemoteSwiftPackageReference "TrustKit" */,
+			);
 			productRefGroup = 66E4161E243C094500EE4052 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -3010,10 +3015,35 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		FB6AF36F251F7D000013B5D7 /* XCRemoteSwiftPackageReference "SwiftOTP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lachlanbell/SwiftOTP.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
+		FB6AF372251F7D190013B5D7 /* XCRemoteSwiftPackageReference "TrustKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/datatheorem/TrustKit.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.6.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		FBE2622F2447B4C700C12F01 /* CovidPackage */ = {
+		FB6AF370251F7D000013B5D7 /* SwiftOTP */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = CovidPackage;
+			package = FB6AF36F251F7D000013B5D7 /* XCRemoteSwiftPackageReference "SwiftOTP" */;
+			productName = SwiftOTP;
+		};
+		FB6AF373251F7D190013B5D7 /* TrustKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB6AF372251F7D190013B5D7 /* XCRemoteSwiftPackageReference "TrustKit" */;
+			productName = TrustKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
