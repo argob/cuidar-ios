@@ -196,6 +196,17 @@ extension PasaporteDesvincularDNIViewModel {
     }
 }
 
+struct MultipleCertificatesViewModel: PasaporteElemento {
+    let certificates : [Estado.PermisoDeCirculacion]
+    let selectedCertificate: Int
+}
+
+extension MultipleCertificatesViewModel {
+    func acceptar<V>(visitador: V) -> V.Result where V : PasaporteElementoVistador {
+        return visitador.visitar(multipleCertificates: self)
+    }
+}
+
 protocol PasaporteElementoVistador {
     associatedtype Result
     
@@ -212,6 +223,7 @@ protocol PasaporteElementoVistador {
     func visitar(masInformacionViewModel: PasaporteMasInformacionViewModel) -> Result
     func visitar(textoAdicionalViewModel: PasaporteTextoAdicionalViewModel) -> Result
     func visitar(desvincularDNIViewModel: PasaporteDesvincularDNIViewModel) -> Result
+    func visitar(multipleCertificates: MultipleCertificatesViewModel) -> Result
 }
 
 extension PasaporteElementoVistador where Result == Void {

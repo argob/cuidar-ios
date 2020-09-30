@@ -209,6 +209,14 @@
 		E84838DC24BF5FAA000314BB /* ConsejosPresentador.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84838DB24BF5FAA000314BB /* ConsejosPresentador.swift */; };
 		E8569A6224C21580000BDD77 /* Consejos.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8569A6124C21580000BDD77 /* Consejos.swift */; };
 		E8C26B62247D77B300AB0082 /* Obfuscator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C26B61247D77B300AB0082 /* Obfuscator.swift */; };
+		E8D3CD2525251381004172E6 /* NewLegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3CD2125251381004172E6 /* NewLegalViewController.swift */; };
+		E8D3CD2625251381004172E6 /* NewLegalPresentador.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3CD2225251381004172E6 /* NewLegalPresentador.swift */; };
+		E8D3CD2725251381004172E6 /* NewLegalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8D3CD2325251381004172E6 /* NewLegalViewController.xib */; };
+		E8D3CD2825251381004172E6 /* NewLegalModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3CD2425251381004172E6 /* NewLegalModels.swift */; };
+		E8D3CD30252514D1004172E6 /* MultipleCertificateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3CD2D252514D1004172E6 /* MultipleCertificateTableViewCell.swift */; };
+		E8D3CD31252514D1004172E6 /* MultipleCertificateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8D3CD2E252514D1004172E6 /* MultipleCertificateTableViewCell.xib */; };
+		E8D3CD372525160E004172E6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3CD362525160E004172E6 /* String.swift */; };
+		E8D3CD3B252516C7004172E6 /* TerminosYCondiciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3CD3A252516C7004172E6 /* TerminosYCondiciones.swift */; };
 		E8E44DB324AC140000E26044 /* InformacionPBAViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E44DB224AC140000E26044 /* InformacionPBAViewController.xib */; };
 		E8E44DB524AC141600E26044 /* InformacionPBAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E44DB424AC141600E26044 /* InformacionPBAViewController.swift */; };
 		E8E44DB724ACB99300E26044 /* InformacionPBAPresentador.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E44DB624ACB99300E26044 /* InformacionPBAPresentador.swift */; };
@@ -468,6 +476,14 @@
 		E84838DB24BF5FAA000314BB /* ConsejosPresentador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsejosPresentador.swift; sourceTree = "<group>"; };
 		E8569A6124C21580000BDD77 /* Consejos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consejos.swift; sourceTree = "<group>"; };
 		E8C26B61247D77B300AB0082 /* Obfuscator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obfuscator.swift; sourceTree = "<group>"; };
+		E8D3CD2125251381004172E6 /* NewLegalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewLegalViewController.swift; sourceTree = "<group>"; };
+		E8D3CD2225251381004172E6 /* NewLegalPresentador.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewLegalPresentador.swift; sourceTree = "<group>"; };
+		E8D3CD2325251381004172E6 /* NewLegalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewLegalViewController.xib; sourceTree = "<group>"; };
+		E8D3CD2425251381004172E6 /* NewLegalModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewLegalModels.swift; sourceTree = "<group>"; };
+		E8D3CD2D252514D1004172E6 /* MultipleCertificateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleCertificateTableViewCell.swift; sourceTree = "<group>"; };
+		E8D3CD2E252514D1004172E6 /* MultipleCertificateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultipleCertificateTableViewCell.xib; sourceTree = "<group>"; };
+		E8D3CD362525160E004172E6 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		E8D3CD3A252516C7004172E6 /* TerminosYCondiciones.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TerminosYCondiciones.swift; path = "../../../../../../ios-OpenSource/CovidApp/CovidApp/Dominio/Servicios/API/TerminosYCondiciones.swift"; sourceTree = "<group>"; };
 		E8E44DB224AC140000E26044 /* InformacionPBAViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformacionPBAViewController.xib; sourceTree = "<group>"; };
 		E8E44DB424AC141600E26044 /* InformacionPBAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformacionPBAViewController.swift; sourceTree = "<group>"; };
 		E8E44DB624ACB99300E26044 /* InformacionPBAPresentador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformacionPBAPresentador.swift; sourceTree = "<group>"; };
@@ -724,6 +740,7 @@
 		661C0A842441432B001957CA /* Celdas */ = {
 			isa = PBXGroup;
 			children = (
+				E8D3CD2B252514D1004172E6 /* CeldaCertificadosMultiples */,
 				079AF746247599DA0085B594 /* CeldaInformacionAdicional */,
 				07671A752474A4640052F261 /* CeldaResultadoToken */,
 				07671A7024748FF50052F261 /* CeldaCertificadoEstado */,
@@ -762,6 +779,7 @@
 		661C0A9F24415625001957CA /* API */ = {
 			isa = PBXGroup;
 			children = (
+				E8D3CD3A252516C7004172E6 /* TerminosYCondiciones.swift */,
 				661C0AA024415625001957CA /* EnviarAutoevaluacion.swift */,
 				6659EED52447744800ADBA45 /* GenerarToken.swift */,
 				E80AD38B24B6383500C4B797 /* RefreshToken.swift */,
@@ -780,6 +798,7 @@
 				FF074343244BD2840025781F /* FactoriaAlertViewController.swift */,
 				975C46D02444D8410009A10E /* AttributedText.swift */,
 				97051347244020F90015DCD2 /* BarraNavegacionPersonalizada.swift */,
+				E8D3CD362525160E004172E6 /* String.swift */,
 				657F4EEB2440CB9D00BDA1B9 /* FormularioValidador.swift */,
 				66A6E40B2440FF1C00974666 /* RoundedCornerView.swift */,
 				661C0A93244143B6001957CA /* UITableViewCellRegistrable.swift */,
@@ -1314,6 +1333,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		E8D3CD2B252514D1004172E6 /* CeldaCertificadosMultiples */ = {
+			isa = PBXGroup;
+			children = (
+				E8D3CD2D252514D1004172E6 /* MultipleCertificateTableViewCell.swift */,
+				E8D3CD2E252514D1004172E6 /* MultipleCertificateTableViewCell.xib */,
+			);
+			path = CeldaCertificadosMultiples;
+			sourceTree = "<group>";
+		};
 		E8E44DB124AC13DE00E26044 /* InformacionPBA */ = {
 			isa = PBXGroup;
 			children = (
@@ -1335,8 +1363,13 @@
 		FB103497244663C600183648 /* AceptarTerminos */ = {
 			isa = PBXGroup;
 			children = (
+				E8D3CD2425251381004172E6 /* NewLegalModels.swift */,
+				E8D3CD2225251381004172E6 /* NewLegalPresentador.swift */,
+				E8D3CD2125251381004172E6 /* NewLegalViewController.swift */,
+				E8D3CD2325251381004172E6 /* NewLegalViewController.xib */,
 			);
-			path = AceptarTerminos;
+			name = AceptarTerminos;
+			path = NewLegal;
 			sourceTree = "<group>";
 		};
 		FF5971A3244789920074517F /* ConsejosCompletos */ = {
@@ -1503,6 +1536,7 @@
 				381DBEC8243E8C0800144F56 /* MenuNavegacionViewController.xib in Resources */,
 				E8E44DB324AC140000E26044 /* InformacionPBAViewController.xib in Resources */,
 				975C46BD244415310009A10E /* ResultadoVideoTableViewCell.xib in Resources */,
+				E8D3CD2725251381004172E6 /* NewLegalViewController.xib in Resources */,
 				66E4162D243C094A00EE4052 /* LaunchScreen.storyboard in Resources */,
 				970513842441985F0015DCD2 /* BotonTableViewCell.xib in Resources */,
 				661C0A902441432B001957CA /* QRTableViewCell.xib in Resources */,
@@ -1510,6 +1544,7 @@
 				975C46C5244415950009A10E /* ResultadoNegativoTableViewCell.xib in Resources */,
 				E84838D824BF5765000314BB /* ConsejosViewController.xib in Resources */,
 				65811964243F386100485E37 /* AutenticacionNavegacionViewController.xib in Resources */,
+				E8D3CD31252514D1004172E6 /* MultipleCertificateTableViewCell.xib in Resources */,
 				6646C0ED243E3E0A004ACD6E /* AutoevaluacionViewController.xib in Resources */,
 				51F2B368243FEBAE00ED16C0 /* EscanerViewController.xib in Resources */,
 				A43197A1243EAC01008915E2 /* EncodeSans-SemiBold.ttf in Resources */,
@@ -1616,6 +1651,7 @@
 				FFE0E60C243E733F00B83D66 /* LinkTextView.swift in Sources */,
 				FFAC5A3A2442463B005D5BD4 /* AutoevaluacionFactoriaCeldas.swift in Sources */,
 				6646C0EA243E383D004ACD6E /* AutoevaluacionPresentador.swift in Sources */,
+				E8D3CD3B252516C7004172E6 /* TerminosYCondiciones.swift in Sources */,
 				382A3F942446941500F6011B /* ConfirmacionViewController.swift in Sources */,
 				07671A782474A4C00052F261 /* ResultadoTokenTableViewCell.swift in Sources */,
 				661C0A8C2441432B001957CA /* PasaporteIdentificacionTableViewCell.swift in Sources */,
@@ -1653,6 +1689,7 @@
 				FF803E4B244B505B0062C031 /* AutenticacionNumeroPresentador.swift in Sources */,
 				384B22AA2443A93B0069402E /* DatosPersonalesViewModels.swift in Sources */,
 				97051348244020F90015DCD2 /* BarraNavegacionPersonalizada.swift in Sources */,
+				E8D3CD2625251381004172E6 /* NewLegalPresentador.swift in Sources */,
 				A4DFD2DD244613EA00A8F938 /* PasaporteDesvincularDNITableViewCell.swift in Sources */,
 				9705137924418AE60015DCD2 /* PasaporteResultadoTiempoTableViewCell.swift in Sources */,
 				661C0A94244143B6001957CA /* UITableViewCellRegistrable.swift in Sources */,
@@ -1660,6 +1697,8 @@
 				FB01E299244783F600692E3C /* Array.swift in Sources */,
 				C54B042F243FE75500F31008 /* BarraProgreso.swift in Sources */,
 				66FA4584244E09F0002917AD /* AppConfiguracionFachada.swift in Sources */,
+				E8D3CD2825251381004172E6 /* NewLegalModels.swift in Sources */,
+				E8D3CD2525251381004172E6 /* NewLegalViewController.swift in Sources */,
 				657F4EF42441E47D00BDA1B9 /* CampoDeTextoSencilloView.swift in Sources */,
 				E84838DA24BF5F02000314BB /* ConsejosViewController.swift in Sources */,
 				07671A73247490100052F261 /* CertificadoEstadoTableViewCell.swift in Sources */,
@@ -1706,6 +1745,7 @@
 				E8E44DB724ACB99300E26044 /* InformacionPBAPresentador.swift in Sources */,
 				384B22A72443A2F10069402E /* ExtensionTextField.swift in Sources */,
 				FF2DF45124464DA200F0FF0F /* ExtensionString.swift in Sources */,
+				E8D3CD372525160E004172E6 /* String.swift in Sources */,
 				66E4164C243D08E900EE4052 /* CoordinadorDeVistas.swift in Sources */,
 				661C0AA424415625001957CA /* RegistrarUsuario.swift in Sources */,
 				979E79D52449467300B05779 /* FormateadorTiempoRestante.swift in Sources */,
@@ -1746,6 +1786,7 @@
 				3810B38E2450DDD1005547E8 /* TablaOpcionesVista.swift in Sources */,
 				66A6E40C2440FF1C00974666 /* RoundedCornerView.swift in Sources */,
 				66E41623243C094500EE4052 /* SceneDelegate.swift in Sources */,
+				E8D3CD30252514D1004172E6 /* MultipleCertificateTableViewCell.swift in Sources */,
 				382A3F9C24473CB400F6011B /* ImageViewModelo.swift in Sources */,
 				97DAD03D2442BA5800681716 /* ExtensionUIFont.swift in Sources */,
 				657F4EED2440CB9D00BDA1B9 /* FormularioValidador.swift in Sources */,
@@ -1949,7 +1990,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.5.4;
+				MARKETING_VERSION = 3.5.6;
 				OTHER_SWIFT_FLAGS = "-DNEWRELIC";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.gob.coronavirus;
 				PRODUCT_NAME = "$(TARGET_NAME)-Dev";
@@ -1982,7 +2023,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.5.4;
+				MARKETING_VERSION = 3.5.6;
 				OTHER_SWIFT_FLAGS = "-DNEWRELIC";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.gob.coronavirus;
 				PRODUCT_NAME = "$(TARGET_NAME)-Dev";
@@ -2118,7 +2159,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.5.4;
+				MARKETING_VERSION = 3.5.6;
 				OTHER_SWIFT_FLAGS = "-DNEWRELIC";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.gob.coronavirus;
 				PRODUCT_NAME = "$(TARGET_NAME)-Qa";
@@ -2233,7 +2274,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.5.4;
+				MARKETING_VERSION = 3.5.6;
 				OTHER_SWIFT_FLAGS = "-DNEWRELIC";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.gob.coronavirus;
 				PRODUCT_NAME = "$(TARGET_NAME)-Stg";
@@ -2348,7 +2389,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.5.4;
+				MARKETING_VERSION = 3.5.6;
 				OTHER_SWIFT_FLAGS = "-DNEWRELIC";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.gob.coronavirus;
 				PRODUCT_NAME = "$(TARGET_NAME)-AR";
@@ -2463,7 +2504,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.5.4;
+				MARKETING_VERSION = 3.5.6;
 				OTHER_SWIFT_FLAGS = "-DNEWRELIC";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.gob.coronavirus;
 				PRODUCT_NAME = "$(TARGET_NAME)-Local";
@@ -2572,7 +2613,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.5.4;
+				MARKETING_VERSION = 3.5.6;
 				OTHER_SWIFT_FLAGS = "-DNEWRELIC";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.gob.coronavirus;
 				PRODUCT_NAME = "$(TARGET_NAME)-Qa";
@@ -2680,7 +2721,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.5.4;
+				MARKETING_VERSION = 3.5.6;
 				OTHER_SWIFT_FLAGS = "-DNEWRELIC";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.gob.coronavirus;
 				PRODUCT_NAME = "$(TARGET_NAME)-Stg";
@@ -2788,7 +2829,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.5.4;
+				MARKETING_VERSION = 3.5.6;
 				OTHER_SWIFT_FLAGS = "-DNEWRELIC";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.gob.coronavirus;
 				PRODUCT_NAME = "$(TARGET_NAME)-AR";
@@ -2896,7 +2937,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.5.4;
+				MARKETING_VERSION = 3.5.6;
 				OTHER_SWIFT_FLAGS = "-DNEWRELIC";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.gob.coronavirus;
 				PRODUCT_NAME = "$(TARGET_NAME)-Local";

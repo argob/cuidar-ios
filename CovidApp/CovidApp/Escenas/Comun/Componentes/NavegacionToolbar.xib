@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavegacionToolbar" customModule="CovidApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavegacionToolbar" customModule="CovidApp_AR" customModuleProvider="target">
             <connections>
                 <outlet property="imagenPrimeraEtapa" destination="Fgz-cU-Ug3" id="zbV-fD-2LQ"/>
                 <outlet property="imagenSegundaEtapa" destination="jzA-J2-FWI" id="dod-xV-5rq"/>
@@ -62,7 +63,7 @@
                                     </constraints>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="Yfn-fS-Inv" secondAttribute="trailing" id="FPA-Zq-6QS"/>
                                 <constraint firstItem="Yfn-fS-Inv" firstAttribute="leading" secondItem="3LU-Xq-07P" secondAttribute="leading" id="JiD-1y-BLD"/>
@@ -104,7 +105,7 @@
                                     </constraints>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="KKq-Id-QDi" secondAttribute="trailing" id="WXV-ip-TSd"/>
                                 <constraint firstItem="KKq-Id-QDi" firstAttribute="centerY" secondItem="cGN-e3-tZK" secondAttribute="centerY" id="cSs-dF-iyV"/>
@@ -120,7 +121,7 @@
                             </constraints>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="Fgz-cU-Ug3" firstAttribute="leading" secondItem="iOM-h8-YiF" secondAttribute="leading" id="27u-Of-sEN"/>
                         <constraint firstItem="3LU-Xq-07P" firstAttribute="top" secondItem="iOM-h8-YiF" secondAttribute="top" id="98i-Hd-U9h"/>
@@ -140,6 +141,7 @@
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="iOM-h8-YiF" secondAttribute="trailing" id="ANA-yP-Kz0"/>
@@ -150,7 +152,6 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="139" y="145"/>
         </view>
     </objects>
@@ -160,5 +161,8 @@
         <image name="location_deactive" width="55.5" height="55.5"/>
         <image name="phone_active" width="54" height="55.5"/>
         <image name="phone_deactive" width="48" height="49"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

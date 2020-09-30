@@ -177,11 +177,17 @@ private extension URLSessionHTTPCliente {
             return respuestaFactoria.crearRespuestaFallida(error: .errorHttp(error: requestError))
         case (error: .none, data: .some(let responseData)):
             do {
+                #if QA || STG
+                    let json = (try? JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any]) ?? [:]
+                    print("---- [DEBUG] RECEIVED ---- \(json)")
+                #endif
                 let respuestaDescodificada = try respuestaDecoder.decode(Solicitud.Respuesta.self, from: responseData)
                 return respuestaFactoria.crearRespuestaExitosa(respuesta: respuestaDescodificada)
             } catch let error {
-                let json = (try? JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any]) ?? [:]
-                print("[DEBUG] ERROR RECEIVED: \n \(error) \n [DEBUG] WHILE PARSING: \n \(json)")
+                #if QA || STG
+                    let json = (try? JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any]) ?? [:]
+                    print("---- [DEBUG] ERROR RECEIVED: ----\n \(error) \n---- [DEBUG] WHILE PARSING ---- \n \(json)")
+                #endif
                 return respuestaFactoria.crearRespuestaFallida(error: .malaDescodificacionDeLaRespuesta(error: error))
             }
         case (error: .none, data: .none):

@@ -124,28 +124,39 @@ extension AutoevaluacionFachada: AutoevaluacionFachadaProtocolo {
             let tos = sintomas.first(where: { $0.id == "S_TOS" })?.getValor(),
             let temperatura = indicadores?.temperatura,
             let viveOTrabajaConPositivo = antecedentes.first(where: {$0.id == "A_CE1"})?.getValor(),
-            let contactoEstrechoEsporadico = antecedentes.first(where: {$0.id == "A_CE2"})?.getValor()
+            let contactoEstrechoEsporadico = antecedentes.first(where: {$0.id == "A_CE2"})?.getValor(),
+            let dolorCabeza = antecedentes.first(where: {$0.id == "S_DDC"})?.getValor(),
+            let vomitos = antecedentes.first(where: {$0.id == "S_VMT"})?.getValor(),
+            let diarrea = antecedentes.first(where: {$0.id == "S_DRA"})?.getValor(),
+            let dolorMuscular = antecedentes.first(where: {$0.id == "S_DMS"})?.getValor()
             else {
                 return false
             }
         
-        // Criterio 4.
-        if perdidaDeGusto || perdidaDeOlfato {
-            return true
-        }
-
         // Adaptación de criterio 1 y 2 (dos síntomas).
         let dr = (dificultadRespiratoria) ? 1 : 0
+        let dra = (diarrea) ? 1 : 0
+        let vmt = (vomitos) ? 1 : 0
+        let ddc = (dolorCabeza) ? 1 : 0
         let dg = (dolorGarganta)  ? 1 : 0
         let to = (tos)  ? 1 : 0
+        let pg = (perdidaDeGusto)  ? 1 : 0
+        let po = (perdidaDeOlfato)  ? 1 : 0
+        let dm = (dolorMuscular)  ? 1 : 0
         let tp = (temperatura >= 37.5)  ? 1 : 0
-        let cantSintomas = to + dg + tp + dr
-        let critUnoODos = cantSintomas >= 2
+        
+        let vomitosODiarrea = dra + vmt > 1 ? 1 : 0
+        
+        
+        // Criterio 1 (2 o más síntomas).
+        let cantSintomas = to + dg + tp + dr + ddc + vomitosODiarrea + pg + po + dm
+        let critUno = cantSintomas >= 2
 
-        // Criterio 3 (contacto estrecho + 1 síntoma).
-        let critTres = (cantSintomas >= 1) && (viveOTrabajaConPositivo || contactoEstrechoEsporadico)
+        // Criterio 2 (contacto estrecho + 1 síntoma).
+        let cantSintomasCritDos = to + dg + tp + dr
+        let critDos = (cantSintomasCritDos >= 1) && (viveOTrabajaConPositivo || contactoEstrechoEsporadico)
 
-        return critUnoODos || critTres
+        return critUno || critDos
     }
     
     func agregarAutoevaluacion(indicadores: AutoevaluacionIndicadores) {

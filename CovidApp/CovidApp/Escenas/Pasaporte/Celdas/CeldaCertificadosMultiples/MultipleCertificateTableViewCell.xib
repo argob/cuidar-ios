@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MultipleCertificateTableViewCell" rowHeight="30" id="RdB-aM-hJj" userLabel="MultipleCertificateTableViewCell" customClass="MultipleCertificateTableViewCell" customModule="CovidApp_AR" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="359" height="141"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RdB-aM-hJj" id="FZG-gC-VbF">
+                <rect key="frame" x="0.0" y="0.0" width="359" height="141"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="71Z-VP-CHV" userLabel="Selected View">
+                        <rect key="frame" x="35" y="0.0" width="289" height="45"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7D-jq-hmo" userLabel="Divider">
+                                <rect key="frame" x="0.0" y="1" width="289" height="1"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="kbx-UE-kZg"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="OvG-ym-Vus">
+                                <rect key="frame" x="0.0" y="14.5" width="289" height="16"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seleccioná un certificado:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvp-GY-vRk" userLabel="Select Certificate Label">
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="165" id="IOL-x5-3SO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Esencial" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zcn-A2-Bkt">
+                                        <rect key="frame" x="167" y="0.0" width="122" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="H7D-jq-hmo" firstAttribute="centerX" secondItem="71Z-VP-CHV" secondAttribute="centerX" id="8eb-fS-j3m"/>
+                            <constraint firstItem="OvG-ym-Vus" firstAttribute="top" secondItem="H7D-jq-hmo" secondAttribute="bottom" constant="12.5" id="A1h-mP-scR"/>
+                            <constraint firstItem="H7D-jq-hmo" firstAttribute="top" secondItem="71Z-VP-CHV" secondAttribute="top" constant="1" id="D2X-ii-cWp"/>
+                            <constraint firstItem="OvG-ym-Vus" firstAttribute="centerY" secondItem="71Z-VP-CHV" secondAttribute="centerY" id="Eux-8c-BAj"/>
+                            <constraint firstAttribute="trailing" secondItem="OvG-ym-Vus" secondAttribute="trailing" id="K96-uH-tEH"/>
+                            <constraint firstItem="H7D-jq-hmo" firstAttribute="leading" secondItem="71Z-VP-CHV" secondAttribute="leading" id="lvJ-gj-ncg"/>
+                            <constraint firstAttribute="height" constant="45" id="s4u-6l-6dh"/>
+                            <constraint firstItem="H7D-jq-hmo" firstAttribute="leading" secondItem="OvG-ym-Vus" secondAttribute="leading" id="wne-hD-N8b"/>
+                        </constraints>
+                    </view>
+                    <pickerView clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="EBE-g4-B5w">
+                        <rect key="frame" x="0.0" y="45" width="359" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="ptU-2s-jtZ"/>
+                        </constraints>
+                    </pickerView>
+                </subviews>
+                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="EBE-g4-B5w" firstAttribute="centerX" secondItem="FZG-gC-VbF" secondAttribute="centerX" id="L4X-yg-xbq"/>
+                    <constraint firstItem="71Z-VP-CHV" firstAttribute="leading" secondItem="FZG-gC-VbF" secondAttribute="leading" constant="35" id="Lhx-76-m9W"/>
+                    <constraint firstItem="71Z-VP-CHV" firstAttribute="centerX" secondItem="FZG-gC-VbF" secondAttribute="centerX" id="MHd-4h-SUO"/>
+                    <constraint firstItem="71Z-VP-CHV" firstAttribute="top" secondItem="FZG-gC-VbF" secondAttribute="top" id="Sie-Gk-PyH"/>
+                    <constraint firstAttribute="trailing" secondItem="71Z-VP-CHV" secondAttribute="trailing" constant="35" id="Ufa-dM-NEy"/>
+                    <constraint firstAttribute="trailing" secondItem="EBE-g4-B5w" secondAttribute="trailing" id="isp-FB-1Xs"/>
+                    <constraint firstItem="EBE-g4-B5w" firstAttribute="leading" secondItem="FZG-gC-VbF" secondAttribute="leading" id="seD-mS-hMV"/>
+                    <constraint firstItem="EBE-g4-B5w" firstAttribute="top" secondItem="71Z-VP-CHV" secondAttribute="bottom" id="seL-as-Ley"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="64B-l6-FT8"/>
+            <connections>
+                <outlet property="certificateSelected" destination="Zcn-A2-Bkt" id="b90-a2-5o6"/>
+                <outlet property="pickerView" destination="EBE-g4-B5w" id="whp-5W-Phz"/>
+            </connections>
+            <point key="canvasLocation" x="53.4375" y="-77.640845070422543"/>
+        </tableViewCell>
+    </objects>
+</document>

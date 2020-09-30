@@ -101,7 +101,7 @@ extension TelefonoContactoViewController : TelefonoContactoVista{
         view.addGestureRecognizer(tap)
         
         if (modelo.telefono.isEmpty) {
-            registerPhoneMessage.text = "Por favor confirma tu número de teléfono"
+            registerPhoneMessage.text = "Por favor confirmá tu número de teléfono"
         }
         phoneTextField.text = modelo.telefono
         

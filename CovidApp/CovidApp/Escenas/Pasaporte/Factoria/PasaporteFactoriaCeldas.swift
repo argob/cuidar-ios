@@ -9,7 +9,7 @@
 import UIKit
 
 final class PasaporteFactoriaCeldas: PasaporteElementoVistador {
-    typealias DelegadoCeldas = BotonCeldaDelegado & DelegadoDevincularDNI
+    typealias DelegadoCeldas = BotonCeldaDelegado & DelegadoDevincularDNI & DelegadoCertificadosTableViewCell
     
     let tableView: UITableView
     let indexPath: IndexPath
@@ -168,4 +168,16 @@ final class PasaporteFactoriaCeldas: PasaporteElementoVistador {
         celda.configurar(viewModel: desvincularDNIViewModel)
         return celda
     }
+    
+    func visitar(multipleCertificates: MultipleCertificatesViewModel) -> UITableViewCell {
+        guard let celda = tableView.dequeueReusableCell(withIdentifier: "MultipleCertificateTableViewCell",
+                                                       for: indexPath) as? MultipleCertificateTableViewCell
+           else {
+               return .init()
+        }
+        celda.delegate = delegado
+        celda.configView(viewModel: multipleCertificates)
+        return celda
+    }
+
 }

@@ -46,7 +46,7 @@ struct ItemAutoevaluado: Codable {
 extension ItemAutoevaluable {
     private static let dolorDeGarganta = ItemAutoevaluable(
         id: "S_DDG",
-        descripcion: "dolor de garganta",
+        descripcion: "Dolor de garganta",
         descripcionDelUsuario: "¿Tenés dolor de garganta?"
     )
     private static let tos = ItemAutoevaluable(
@@ -69,7 +69,27 @@ extension ItemAutoevaluable {
         descripcion: "Pérdida de gusto",
         descripcionDelUsuario: "¿Percibiste una marcada pérdida del gusto (sabor de los alimentos) de manera repentina?"
     )
-    static let sintomas: [ItemAutoevaluable] = [.perdidaOlfato, .perdidaGusto, .dolorDeGarganta, .tos, .dificultadRespiratoria]
+    private static let dolorCabeza = ItemAutoevaluable(
+        id: "S_DDC",
+        descripcion: "Dolor de cabeza",
+        descripcionDelUsuario: "¿Tenés dolor de cabeza?"
+    )
+    private static let vomitos = ItemAutoevaluable(
+        id: "S_VMT",
+        descripcion: "Vómitos",
+        descripcionDelUsuario: "¿Tenés vómitos?"
+    )
+    private static let diarrea = ItemAutoevaluable(
+        id: "S_DRA",
+        descripcion: "Diarrea",
+        descripcionDelUsuario: "¿Tenés diarrea?"
+    )
+    private static let dolorMuscular = ItemAutoevaluable(
+        id: "S_DMS",
+        descripcion: "Dolor muscular",
+        descripcionDelUsuario: "¿Tenés dolor muscular?"
+    )
+    static let sintomas: [ItemAutoevaluable] = [.perdidaOlfato, .perdidaGusto, .dolorDeGarganta, .tos, .dificultadRespiratoria, .dolorCabeza, .vomitos, .diarrea, .dolorMuscular]
 }
 
 extension ItemAutoevaluable {

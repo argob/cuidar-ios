@@ -43,7 +43,11 @@ struct Constantes {
     static let LEGALES_TAG = 10001
     static let LEGALES_VISTA_ACEPTAR_ALTO:CGFloat = 250
     static let LEGALES_VISTA_ACEPTAR_OFFSET:CGFloat = 10
-    
+    static let haAbiertoLaAppAntesKey = "com.covidapp.haAbiertoLaAppAntesKey"
+    static let LEGAL_DELTA = "com.covidapp.TYCDelta"
+    static let LEGAL_VERSION = "com.covidapp.TYCVersion"
+    static let LEGAL_CANCEL_ALERT = "Si no acepta los Términos y Condiciones no podrá seguir usando CuidAr"
+
     // MARK: - DOMICILIO
     static let DOMICILIO_ARCHIVO_DE_PROVINCIAS = "Provincias.json"
     static let DOMICILIO_ARCHIVO_DE_CIUDADES = "Ciudades.json"
@@ -98,4 +102,7 @@ struct Constantes {
     static let INVALID_TOKEN = "invalidToken"
     static let ANOTHER_DEVICE_LOGGED = "Para continuar es necesario que vuelvas a ingresar tu DNI. Puede deberse a que hayas ingresado a Cuidar desde otro dispositivo o un control de seguridad periódico"
     
+    // MARK: - CONSEJOS
+    static let CONSEJOS_URL = Keys.STATIC_WEB + "consejos/"
+    static let CONSEJOS_CANTIDAD_DISPONIBLES = CONSEJOS_URL + "index.json"
 }

@@ -16,10 +16,10 @@ protocol CoordinadorDeVistaProtocolo: class {
     func irAPasaporteSanitario()
     func irAEscaner(delegado: EscannerDelegado)
     func irAAutenticacion()
-    func irPasaporte()
     func irAResultado(modo: ResultadoModoPresentacion)
     func irAResultadoOnboarding()
     func irAForceUpgrade()
+    func irANewLegal()
     func irA(url: URL)
     func presentarAResultado(modo: ResultadoModoPresentacion)
     func irAConfiguracionDeAPP()
@@ -30,7 +30,8 @@ protocol CoordinadorDeVistaProtocolo: class {
 
 protocol Enrutador {
     func terminosYCondicionesIniciar()
-    func terminosYCondicionesTerminado()
+    func terminosYCondicionesAceptados()
+    func nuevosTerminosYCondicionesAceptados()
     func autenticacionTerminada()
     func autoevaluacionTerminada()
     func resultadoTerminado()
@@ -81,6 +82,9 @@ extension CoordinadorDeVistas: Enrutador {
         presentador.manejarConsejos()
     }
     
+    func nuevosTerminosYCondicionesAceptados() {
+        presentador.manejarNuevosTerminosYCondicionesAceptados()
+    }
     
     func telefonoContactoConfirmado() {
         presentador.manejarTelefonoContactoConfirmado()
@@ -94,16 +98,16 @@ extension CoordinadorDeVistas: Enrutador {
         presentador.manejarInicioDeLaApp()
     }
     
-    func terminosYCondicionesTerminado() {
-        presentador.manejarAceptarTerminosYCondiciones()
-    }
-    
     func autenticacionTerminada() {
         presentador.manejarAutenticacionCompletada()
     }
     
     func terminosYCondicionesIniciar() {
         presentador.manejarAbrirTerminosYCondiciones()
+    }
+    
+    func terminosYCondicionesAceptados() {
+        presentador.manejarTerminosYCondicionesAceptado()
     }
     
     func autoevaluacionTerminada() {
@@ -183,6 +187,10 @@ extension CoordinadorDeVistas: CoordinadorDeVistaProtocolo {
     
     func irALegal() {
         irA(controlador: LegalViewController())
+    }
+    
+    func irANewLegal() {
+        irA(controlador: NewLegalViewController())
     }
     
     func irPasaporte() {

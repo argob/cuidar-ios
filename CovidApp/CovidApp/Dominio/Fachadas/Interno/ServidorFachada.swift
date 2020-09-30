@@ -81,7 +81,8 @@ extension ServidorFachada: ProvedorDeEncabezados {
     func getHeaders() -> [String : String] {
         var headers = [
             "X-App-Platform": "ios",
-            "X-App-Version": Bundle.main.appVersion
+            "X-App-Version": Bundle.main.appVersion,
+            "CovFF-MultipleCUCHs": "true"
         ]
         guard let sesion = sesionPersitencia.getSesion() else {
             return headers

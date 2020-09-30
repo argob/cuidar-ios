@@ -89,6 +89,7 @@ extension SesionPersistenciaSegura: SesionPersistencia {
     }
     
     func borrar() {
+        UserDefaults.standard.removeObject(forKey: Constantes.LEGAL_DELTA)
         accessQueue.async(flags: .barrier) {
             let query: [String: Any] = [kSecClass as String: kSecClassGenericPassword,
                                         kSecAttrAccount as String: SesionPersistenciaSegura.sesionKey]

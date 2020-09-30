@@ -31,7 +31,7 @@ private final class FormularioDatosDeContactoPresentador: MVPPresentador {
     
     let domicilioFachada: DomicilioFachadaProtolo = inyectar()
     let usuarioFachada: UsuarioFachadaProtocolo = inyectar()
-    
+    let notificacionFachada: NotificacionFachadaProtocolo = inyectar()
 
     var datos: String?
     var datosContacto: DatosDeContacto
@@ -229,6 +229,8 @@ extension FormularioDatosDeContactoPresentador: FormularioDatosDeContactoPresent
                 self?.vista?.finalizoAutenticacion()
             } else {
                 if (UserDefaults.standard.bool(forKey: Constantes.INVALID_TOKEN)) {
+                    self?.notificacionFachada.desregistrarDispositivo()
+                    self?.usuarioFachada.logout()
                     self?.vista?.alertAnotherDeviceLogged()
                 } else {
                     self?.vista?.presentarErrorEnFormulario(mensaje: "usuario inválido")

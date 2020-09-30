@@ -28,6 +28,8 @@ protocol PasaporteVista: class, VisualizadorDeCarga {
 final class PasaporteViewController: BaseViewController, MVPVista {
     @IBOutlet weak var tablaDeContenido: UITableView!
     
+    var expandCellSelectedIndex : IndexPath?
+
     private var elementos: [PasaporteElemento] = [] {
         didSet {
             tablaDeContenido.reloadData()
@@ -77,6 +79,7 @@ extension PasaporteViewController: PasaporteVista {
         CertificadoEstadoTableViewCell.registerCell(inTableView: tablaDeContenido)
         ResultadoTokenTableViewCell.registerCell(inTableView: tablaDeContenido)
         InformacionAdicionalTableViewCell.registerCell(inTableView: tablaDeContenido)
+        MultipleCertificateTableViewCell.registerCell(inTableView: tablaDeContenido)
     }
     
     func habilitarCirculacion() {
@@ -116,7 +119,7 @@ extension PasaporteViewController: PasaporteVista {
     }
     
     @objc func refresh(_ sender: AnyObject) {
-        presentador.manejarRefresh()
+        presentador.manejarRefresh(showTips: true)
     }
     func mostrarConsejos() {
         self.enrutador.consejos()
@@ -126,7 +129,8 @@ extension PasaporteViewController: PasaporteVista {
 
 extension PasaporteViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return elementos.count
+        let count: Int = elementos.count
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -146,14 +150,30 @@ extension PasaporteViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if expandCellSelectedIndex == indexPath {
+            return 150
+        }
+        
         return UITableView.automaticDimension
     }
 
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        
         return alturaCeldas[indexPath] ?? UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        if cell?.isKind(of: MultipleCertificateTableViewCell.self) ?? false {
+            self.expandCellSelectedIndex = indexPath
+        }else {
+            self.expandCellSelectedIndex = nil
+        }
+        tableView.reloadData()
+        
         elementos[indexPath.row].acceptar(visitador: self)
     }
 }
@@ -170,6 +190,15 @@ extension PasaporteViewController: DelegadoDevincularDNI {
     }
 }
 
+extension PasaporteViewController: DelegadoCertificadosTableViewCell {
+    func certificateSelected(selectedCertificate: Estado.PermisoDeCirculacion) {
+        UserDefaults.standard.set(selectedCertificate.idCertificado!, forKey: "CerificateSelected")
+        expandCellSelectedIndex = nil
+        presentador.manejarRefresh(showTips: false)
+    }
+}
+
+
 extension PasaporteViewController: PasaporteElementoVistador {
     func visitar(tokenDinamicoViewModel: PasaporteTokenDinamicoViewModel) { }
     
@@ -181,6 +210,7 @@ extension PasaporteViewController: PasaporteElementoVistador {
     func visitar(tokenSeguridadViewModel: PasaporteTokenSeguridadViewModel) { }
     func visitar(resultadoTiempoViewModel: PasaporteResultadoTiempoViewModel) { }
     func visitar(desvincularDNIViewModel: PasaporteDesvincularDNIViewModel) {}
+    func visitar(multipleCertificates: MultipleCertificatesViewModel) {}
     func visitar(estadoViewModel: PasaporteEstadoViewModel) -> () {}
     func visitar(certificadoEstadoViewModel: CertificadoEstadoViewModel) -> () {}
     func visitar(informacionAdicionalViewModel: InformacionAdicionalViewModel) -> () {

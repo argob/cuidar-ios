@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +17,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InformacionViewController" customModule="CovidApp_STG" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InformacionViewController" customModule="CovidApp_AR" customModuleProvider="target">
             <connections>
                 <outlet property="botonContinuar" destination="AmU-mr-HQF" id="3h6-mK-oay"/>
                 <outlet property="encabezadoImagen" destination="wDa-0W-ccm" id="vko-r5-URN"/>
@@ -90,7 +90,7 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="Y9E-cy-xqg"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="jcR-ud-5Wx"/>
                 </scrollView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AmU-mr-HQF">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AmU-mr-HQF">
                     <rect key="frame" x="36" y="767" width="342" height="58"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -101,6 +101,7 @@
                     <state key="normal" title="Button"/>
                 </button>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wDa-0W-ccm" secondAttribute="trailing" constant="129" id="3pj-MZ-9cc"/>
@@ -118,7 +119,6 @@
                 <constraint firstItem="l9M-Dg-qX1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="36" id="hgA-O5-QPN"/>
                 <constraint firstItem="wDa-0W-ccm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="p9Z-1N-rMh"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="138.75" y="110.91549295774648"/>
         </view>
     </objects>

@@ -56,24 +56,27 @@ private final class MockUsuarioFachada: UsuarioFachadaProtocolo {
     }
     
     func validarRegistro(dni: Int, noTramite: Int, sexo: Usuario.Sexo, finalizacion: @escaping (EstadoDelRegistro) -> Void) {
-        let mockUser = Usuario(dni: dni,
-                               sexo: sexo,
-                               fechaDeNacimiento: "01/01/1111",
-                               nombres: "Mock Name",
-                               apellidos: "Mock Apellido",
-                               estadoActual: .init(diagnostico: .noInfectado,
-                                                   vencimiento: "2020-07-03T10:05:59.5646+08:00",
-                                                   permisoDeCirculacion: Estado.PermisoDeCirculacion(qrString: "", tipoActividad: "Actividades Esenciales", patente: "AS-123-BC", sube: "1234567890123456"),
-                                                    pims: Estado.Pims(tag: "Repatriado", motivo: "Motivo ejemplo")),
-                               telefono: "1223 13288",
-                               domicilio: Domicilio(provincia: "Buenos Aires", localidad: "Boca", departamento: "", calle: "Principal", numero: "123", piso: "1", puerta: "12", codigoPostal: "1234", otros: ""))
+        
+        let mockUserMultipleCertificados = Usuario(dni: dni,
+                                      sexo: sexo,
+                                      fechaDeNacimiento: "01/01/1111",
+                                      nombres: "Mock Name",
+                                      apellidos: "Mock Apellido",
+                                      estadoActual: .init(diagnostico: .noInfectado,
+                                                           vencimiento: "2020-11-03T10:05:59.5646+08:00",
+                                                           permisoDeCirculacion: Estado.PermisoDeCirculacion(tipoActividad: "Actividades Esenciales",
+                                                           patente: "AS-123-BC", sube: "1234567890123456"),
+                                                           permisosDeCirculacion: [Estado.PermisoDeCirculacion( vencimiento: "2020-11-23T19:05:03.524-03:00", tipoActividad: "ESENCIAL",motivoCirculacion: "Turismo 1",idCertificado: 618954904, patente: "AAA111", sube: "111333322222333"),Estado.PermisoDeCirculacion( vencimiento: "2020-11-23T19:05:03.524-03:00", tipoActividad: "MEDICO",motivoCirculacion: "Turismo",idCertificado: 618954902, patente: "AAA222", sube: "222444411111222"),Estado.PermisoDeCirculacion( vencimiento: "2020-11-23T19:05:03.524-03:00", tipoActividad: "ESENCIAL -TRANSPORTE SI",motivoCirculacion: "Medicina",idCertificado: 618954905, patente: "AAA111", sube: "111333322222333"),Estado.PermisoDeCirculacion( vencimiento: "2020-11-23T19:05:03.524-03:00", tipoActividad: "MEDICO - SIN TRANSPORTE",motivoCirculacion: "Autoridades superiores de los gobiernos nacional, provinciales, municipales y de la Ciudad Autónoma de Buenos Aires Trabajadores y trabajadoras del sector público nacional, provincial, municipal y de la Ciudad Autónoma de Buenos Aires, convocados para garantizar actividades esenciales requeridas por las respectivas autoridades",idCertificado: 618954906, patente: "AAA222", sube: "222444411111222",qrURL: "http://www.google.com")],
+                                                           pims: Estado.Pims(tag: "Repatriado", motivo: "Motivo ejemplo")),
+                                      telefono: "1223 13288",
+                                      domicilio: Domicilio(provincia: "Buenos Aires", localidad: "Boca", departamento: "", calle: "Principal", numero: "123", piso: "1", puerta: "12", codigoPostal: "1234", otros: ""))
         self.ultimaSession = Sesion(dni: dni,
                                     sexo: .mujer,
                                     authToken: "570b7dc924f50783d7c93308898122f8f4c57b462d4a61f18d8157a7f06bc8f4",
                                     hash: "3123123jk12h31kj2",
                                     authRefreshToken: "570b7dc924f50783d7c93308898122f8f4c57b462d4a61f18d8157a7f0612313",
-                                    informacionDeUsuario: .init(usuario: mockUser))
-        finalizacion(.habilitadoParaSerRegistrado(usuario: mockUser))
+                                    informacionDeUsuario: .init(usuario: mockUserMultipleCertificados))
+        finalizacion(.habilitadoParaSerRegistrado(usuario: mockUserMultipleCertificados))
     }
 }
 

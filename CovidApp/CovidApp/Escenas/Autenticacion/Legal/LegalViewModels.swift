@@ -11,5 +11,5 @@ import Foundation
 struct LegalViewModel {
     var titulo: LabelViewModel    
     var botonAceptar: BotonViewModel
-    var terminosUrl: URL?    
+    var terminosUrl: URL?
 }

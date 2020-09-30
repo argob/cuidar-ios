@@ -14,6 +14,7 @@ protocol LegalVista: class {
     func configurarVista(viewModel: LegalViewModel)
     func aceptarTerminosYCondiciones()
     func removerContenido()
+    func addTransitionFromLeft()
 }
 
 final class LegalViewController: BaseViewController, MVPVista {
@@ -26,12 +27,27 @@ final class LegalViewController: BaseViewController, MVPVista {
 }
 
 extension LegalViewController: LegalVista {
+    func addTransitionFromLeft() {
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromLeft
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.default)
+        self.view.window?.layer.add(transition, forKey: kCATransition)
+    }
+    
     func configurarVista(viewModel: LegalViewModel) {
         titulo.configurar(modelo: viewModel.titulo)
         botonAceptar.configurar(modelo: viewModel.botonAceptar)
         botonAceptar.layer.cornerRadius = 29
-        if let url = viewModel.terminosUrl {            
-            terminos.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
+        
+        if let url = viewModel.terminosUrl {
+//            Terminos Static Web
+//            Keys.STATIC_WEB + tyc/ultima.html
+            terminos.load(URLRequest(url:url))
+            
+//            Terminos HardCode
+//            terminos.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
         }
         botonAceptar.addTarget(self, action: #selector(botonAceptarSeleccionado), for: .touchUpInside)
     }
@@ -40,16 +56,17 @@ extension LegalViewController: LegalVista {
         self.barraNavegacionPersonalizada.delegado = self
         self.barraNavegacionPersonalizada.configurarBarraNavegacion(viewModel: viewModel)
         self.barraNavegacionPersonalizada.modoVisible = true
+        self.barraNavegacionPersonalizada.mostrarBotonIzquierdo(mostrar: false)
     }
     
     func aceptarTerminosYCondiciones() {
-        enrutador.terminosYCondicionesTerminado()
+        enrutador.terminosYCondicionesAceptados()
     }
     
     @objc func botonAceptarSeleccionado(_ sender: UIButton) {
-        presentador.manejarBotonAtras()
+        aceptarTerminosYCondiciones()
     }
-    
+        
     func removerContenido() {
         self.navigationController?.popViewController(animated: true)
     }

@@ -1,8 +1,15 @@
 Cuidar iOS
 
-Versión 3.5.4 -- WIP
-* Se ajusta el criterio de caso a la definición del 1/08/2020.
+Versión 3.5.6 -- WIP
+* Se incorpora mecanismo para notificar más claramente cambios en los TyC si los hubiera.
+* Se elimina la dependencia de Carthage (gracias a PRs contribuidos, ver CONTRIBUTORS.md).
+* Agradecemos al usuario @marcosgriselli por sus comentarios y PRs. Más información en CONTRIBUTORS.md.
+
+Versión 3.5.4 -- 25/09/2020
+* Permite mostrar múltiples certificados.
+* Incorpora nuevo criterio de caso.
 * Se mejora el procesamiento de actualizaciones cuando llegan notificaciones.
+* Agradecemos al usuario @fgiuliani por sus comentarios y PR. Más información en CONTRIBUTORS.md.
 
 Versión 3.5.2 -- 5/08/2020
 * Se agregan "splash screens" con consejos mientras se carga estado del server.

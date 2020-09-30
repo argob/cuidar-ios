@@ -148,6 +148,7 @@ extension NotificacionFachada: UNUserNotificationCenterDelegate {
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        NotificationCenter.default.post(name: Notification.Name.init(rawValue: "pushNotification"), object: nil)
         completionHandler([.alert, .badge, .sound])
     }
     

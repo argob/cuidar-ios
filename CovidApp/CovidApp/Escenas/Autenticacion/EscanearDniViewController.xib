@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -20,7 +21,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EscanearDniViewController" customModule="CovidApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EscanearDniViewController" customModule="CovidApp_AR" customModuleProvider="target">
             <connections>
                 <outlet property="botonEscanear" destination="882-6e-Ho2" id="fM2-g9-pYv"/>
                 <outlet property="botonEscanearManual" destination="nQY-b7-OD0" id="ci6-5S-Dc0"/>
@@ -86,7 +87,7 @@ Z2VuZXMgc2VhbiBuw610aWRhcy4
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstItem="aVB-16-wH6" firstAttribute="centerX" secondItem="aIG-SW-0ag" secondAttribute="centerX" id="6Jl-wd-ivg"/>
                                                 <constraint firstAttribute="trailing" secondItem="i7D-Zo-Vu3" secondAttribute="trailing" constant="10" id="KyG-UR-Opw"/>
@@ -106,7 +107,7 @@ Z2VuZXMgc2VhbiBuw610aWRhcy4
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bqr-zz-mTz">
                                             <rect key="frame" x="0.0" y="429.5" width="375" height="140"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="882-6e-Ho2" customClass="BotonNavegacionGeneral" customModule="CovidApp" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="882-6e-Ho2" customClass="BotonNavegacionGeneral" customModule="CovidApp_AR" customModuleProvider="target">
                                                     <rect key="frame" x="20.5" y="10" width="334" height="58.5"/>
                                                     <color key="backgroundColor" name="AzulCovid"/>
                                                     <constraints>
@@ -122,7 +123,7 @@ Z2VuZXMgc2VhbiBuw610aWRhcy4
                                                         <action selector="escanearDni:" destination="-1" eventType="touchUpInside" id="Xtj-pj-BaM"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQY-b7-OD0" customClass="BotonNavegacionGeneralConBorde" customModule="CovidApp" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQY-b7-OD0" customClass="BotonNavegacionGeneralConBorde" customModule="CovidApp_AR" customModuleProvider="target">
                                                     <rect key="frame" x="20.5" y="95.5" width="334" height="58.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
@@ -139,7 +140,7 @@ Z2VuZXMgc2VhbiBuw610aWRhcy4
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstItem="nQY-b7-OD0" firstAttribute="height" secondItem="882-6e-Ho2" secondAttribute="height" id="ExP-s8-dbH"/>
                                                 <constraint firstItem="nQY-b7-OD0" firstAttribute="top" secondItem="882-6e-Ho2" secondAttribute="bottom" constant="27" id="JIc-BY-jTD"/>
@@ -155,19 +156,19 @@ Z2VuZXMgc2VhbiBuw610aWRhcy4
                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kq7-bZ-8zB">
                                             <rect key="frame" x="0.0" y="490" width="375" height="160"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYk-xi-85h" customClass="BotonNavegacionGeneral" customModule="CovidApp" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYk-xi-85h" customClass="BotonNavegacionGeneral" customModule="CovidApp_AR" customModuleProvider="target">
                                                     <rect key="frame" x="20.5" y="81.5" width="334" height="58.5"/>
                                                     <color key="backgroundColor" name="AzulCovid"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="SIGUIENTE">
-                                                        <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <color key="titleColor" systemColor="groupTableViewBackgroundColor"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="terminarEscaneo:" destination="-1" eventType="touchUpInside" id="2Bf-gq-0oc"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5b-ff-DHD" customClass="BotonNavegacionGeneralConBorde" customModule="CovidApp" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5b-ff-DHD" customClass="BotonNavegacionGeneralConBorde" customModule="CovidApp_AR" customModuleProvider="target">
                                                     <rect key="frame" x="20.5" y="10" width="334" height="58.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
@@ -180,7 +181,7 @@ Z2VuZXMgc2VhbiBuw610aWRhcy4
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="160" id="YMh-Ls-Q80"/>
                                                 <constraint firstItem="CYk-xi-85h" firstAttribute="centerX" secondItem="Kq7-bZ-8zB" secondAttribute="centerX" id="ZY1-Jq-3HM"/>
@@ -233,7 +234,7 @@ Z2VuZXMgc2VhbiBuw610aWRhcy4
                             <viewLayoutGuide key="frameLayoutGuide" id="Xzn-U1-b5G"/>
                         </scrollView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="z6u-uX-zUF" firstAttribute="centerX" secondItem="ZOK-lD-qSu" secondAttribute="centerX" id="D96-yd-D3j"/>
                         <constraint firstItem="z6u-uX-zUF" firstAttribute="top" secondItem="ZOK-lD-qSu" secondAttribute="top" id="jWd-JU-WIz"/>
@@ -241,6 +242,7 @@ Z2VuZXMgc2VhbiBuw610aWRhcy4
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="aul-AN-nty" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="aJt-P9-3tp"/>
@@ -249,15 +251,34 @@ Z2VuZXMgc2VhbiBuw610aWRhcy4
                 <constraint firstItem="ZOK-lD-qSu" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="yKW-Pk-i1N"/>
                 <constraint firstItem="ZOK-lD-qSu" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ydP-Zd-Yod"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="136.80000000000001" y="138.0809595202399"/>
         </view>
     </objects>
+    <designables>
+        <designable name="882-6e-Ho2">
+            <size key="intrinsicContentSize" width="159" height="32"/>
+        </designable>
+        <designable name="CYk-xi-85h">
+            <size key="intrinsicContentSize" width="88" height="32"/>
+        </designable>
+        <designable name="c5b-ff-DHD">
+            <size key="intrinsicContentSize" width="175" height="32"/>
+        </designable>
+        <designable name="nQY-b7-OD0">
+            <size key="intrinsicContentSize" width="241" height="32"/>
+        </designable>
+    </designables>
     <resources>
         <image name="dni-imagen" width="108" height="68"/>
         <image name="icon-error" width="92" height="92"/>
         <namedColor name="AzulCovid">
             <color red="0.21600000560283661" green="0.73299998044967651" blue="0.91399997472763062" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

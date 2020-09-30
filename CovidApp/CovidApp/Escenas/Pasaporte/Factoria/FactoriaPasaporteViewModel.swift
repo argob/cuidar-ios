@@ -18,6 +18,7 @@ struct PasaporteNoInfectado: TipoPasaporte {
     var qrString: String?
     var vigenciaCirculacion: String
     var tipoActividad: String
+    var permisosDeCirculacion: [Estado.PermisoDeCirculacion]?
     func aceptar<V>(visitador: V) -> V.Resultado where V : VisitadorTipoPasaporte {
         visitador.visitar(noInfectado: self)
     }
@@ -67,8 +68,8 @@ final class FactoriaPasaporteViewModel {
 
     let nombre: String
     let dNI: String
-    let sube: String?
-    let patente: String?
+    var sube: String?
+    var patente: String?
     let tokenDinamico: TokenDinamico?
     let provincia:String?
     private lazy var formateador = FormateadorTiempoRestante()
@@ -92,11 +93,22 @@ final class FactoriaPasaporteViewModel {
  
 extension FactoriaPasaporteViewModel: VisitadorTipoPasaporte {
     func visitar(noInfectado: PasaporteNoInfectado) -> [PasaporteElemento] {
-        if let qrString = noInfectado.qrString,
-        !(formateador.ejecutar(fecha: noInfectado.vigenciaCirculacion)?.vencido ?? true) {
+        
+        let certificatesCount: Int = noInfectado.permisosDeCirculacion?.count ?? 0
+
+        if certificatesCount > 0 && !(formateador.ejecutar(fecha: noInfectado.vigenciaCirculacion)?.vencido ?? true) {
             let vigencia = obtenerMinimaFechaVencimiento(vigenciaEstadoStringFecha: noInfectado.vigencia, vigenciaCirculacionStringFecha: noInfectado.vigenciaCirculacion)
             let tipoActividad = noInfectado.tipoActividad
-            return generarContenidoNoInfectadoConQRValido(vigencia: vigencia, qrString: qrString, tipoActividad: tipoActividad)
+            
+            if pasoLaVigencia(vigenciaEstadoStringFecha: vigencia) {
+                return generarContenidoNoInfectadoConQRInvalido(vigencia: noInfectado.vigencia)
+            }
+            
+            if certificatesCount > 1 {
+                return generarContenidoNoInfectadoConQRMultipleValido(certificates: noInfectado.permisosDeCirculacion!, vigencia: vigencia, tipoActividad: tipoActividad)
+            }else{
+                return generarContenidoNoInfectadoConQRValido(vigencia: vigencia, qrString: (noInfectado.permisosDeCirculacion?[0].qrURL)!, tipoActividad: tipoActividad)
+            }
         } else {
             return generarContenidoNoInfectadoConQRInvalido(vigencia: noInfectado.vigencia)
         }
@@ -131,6 +143,18 @@ extension FactoriaPasaporteViewModel: VisitadorTipoPasaporte {
         }
         return vigenciaCirculacionStringFecha
     }
+    
+    private func pasoLaVigencia(vigenciaEstadoStringFecha: String) -> Bool {
+        guard
+            let vigenciaEstado = formateador.obtenerfechaDesdeString(fechaString: vigenciaEstadoStringFecha)
+        else {
+            return false
+        }
+        if vigenciaEstado < Date() {
+            return true
+        }
+        return false
+    }
 }
 
 private extension FactoriaPasaporteViewModel {
@@ -139,12 +163,48 @@ private extension FactoriaPasaporteViewModel {
         return [
             crearEstado("Podés salir a trabajar", fontSize: 30, fondo: .verde, imagen: "estado-circular"),
             crearInformacionGeneral(descripcion: "Recordá siempre las medidas sanitarias."),
-            
             crearResultadoToken(resultado: "Certificado único \nde circulación", estado: "Habilitado", periodo: tipoActividad, color: .verde, informacion: "MÁS INFORMACIÓN", informacionColor: .azulCyan, token: tokenDinamico, qrString: qrString),
             
             crearResultadoToken(resultado: "Autodiagnóstico", estado: "Sin síntomas", periodo: "Vence \(tiempoFormateado)", color: .verde, informacion: "MÁS INFORMACIÓN", informacionColor: .azulCyan, token: tokenDinamico, qrString: nil),
 
-            BotonCeldaViewModel(titulo: .crearBotonBlanco(titulo: "HACER OTRO AUTODIAGNOSTICO"), identificador: .autodiagnostico)
+            BotonCeldaViewModel(titulo: .crearBotonBlanco(titulo: "HACER OTRO AUTODIAGNÓSTICO"), identificador: .autodiagnostico)
+        ]
+    }
+    
+    func generarContenidoNoInfectadoConQRMultipleValido(certificates: [Estado.PermisoDeCirculacion], vigencia: String, tipoActividad: String) -> [PasaporteElemento] {
+        let tiempoFormateado = formatearFechaVigencia(vigencia)
+        
+        let certificateSelected = UserDefaults.standard.value(forKey: "CerificateSelected") as? Int
+        
+        if certificateSelected != nil {
+            for certificate in certificates {
+                if certificate.idCertificado == certificateSelected {
+                    patente = certificate.patente
+                    sube = certificate.sube
+                    
+                    return [
+                        crearEstado("Podés salir a trabajar", fontSize: 30, fondo: .verde, imagen: "estado-circular"),
+                        crearInformacionGeneral(descripcion: "Recordá siempre las medidas sanitarias."),
+                        crearCertificadoMultiple(certificates: certificates, selectedCertificate: certificate.idCertificado!),
+                        crearResultadoToken(resultado: "Certificado único \nde circulación", estado: "Habilitado", periodo: certificate.tipoActividad!, color: .verde, informacion: "MÁS INFORMACIÓN", informacionColor: .azulCyan, token: tokenDinamico, qrString: certificate.qrURL),
+                        
+                        crearResultadoToken(resultado: "Autodiagnóstico", estado: "Sin síntomas", periodo: "Vence \(tiempoFormateado)", color: .verde, informacion: "MÁS INFORMACIÓN", informacionColor: .azulCyan, token: tokenDinamico, qrString: nil),
+
+                        BotonCeldaViewModel(titulo: .crearBotonBlanco(titulo: "HACER OTRO AUTODIAGNÓSTICO"), identificador: .autodiagnostico)
+                    ]
+                }
+            }
+        }
+        
+        return [
+            crearEstado("Podés salir a trabajar", fontSize: 30, fondo: .verde, imagen: "estado-circular"),
+            crearInformacionGeneral(descripcion: "Recordá siempre las medidas sanitarias."),
+            crearCertificadoMultiple(certificates: certificates,selectedCertificate: certificates[0].idCertificado!),
+            crearResultadoToken(resultado: "Certificado único \nde circulación", estado: "Habilitado", periodo: tipoActividad, color: .verde, informacion: "MÁS INFORMACIÓN", informacionColor: .azulCyan, token: tokenDinamico, qrString: certificates[0].qrURL),
+            
+            crearResultadoToken(resultado: "Autodiagnóstico", estado: "Sin síntomas", periodo: "Vence \(tiempoFormateado)", color: .verde, informacion: "MÁS INFORMACIÓN", informacionColor: .azulCyan, token: tokenDinamico, qrString: nil),
+
+            BotonCeldaViewModel(titulo: .crearBotonBlanco(titulo: "HACER OTRO AUTODIAGNÓSTICO"), identificador: .autodiagnostico)
         ]
     }
     
@@ -156,7 +216,7 @@ private extension FactoriaPasaporteViewModel {
                             
             crearResultadoToken(resultado: "Autodiagnóstico", estado: "Sin síntomas", periodo: "Vence \(tiempoFormateado)", color: .azul, informacion: "MÁS INFORMACIÓN", informacionColor: .azulCyan, token: tokenDinamico, qrString: nil),
             
-            BotonCeldaViewModel(titulo: .crearBotonBlanco(titulo: "HACER OTRO AUTODIAGNOSTICO"), identificador: .autodiagnostico),
+            BotonCeldaViewModel(titulo: .crearBotonBlanco(titulo: "HACER OTRO AUTODIAGNÓSTICO"), identificador: .autodiagnostico),
             crearCertificadoEstado(estado: "No disponible", color: .azul),
             BotonCeldaViewModel(titulo: .crearBotonAzul(titulo: "AGREGAR"), identificador: .habilitarCirculacion)
         ]
@@ -202,7 +262,7 @@ private extension FactoriaPasaporteViewModel {
                                                           estatus: "QUEDATE EN CASA",
                                                           descripcion: "Recordá que solo podés salir de tu casa para realizar compras en comercios de cercanía. Para realizar actividades exceptuadas de la cuarentena requerís un certificado.".uppercased(),
                                                           colores: (color1: .azulPrimario, color2: .azulSecundario)),
-                BotonCeldaViewModel(titulo: .crearBotonBlanco(titulo: "HABILITAR LA CIRCULACION"),
+                BotonCeldaViewModel(titulo: .crearBotonBlanco(titulo: "HABILITAR LA CIRCULACIÓN"),
                                     identificador: .habilitarCirculacion),
                 crearTokenDinamivoViewModel(tokenDinamico: tokenDinamico)
         ]
@@ -236,11 +296,15 @@ private extension FactoriaPasaporteViewModel {
         )
     }
     
+    func crearCertificadoMultiple( certificates: [Estado.PermisoDeCirculacion], selectedCertificate: Int) -> MultipleCertificatesViewModel {
+        return MultipleCertificatesViewModel(certificates: certificates,selectedCertificate: selectedCertificate)
+    }
+    
     func crearResultadoToken(resultado: String, estado: String, periodo: String, color: UIColor, informacion: String, informacionColor: UIColor, token: TokenDinamico?, qrString: String?, esPim: Bool = false) -> ResultadoTokenViewModel {
-        let qrImagen = qrString != nil ? crearQR(enunciadoBase64: qrString) : nil
+        let qrImagen = qrString != nil ? generateQRCode(from: qrString!): nil
         return ResultadoTokenViewModel(
             resultado: LabelViewModel(texto: resultado, apariencia: LabelAppearance(fuente: .robotoBold(tamaño: 15), numberLines: 2, colorTexto: .negroSecundario)),
-            estado: LabelViewModel(texto: estado, apariencia: LabelAppearance(fuente: .robotoBold(tamaño: 22), numberLines: 1, colorTexto: color)),
+            estado: LabelViewModel(texto: estado, apariencia: LabelAppearance(fuente: .robotoBold(tamaño:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         22), numberLines: 1, colorTexto: color)),
             periodo: LabelViewModel(texto: periodo, apariencia: LabelAppearance(fuente: .robotoBold(tamaño: qrString == nil ? 12 : 16), colorTexto: qrString == nil ? .negroSecundario : .azulCyan)),
             informacion: LabelViewModel(texto: informacion, apariencia: LabelAppearance(fuente: .robotoMedium(tamaño: 14), colorTexto: informacionColor)),
             QRImage: qrImagen,
@@ -314,6 +378,17 @@ private extension FactoriaPasaporteViewModel {
         }
       
         return UIImage(data: imageData)
+    }
+    
+    func generateQRCode(from string: String) -> UIImage? {
+        let data = string.data(using: String.Encoding.ascii)
+        guard let qrFilter = CIFilter(name: "CIQRCodeGenerator") else { return nil }
+        qrFilter.setValue(data, forKey: "inputMessage")
+        guard let qrImage = qrFilter.outputImage else { return nil}
+        let transform = CGAffineTransform(scaleX: 5, y: 5)
+        let scaledQrImage = qrImage.transformed(by: transform)
+        
+        return UIImage(ciImage: scaledQrImage)
     }
     
     func formatearFechaVigencia(_ fecha: String) -> String {

@@ -11,7 +11,8 @@ import Foundation
 protocol CoordinadorPresentadorProtocolo {
     func manejarInicioDeLaApp()
     func manejarAbrirTerminosYCondiciones()
-    func manejarAceptarTerminosYCondiciones()
+    func manejarTerminosYCondicionesAceptado()
+    func manejarNuevosTerminosYCondicionesAceptados()
     func manejarAutenticacionCompletada()
     func manejarAutoevaluacionCompletada()
     func manejarResultadoTerminado()
@@ -29,7 +30,7 @@ protocol CoordinadorPresentadorProtocolo {
 
 final class CoordinadorPresentador: MVPPresentador {
     private static let haAbiertoLaAppAntesKey = "com.covidapp.haAbiertoLaAppAntesKey"
-    
+
     weak var vista: CoordinadorDeVistaProtocolo?
     private let usuarioFachada: UsuarioFachadaProtocolo
     private let appConfiguracionFachada: AppConfiguracionFachadaProtocolo
@@ -46,6 +47,12 @@ final class CoordinadorPresentador: MVPPresentador {
 }
 
 extension CoordinadorPresentador: CoordinadorPresentadorProtocolo {
+    func manejarNuevosTerminosYCondicionesAceptados() {
+        actualizarTerminosYCondiciones {
+            self.continuarInicioDelaApp()
+        }
+    }
+    
     func manejarConsejos() {
         vista?.irAConsejos()
     }
@@ -69,21 +76,23 @@ extension CoordinadorPresentador: CoordinadorPresentadorProtocolo {
     }
     
     func continuarInicioDelaApp() {
+        
         verificarPrimerAperturaDeLaApp()
         guard let sesion = usuarioFachada.obtenerUltimaSession() else {
             self.vista?.irAAutenticacion()
             return
         }
-        
-        let informacionDeUsuario = sesion.informacionDeUsuario
+        verificarTerminosYCondiciones {
+            let informacionDeUsuario = sesion.informacionDeUsuario
 
-        if !(informacionDeUsuario?.terminoRegistro ?? false) {
-            self.usuarioFachada.logout()
-            self.vista?.irAAutenticacion()
-        } else if informacionDeUsuario?.ultimoEstado.diagnostico != .debeAutodiagnosticarse {
-            self.vista?.irAPasaporteSanitario()
-        } else {
-           self.vista?.irAAutoevaluacion()
+            if !(informacionDeUsuario?.terminoRegistro ?? false) {
+                self.usuarioFachada.logout()
+                self.vista?.irAAutenticacion()
+            } else if informacionDeUsuario?.ultimoEstado.diagnostico != .debeAutodiagnosticarse {
+                self.vista?.irAPasaporteSanitario()
+            } else {
+                self.vista?.irAAutoevaluacion()
+            }
         }
     }
     
@@ -91,8 +100,8 @@ extension CoordinadorPresentador: CoordinadorPresentadorProtocolo {
         vista?.irALegal()
     }
     
-    func manejarAceptarTerminosYCondiciones() {
-        vista?.irAAutenticacion()
+    func manejarTerminosYCondicionesAceptado() {
+        continuarInicioDelaApp()
     }
     
     func manejarAutenticacionCompletada() {
@@ -124,7 +133,7 @@ extension CoordinadorPresentador: CoordinadorPresentadorProtocolo {
     }
     
     func manejarResultadoTerminado() {
-        vista?.irPasaporte()
+        vista?.irAPasaporteSanitario()
     }
     
     func manejarNuevoAutodiagnostico() {
@@ -163,7 +172,7 @@ extension CoordinadorPresentador: CoordinadorPresentadorProtocolo {
     }
     
     func manejarVolverAPasaporte() {
-        vista?.irPasaporte()
+        vista?.irAPasaporteSanitario()
     }
     func manejarAppUpgrade() {
         guard let url = URL(string: "https://apps.apple.com/ar/app/covid-19-ministerio-de-salud/id1503956284")
@@ -191,5 +200,26 @@ private extension CoordinadorPresentador {
         }
         userDefaults.set(true, forKey: type(of: self).haAbiertoLaAppAntesKey)
         usuarioFachada.logout()
+    }
+    
+    func verificarTerminosYCondiciones(continuar: @escaping () -> Void) {
+        appConfiguracionFachada.validarSiLaAppNecesitaTerminosYCondiciones { [weak self] (necesitaAceptar) in
+
+            if necesitaAceptar {
+                self?.vista?.irANewLegal()
+            } else {
+                continuar()
+                return
+            }
+        }
+    }
+    
+    func actualizarTerminosYCondiciones(continuar: @escaping () -> Void) {
+        appConfiguracionFachada.actualizarTerminosYCondiciones { (aceptados) in
+
+            continuar()
+            return
+        
+        }
     }
 }

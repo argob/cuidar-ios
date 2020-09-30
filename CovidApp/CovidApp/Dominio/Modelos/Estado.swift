@@ -13,6 +13,7 @@ struct Estado: Codable {
         case diagnostico = "nombre-estado"
         case vencimiento = "fecha-hora-vencimiento"
         case permisoDeCirculacion = "permiso-circulacion"
+        case permisosDeCirculacion = "permisos-circulacion"
         case datosCoep = "datos-coep"
         case pims
     }
@@ -29,17 +30,21 @@ struct Estado: Codable {
     }
     struct PermisoDeCirculacion: Codable {
         private enum CodingKeys: String, CodingKey {
-            case qrString = "permiso-qr"
             case vencimiento = "fecha-vencimiento-permiso"
             case tipoActividad = "tipo-actividad"
+            case motivoCirculacion = "motivo-circulacion"
+            case idCertificado = "id-certificado"
             case patente = "patente"
             case sube = "sube"
+            case qrURL = "url-qr"
         }
-        var qrString: String? // Imagen del QR en base 64.
         var vencimiento: String? // Fecha de vencimiento, en formato YYYY-MM-DDTHH:mm:ss
         var tipoActividad: String?
+        var motivoCirculacion: String?
+        var idCertificado: Int?
         var patente: String?
         var sube: String?
+        var qrURL: String?
     }
     struct DatosCoep: Codable {
         private enum CodingKeys: String, CodingKey {
@@ -53,6 +58,7 @@ struct Estado: Codable {
     var diagnostico: Diagnostico
     var vencimiento: String?
     var permisoDeCirculacion: PermisoDeCirculacion?
+    var permisosDeCirculacion: [PermisoDeCirculacion]?
     var datosCoep: DatosCoep?
     var pims: Pims?
 }

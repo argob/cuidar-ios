@@ -42,14 +42,17 @@ extension LegalPresentador: LegalPresentadorProtocolo {
     func manejarBotonAtras() {
         vista?.removerContenido()
     }
+    
+    func escenaDesaparecera() {
+        vista?.addTransitionFromLeft()
+    }
 }
 
 private extension LegalPresentador {
-    func formatearInformacion() -> LegalViewModel {
+    func formatearInformacion() -> LegalViewModel {        
         return .init(titulo: crearTitulo(),
                      botonAceptar: .crearBotonAzul(titulo: "ENTENDIDO", estaHabilitado: true),
                      terminosUrl: crearTerminos())
-
     }
     
     func crearTitulo() -> LabelViewModel {
@@ -59,6 +62,9 @@ private extension LegalPresentador {
     }
     
     func crearTerminos() -> URL? {
-        return Bundle.main.url(forResource: Constantes.TERMINOS_Y_CONDICIONES_FILE_NAME, withExtension: Constantes.FILE_TYPE)
+//      Terminos Static Web
+        return URL(string: Keys.STATIC_WEB + "tyc/ultima.html")!
+//        Terminos HardCode
+//        return Bundle.main.url(forResource: Constantes.TERMINOS_Y_CONDICIONES_FILE_NAME, withExtension: Constantes.FILE_TYPE)
     }
 }

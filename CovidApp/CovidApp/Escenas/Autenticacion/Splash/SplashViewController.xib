@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -59,6 +59,7 @@
                     <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </activityIndicatorView>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="Ufg-6B-Ent"/>
             <color key="backgroundColor" name="AzulInformacion"/>
             <constraints>
                 <constraint firstItem="zxd-EC-YDQ" firstAttribute="bottom" secondItem="Ufg-6B-Ent" secondAttribute="centerY" id="6hC-At-jee"/>
@@ -87,7 +88,6 @@
                 <constraint firstAttribute="bottom" secondItem="oCP-vg-qyl" secondAttribute="bottom" id="vw2-Y2-tLj"/>
                 <constraint firstItem="Mh9-yS-HQv" firstAttribute="height" secondItem="ABJ-PG-CaO" secondAttribute="height" multiplier="207:896" id="xBT-eH-tx3"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="Ufg-6B-Ent"/>
             <point key="canvasLocation" x="138" y="145"/>
         </view>
     </objects>

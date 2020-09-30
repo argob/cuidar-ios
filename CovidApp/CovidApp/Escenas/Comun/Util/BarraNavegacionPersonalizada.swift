@@ -13,6 +13,10 @@ struct BarraNavegacionPersonalizadaViewModel {
         vistaEncabezadoFondo: UIImage(named: "navegacion-encabezado"),
         botonIzquierdoFondo: UIImage(named: "navegacion-menu"),
         botonIzquierdoHabilitado: true)
+    static var soloFlecha = BarraNavegacionPersonalizadaViewModel(
+           vistaEncabezadoFondo: nil,
+           botonIzquierdoFondo: UIImage(named: "navegacion-flecha"),
+           botonIzquierdoHabilitado: true)
     static var completa = BarraNavegacionPersonalizadaViewModel(
            vistaEncabezadoFondo: UIImage(named: "navegacion-encabezado"),
            botonIzquierdoFondo: UIImage(named: "navegacion-flecha"),

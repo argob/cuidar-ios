@@ -59,6 +59,7 @@ extension FormularioDatosDeContactoViewController: FormularioDatosDeContactoVist
         let ok = UIAlertAction(title: "Aceptar", style: .default) { (action) in
             
             self.dismiss(animated: true, completion: nil)
+            
             self.autenticacionNavegacionDelegado?.logOut()
             
         }

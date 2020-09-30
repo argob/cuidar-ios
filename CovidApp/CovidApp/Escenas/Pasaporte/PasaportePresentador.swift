@@ -15,7 +15,7 @@ protocol PasaportePresentadorProtocol {
     func manejarAbrirURL(_ url: String)
     func manejarEdiciondeDatos()
     func manejarOpcionPBA()
-    func manejarRefresh()
+    func manejarRefresh(showTips: Bool)
 }
 
 extension MVPVista where Self: PasaporteVista {
@@ -51,14 +51,14 @@ extension PasaportePresentador: PasaportePresentadorProtocol {
             vista?.presentarInformacionPBA()
         }
     }
-    func manejarRefresh() {
-        refrescarInformacionDelUsuario()
+    func manejarRefresh(showTips: Bool) {
+        refrescarInformacionDelUsuario(showTips: showTips)
     }
     
     func escenaCargo() {
         vista?.configurarTablaContenido()
         cargarInformacionDelUsuario()
-        refrescarInformacionDelUsuario()
+        refrescarInformacionDelUsuario(showTips: true)
         dependencias.notificacionFachada.registrarDispositivo()
     }
     
@@ -67,8 +67,14 @@ extension PasaportePresentador: PasaportePresentadorProtocol {
         vista?.configurarMenu(con: generarInformacionMenu())
         notificationCenter.addObserver(
             self,
-            selector: #selector(refrescarInformacionDelUsuario),
+            selector: #selector(refrescarInformacionDelUsuario(showTips:)),
             name: UIApplication.willEnterForegroundNotification,
+            object: nil
+        )
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(refrescarInformacionDelUsuario(showTips:)),
+            name: Notification.Name.init(rawValue: "pushNotification"),
             object: nil
         )
     }
@@ -76,6 +82,11 @@ extension PasaportePresentador: PasaportePresentadorProtocol {
         notificationCenter.removeObserver(
             self,
             name: UIApplication.willEnterForegroundNotification,
+            object: nil
+        )
+        notificationCenter.removeObserver(
+            self,
+            name: Notification.Name.init(rawValue: "pushNotification"),
             object: nil
         )
     }
@@ -87,7 +98,7 @@ extension PasaportePresentador: PasaportePresentadorProtocol {
     
     func manejarBotonConIdentificador(identificador: Identificador) {
         if identificador == .actualizar {
-            refrescarInformacionDelUsuario()
+            refrescarInformacionDelUsuario(showTips: true)
         } else if identificador == .autodiagnostico {
             vista?.nuevoAutodiagnostico()
         } else if identificador == .habilitarCirculacion {
@@ -163,9 +174,19 @@ extension PasaportePresentador: VisitadorEstado {
     }
     
     func visitarNoInfectado(aditionalInfo: Sesion.InformacionDeUsuario?) -> TipoPasaporte? {
+        
+        if (aditionalInfo?.ultimoEstado.permisosDeCirculacion?.count ?? 0 >= 1) {
+            return PasaporteNoInfectado(
+            vigencia: aditionalInfo?.ultimoEstado.vencimiento ?? "",
+            qrString: aditionalInfo?.ultimoEstado.permisosDeCirculacion?[0].qrURL,
+            vigenciaCirculacion: aditionalInfo?.ultimoEstado.permisosDeCirculacion?[0].vencimiento ?? "",
+            tipoActividad: aditionalInfo?.ultimoEstado.permisosDeCirculacion?[0].tipoActividad ?? "",
+            permisosDeCirculacion: aditionalInfo?.ultimoEstado.permisosDeCirculacion)
+        }
+        
         return PasaporteNoInfectado(
             vigencia: aditionalInfo?.ultimoEstado.vencimiento ?? "",
-            qrString: aditionalInfo?.ultimoEstado.permisoDeCirculacion?.qrString,
+            qrString: aditionalInfo?.ultimoEstado.permisoDeCirculacion?.qrURL,
             vigenciaCirculacion: aditionalInfo?.ultimoEstado.permisoDeCirculacion?.vencimiento ?? "",
             tipoActividad: aditionalInfo?.ultimoEstado.permisoDeCirculacion?.tipoActividad ?? "")
     }
@@ -173,7 +194,7 @@ extension PasaportePresentador: VisitadorEstado {
     func visitarNoContagioso(aditionalInfo: Sesion.InformacionDeUsuario?) -> TipoPasaporte? {
         return PasaporteNoContagioso(
             vigencia: aditionalInfo?.ultimoEstado.vencimiento ?? "",
-            qrString: aditionalInfo?.ultimoEstado.permisoDeCirculacion?.qrString,
+            qrString: aditionalInfo?.ultimoEstado.permisoDeCirculacion?.qrURL,
             vigenciaCirculacion: aditionalInfo?.ultimoEstado.permisoDeCirculacion?.vencimiento ?? "")
     }
     
@@ -198,8 +219,10 @@ private extension PasaportePresentador {
         configurarVistaConSesion(sesion: sesion)
     }
     
-    @objc func refrescarInformacionDelUsuario() {
-        self.vista?.mostrarConsejos()
+    @objc func refrescarInformacionDelUsuario(showTips: Bool) {
+        if showTips {
+            self.vista?.mostrarConsejos()
+        }
         vista?.mostrarLoader()
         dependencias.usuarioFachada.actualizarInformacionDeUsuario { [weak self] sesion in
             DispatchQueue.main.async { [weak self] in
@@ -224,16 +247,28 @@ private extension PasaportePresentador {
                 return
         }
         
-        let factoria = FactoriaPasaporteViewModel(
-            nombre: "\(informacionDeUsuario.nombres) \(informacionDeUsuario.apellidos)",
-            dNI: "\(sesion.dni)",
-            sube: "\(sesion.informacionDeUsuario?.ultimoEstado.permisoDeCirculacion?.sube ?? "")",
-            patente: "\(sesion.informacionDeUsuario?.ultimoEstado.permisoDeCirculacion?.patente ?? "")",
-            tokenDinamico: dependencias.tokenFachada.generarTokenDinamico(),
-            provincia: "\(informacionDeUsuario.domicilio?.provincia ?? "")"
-        )
-        
-        self.vista?.configurar(viewModel: factoria.crearModeloPara(tipo: tipoPasaporte))
+        if sesion.informacionDeUsuario?.ultimoEstado.permisosDeCirculacion?.count ?? 0 >= 1 {
+            let factoria = FactoriaPasaporteViewModel(
+                nombre: "\(informacionDeUsuario.nombres) \(informacionDeUsuario.apellidos)",
+                dNI: "\(sesion.dni)",
+                sube: "\(sesion.informacionDeUsuario?.ultimoEstado.permisosDeCirculacion?[0].sube ?? "")",
+                patente: "\(sesion.informacionDeUsuario?.ultimoEstado.permisosDeCirculacion?[0].patente ?? "")",
+                tokenDinamico: dependencias.tokenFachada.generarTokenDinamico(),
+                provincia: "\(informacionDeUsuario.domicilio?.provincia ?? "")"
+            )
+            self.vista?.configurar(viewModel: factoria.crearModeloPara(tipo: tipoPasaporte))
+
+        }else {
+           let factoria = FactoriaPasaporteViewModel(
+                nombre: "\(informacionDeUsuario.nombres) \(informacionDeUsuario.apellidos)",
+                dNI: "\(sesion.dni)",
+                sube: "\(sesion.informacionDeUsuario?.ultimoEstado.permisoDeCirculacion?.sube ?? "")",
+                patente: "\(sesion.informacionDeUsuario?.ultimoEstado.permisoDeCirculacion?.patente ?? "")",
+                tokenDinamico: dependencias.tokenFachada.generarTokenDinamico(),
+                provincia: "\(informacionDeUsuario.domicilio?.provincia ?? "")"
+            )
+            self.vista?.configurar(viewModel: factoria.crearModeloPara(tipo: tipoPasaporte))
+        }
     }
 }
 

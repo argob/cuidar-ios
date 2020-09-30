@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewLegalViewController" customModule="CovidApp_AR" customModuleProvider="target">
+            <connections>
+                <outlet property="botonCancelar" destination="3aW-Sg-baw" id="4Ti-Tp-8DY"/>
+                <outlet property="botonContinuar" destination="m3E-lj-kCR" id="5aF-9A-uc5"/>
+                <outlet property="deltaView" destination="NkU-Z4-Z6y" id="KMH-kL-AJL"/>
+                <outlet property="view" destination="iN0-l3-epB" id="vNB-bd-LqR"/>
+                <outlet property="vistaTerminos" destination="yAL-hF-3MN" id="Sca-nd-9ve"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="resultado-encabezado" translatesAutoresizingMaskIntoConstraints="NO" id="3uC-7h-usc">
+                    <rect key="frame" x="40" y="64" width="187.5" height="100"/>
+                    <color key="tintColor" systemColor="darkTextColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="Gn7-AJ-o6S"/>
+                        <constraint firstAttribute="width" secondItem="3uC-7h-usc" secondAttribute="height" multiplier="15:8" id="I3T-d6-Rrp"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hemos realizado cambios en los términos y condiciones" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bJ-WS-q7o">
+                    <rect key="frame" x="40" y="174" width="334" height="42"/>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
+                    <color key="textColor" red="0.21960784310000001" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NkU-Z4-Z6y" userLabel="DeltaView">
+                    <rect key="frame" x="40" y="236" width="334" height="320"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <color key="textColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3E-lj-kCR" userLabel="Continuar" customClass="BotonNavegacionGeneral" customModule="CovidApp_AR" customModuleProvider="target">
+                    <rect key="frame" x="40" y="726" width="334" height="58"/>
+                    <color key="backgroundColor" name="AzulCovid"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="58" id="F9j-Le-9wI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
+                    <state key="normal" title="CONTINUAR">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="continuarAction:" destination="-1" eventType="touchUpInside" id="zk3-ml-geV"/>
+                    </connections>
+                </button>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yAL-hF-3MN">
+                    <rect key="frame" x="20" y="576" width="374" height="130"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="130" id="308-t5-Hgc"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3aW-Sg-baw" userLabel="Cancelar" customClass="BotonNavegacionGeneralConBorde" customModule="CovidApp_AR" customModuleProvider="target">
+                    <rect key="frame" x="40" y="794" width="334" height="58"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="58" id="XiN-fg-dvS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
+                    <color key="tintColor" name="AzulCovid"/>
+                    <state key="normal" title="CANCELAR">
+                        <color key="titleColor" name="AzulCovid"/>
+                        <color key="titleShadowColor" name="AzulCovid"/>
+                    </state>
+                    <connections>
+                        <action selector="cancelarAction:" destination="-1" eventType="touchUpInside" id="tNi-OD-KlH"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="5bJ-WS-q7o" firstAttribute="top" secondItem="3uC-7h-usc" secondAttribute="bottom" constant="10" id="039-ob-Bqk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yAL-hF-3MN" secondAttribute="trailing" constant="20" id="0Ku-61-T53"/>
+                <constraint firstItem="yAL-hF-3MN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0dw-GY-tIh"/>
+                <constraint firstItem="NkU-Z4-Z6y" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7nW-eo-QAA"/>
+                <constraint firstItem="5bJ-WS-q7o" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="BUR-an-FO6"/>
+                <constraint firstItem="m3E-lj-kCR" firstAttribute="bottom" secondItem="3aW-Sg-baw" secondAttribute="top" constant="-10" id="E52-R3-2SW"/>
+                <constraint firstItem="3uC-7h-usc" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="LUU-3F-kaJ"/>
+                <constraint firstItem="NkU-Z4-Z6y" firstAttribute="top" secondItem="5bJ-WS-q7o" secondAttribute="bottom" constant="20" id="Rpr-Pg-Az1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="NkU-Z4-Z6y" secondAttribute="trailing" constant="40" id="SYT-7a-8YN"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5bJ-WS-q7o" secondAttribute="trailing" constant="40" id="bBh-4H-09r"/>
+                <constraint firstItem="m3E-lj-kCR" firstAttribute="top" secondItem="yAL-hF-3MN" secondAttribute="bottom" constant="20" id="cUs-cm-sQI"/>
+                <constraint firstItem="yAL-hF-3MN" firstAttribute="top" secondItem="NkU-Z4-Z6y" secondAttribute="bottom" constant="20" id="cWR-Yb-TJN"/>
+                <constraint firstItem="3aW-Sg-baw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="ek6-HN-C2k"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="m3E-lj-kCR" secondAttribute="trailing" constant="40" id="irQ-7z-zaK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3aW-Sg-baw" secondAttribute="trailing" constant="40" id="iuK-fC-4HW"/>
+                <constraint firstItem="yAL-hF-3MN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="m9Y-Uu-OgZ"/>
+                <constraint firstItem="5bJ-WS-q7o" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="maX-Y2-3O1"/>
+                <constraint firstItem="NkU-Z4-Z6y" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="qwi-vF-2Id"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="3aW-Sg-baw" secondAttribute="bottom" constant="10" id="qzq-17-dWY"/>
+                <constraint firstItem="3uC-7h-usc" firstAttribute="width" secondItem="3uC-7h-usc" secondAttribute="height" multiplier="15:8" id="sio-gz-VTb"/>
+                <constraint firstItem="m3E-lj-kCR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="v5V-YZ-HIT"/>
+                <constraint firstItem="3uC-7h-usc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="xph-V8-cLG"/>
+            </constraints>
+            <point key="canvasLocation" x="140.57971014492756" y="95.758928571428569"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="3aW-Sg-baw">
+            <size key="intrinsicContentSize" width="91" height="32"/>
+        </designable>
+        <designable name="m3E-lj-kCR">
+            <size key="intrinsicContentSize" width="99" height="32"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="resultado-encabezado" width="254.5" height="94.5"/>
+        <namedColor name="AzulCovid">
+            <color red="0.21600000560283661" green="0.73299998044967651" blue="0.91399997472763062" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
