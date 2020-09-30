@@ -50,7 +50,6 @@
 		510311882446376A002780C8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 510311872446376A002780C8 /* MapKit.framework */; };
 		516EAC1C243E8AF700344042 /* EscanearDniViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516EAC1B243E8AF700344042 /* EscanearDniViewController.xib */; };
 		518C07AC244CD0CB0066E243 /* UbicacionFachada.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518C07AB244CD0CB0066E243 /* UbicacionFachada.swift */; };
-		51F2B361243F86E500ED16C0 /* ZXingObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51F2B360243F86E500ED16C0 /* ZXingObjC.framework */; };
 		51F2B367243FEBAE00ED16C0 /* EscanerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F2B365243FEBAE00ED16C0 /* EscanerViewController.swift */; };
 		51F2B368243FEBAE00ED16C0 /* EscanerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51F2B366243FEBAE00ED16C0 /* EscanerViewController.xib */; };
 		51F2B36A2440BBCA00ED16C0 /* EscanearDniPresentador.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F2B3692440BBCA00ED16C0 /* EscanearDniPresentador.swift */; };
@@ -215,6 +214,7 @@
 		E8E44DB724ACB99300E26044 /* InformacionPBAPresentador.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E44DB624ACB99300E26044 /* InformacionPBAPresentador.swift */; };
 		FB01E299244783F600692E3C /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB01E298244783F600692E3C /* Array.swift */; };
 		FB05B0B124452DBD00CDA0CE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB05B0B024452DBD00CDA0CE /* WebKit.framework */; };
+		FB0660212524FF1B00909C5C /* ZXingObjC in Frameworks */ = {isa = PBXBuildFile; productRef = FB0660202524FF1B00909C5C /* ZXingObjC */; };
 		FB6AF371251F7D000013B5D7 /* SwiftOTP in Frameworks */ = {isa = PBXBuildFile; productRef = FB6AF370251F7D000013B5D7 /* SwiftOTP */; };
 		FB6AF374251F7D190013B5D7 /* TrustKit in Frameworks */ = {isa = PBXBuildFile; productRef = FB6AF373251F7D190013B5D7 /* TrustKit */; };
 		FB6D7AA32448D4F300EC3176 /* VistaTerminos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6D7AA22448D4F300EC3176 /* VistaTerminos.swift */; };
@@ -512,13 +512,13 @@
 				6BF3785E244C107800B8080F /* libz.tbd in Frameworks */,
 				6BF3785C244C106E00B8080F /* libc++.tbd in Frameworks */,
 				FB6AF374251F7D190013B5D7 /* TrustKit in Frameworks */,
+				FB0660212524FF1B00909C5C /* ZXingObjC in Frameworks */,
 				6BF3785A244C106500B8080F /* SystemConfiguration.framework in Frameworks */,
 				6BF37858244C105A00B8080F /* CoreTelephony.framework in Frameworks */,
 				FB05B0B124452DBD00CDA0CE /* WebKit.framework in Frameworks */,
 				6BF37856244C100700B8080F /* NewRelicAgent.framework in Frameworks */,
 				510311882446376A002780C8 /* MapKit.framework in Frameworks */,
 				FB6AF371251F7D000013B5D7 /* SwiftOTP in Frameworks */,
-				51F2B361243F86E500ED16C0 /* ZXingObjC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1416,7 +1416,6 @@
 				66E41619243C094500EE4052 /* Sources */,
 				66E4161A243C094500EE4052 /* Frameworks */,
 				66E4161B243C094500EE4052 /* Resources */,
-				661C0A95244147D4001957CA /* Carhage Copy Frameworks */,
 				6BF37862244C112B00B8080F /* New Relic */,
 			);
 			buildRules = (
@@ -1427,6 +1426,7 @@
 			packageProductDependencies = (
 				FB6AF370251F7D000013B5D7 /* SwiftOTP */,
 				FB6AF373251F7D190013B5D7 /* TrustKit */,
+				FB0660202524FF1B00909C5C /* ZXingObjC */,
 			);
 			productName = CovidApp;
 			productReference = 66E4161D243C094500EE4052 /* CovidApp-Dev.app */;
@@ -1481,6 +1481,7 @@
 			packageReferences = (
 				FB6AF36F251F7D000013B5D7 /* XCRemoteSwiftPackageReference "SwiftOTP" */,
 				FB6AF372251F7D190013B5D7 /* XCRemoteSwiftPackageReference "TrustKit" */,
+				FB06601F2524FF1B00909C5C /* XCRemoteSwiftPackageReference "zxingify-objc" */,
 			);
 			productRefGroup = 66E4161E243C094500EE4052 /* Products */;
 			projectDirPath = "";
@@ -1563,26 +1564,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		661C0A95244147D4001957CA /* Carhage Copy Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/ZXingObjC.framework",
-			);
-			name = "Carhage Copy Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ZXingObjC.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
 		6BF37862244C112B00B8080F /* New Relic */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1960,7 +1941,6 @@
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/ExternalFrameworks",
 				);
 				INFOPLIST_FILE = CovidApp/Info.plist;
@@ -1994,7 +1974,6 @@
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/ExternalFrameworks",
 				);
 				INFOPLIST_FILE = CovidApp/Info.plist;
@@ -2131,7 +2110,6 @@
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/ExternalFrameworks",
 				);
 				INFOPLIST_FILE = CovidApp/Info.plist;
@@ -2247,7 +2225,6 @@
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/ExternalFrameworks",
 				);
 				INFOPLIST_FILE = CovidApp/Info.plist;
@@ -2363,7 +2340,6 @@
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/ExternalFrameworks",
 				);
 				INFOPLIST_FILE = CovidApp/Info.plist;
@@ -2479,7 +2455,6 @@
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/ExternalFrameworks",
 				);
 				INFOPLIST_FILE = CovidApp/Info.plist;
@@ -2589,7 +2564,6 @@
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/ExternalFrameworks",
 				);
 				INFOPLIST_FILE = CovidApp/Info.plist;
@@ -2698,7 +2672,6 @@
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/ExternalFrameworks",
 				);
 				INFOPLIST_FILE = CovidApp/Info.plist;
@@ -2807,7 +2780,6 @@
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/ExternalFrameworks",
 				);
 				INFOPLIST_FILE = CovidApp/Info.plist;
@@ -2916,7 +2888,6 @@
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/ExternalFrameworks",
 				);
 				INFOPLIST_FILE = CovidApp/Info.plist;
@@ -3016,6 +2987,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FB06601F2524FF1B00909C5C /* XCRemoteSwiftPackageReference "zxingify-objc" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/zxingify/zxingify-objc";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 3.6.6;
+			};
+		};
 		FB6AF36F251F7D000013B5D7 /* XCRemoteSwiftPackageReference "SwiftOTP" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/lachlanbell/SwiftOTP.git";
@@ -3035,6 +3014,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FB0660202524FF1B00909C5C /* ZXingObjC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB06601F2524FF1B00909C5C /* XCRemoteSwiftPackageReference "zxingify-objc" */;
+			productName = ZXingObjC;
+		};
 		FB6AF370251F7D000013B5D7 /* SwiftOTP */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FB6AF36F251F7D000013B5D7 /* XCRemoteSwiftPackageReference "SwiftOTP" */;
