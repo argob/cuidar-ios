@@ -45,7 +45,7 @@ Más allá de las mejoras funcionales que se incorporen por requerimiento de las
 * Versión mínima de iOS: 11
 * Última versión de iOS durante el desarrollo del proyecto: 13.4
 * Versión mínima de Xcode: 11.3.1 (11C504)
-* La aplicación usa [Carthage](https://github.com/Carthage/Carthage) y [Swift Package Manager](https://swift.org/package-manager/) como sistema de manejo de dependencias. Se usan ambos ya que algunos frameworks no soportan Carthage. Para compilar el proyecto necesitás:
+* La aplicación usa [Swift Package Manager](https://swift.org/package-manager/) como sistema de manejo de dependencias. Para compilar el proyecto necesitás:
 
 ### NewRelic 
 
