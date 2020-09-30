@@ -1941,7 +1941,6 @@
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/ExternalFrameworks",
 				);
 				INFOPLIST_FILE = CovidApp/Info.plist;
@@ -1975,7 +1974,6 @@
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/ExternalFrameworks",
 				);
 				INFOPLIST_FILE = CovidApp/Info.plist;
@@ -2112,7 +2110,6 @@
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/ExternalFrameworks",
 				);
 				INFOPLIST_FILE = CovidApp/Info.plist;
@@ -2228,7 +2225,6 @@
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/ExternalFrameworks",
 				);
 				INFOPLIST_FILE = CovidApp/Info.plist;
@@ -2344,7 +2340,6 @@
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/ExternalFrameworks",
 				);
 				INFOPLIST_FILE = CovidApp/Info.plist;
@@ -2460,7 +2455,6 @@
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/ExternalFrameworks",
 				);
 				INFOPLIST_FILE = CovidApp/Info.plist;
@@ -2570,7 +2564,6 @@
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/ExternalFrameworks",
 				);
 				INFOPLIST_FILE = CovidApp/Info.plist;
@@ -2679,7 +2672,6 @@
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/ExternalFrameworks",
 				);
 				INFOPLIST_FILE = CovidApp/Info.plist;
@@ -2788,7 +2780,6 @@
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/ExternalFrameworks",
 				);
 				INFOPLIST_FILE = CovidApp/Info.plist;
@@ -2897,7 +2888,6 @@
 				DEVELOPMENT_TEAM = AXB6T3Q6UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/ExternalFrameworks",
 				);
 				INFOPLIST_FILE = CovidApp/Info.plist;
