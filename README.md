@@ -51,7 +51,7 @@ Más allá de las mejoras funcionales que se incorporen por requerimiento de las
 
 ### NewRelic 
 
-* Agregarle el paquete de NewRelic (en ese caso poner en `true` la variable `USAR_NEWRELIC` en `CovidApp/CovidApp/Dominio/Constantes/GlobalKeys.swift`) o eliminarlo del proyecto (Project Settings ▸ Build Phases ▸ eliminar New Relic, Build Settings ▸ Swift Compiler ▸ General ▸ Objective-C Bridging Header ▸ vaciarlo y eliminar -DNEWRELIC de Other Swift Flags).
+* Agregarle el paquete de NewRelic (en ese caso poner en `true` la variable `USAR_NEWRELIC` en `CovidApp/CovidApp/Dominio/Constantes/GlobalKeys.swift`) o eliminarlo del proyecto (en Project Settings ▸ Build Phases ▸ eliminar New Relic de Link Binary With Libraries y de su propia sección, en Build Settings ▸ Swift Compiler ▸ General ▸ Objective-C Bridging Header ▸ vaciarlo y eliminar -DNEWRELIC de Other Swift Flags).
 * Tal vez necesites Project ▸ Clean Build Folder.
 
 ### Swift Package Manager
