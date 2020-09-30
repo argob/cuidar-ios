@@ -16,9 +16,7 @@ struct Keys {
     static let USAR_NEWRELIC = false
 
     static let BASE_URL = "https://192.168.100.22:8060" //<---- IP LOCAL AQUÍ
-    static let CONSEJOS_URL = "https://192.168.100.22/consejos/"
-    static let CONSEJOS_CANTIDAD_DISPONIBLES = "https://192.168.100.22/consejos/index.json"
-    static let STATIC_WEB = "https://algunaurl.ar/“
+    static let STATIC_WEB = "https://algunaurl.ar/"
         
     static let API_KEY: [UInt8] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     
