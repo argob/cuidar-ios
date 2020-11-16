@@ -483,7 +483,7 @@
 		E8D3CD2D252514D1004172E6 /* MultipleCertificateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleCertificateTableViewCell.swift; sourceTree = "<group>"; };
 		E8D3CD2E252514D1004172E6 /* MultipleCertificateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultipleCertificateTableViewCell.xib; sourceTree = "<group>"; };
 		E8D3CD362525160E004172E6 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		E8D3CD3A252516C7004172E6 /* TerminosYCondiciones.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TerminosYCondiciones.swift; path = "../../../../../../ios-OpenSource/CovidApp/CovidApp/Dominio/Servicios/API/TerminosYCondiciones.swift"; sourceTree = "<group>"; };
+		E8D3CD3A252516C7004172E6 /* TerminosYCondiciones.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminosYCondiciones.swift; sourceTree = "<group>"; };
 		E8E44DB224AC140000E26044 /* InformacionPBAViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformacionPBAViewController.xib; sourceTree = "<group>"; };
 		E8E44DB424AC141600E26044 /* InformacionPBAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformacionPBAViewController.swift; sourceTree = "<group>"; };
 		E8E44DB624ACB99300E26044 /* InformacionPBAPresentador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformacionPBAPresentador.swift; sourceTree = "<group>"; };
